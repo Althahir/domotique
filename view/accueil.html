@@ -4,133 +4,71 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Accueil</title>
-
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<main>
-    <h1>Tableau de bord</h1>
-</main>
 
-<div class="container">
-  <!-- Colonne gauche -->
-  <div class="left">
-    <h2>Mes accessoires</h2>
-    <div class="accessoires">
-      <div class="card">Lunettes de soleil</div>
-      <div class="card">Sac à main</div>
-      <div class="card">Montre</div>
-      <div class="card">Chapeau</div>
-    </div>
-  </div>
+<div class="layout">
+    <!-- Sidebar chargée dynamiquement -->
+    <div id="sidebar"></div>
 
-  <!-- Colonne droite -->
-  <div class="right">
-    <img src="https://via.placeholder.com/300x400" alt="Photo d'accessoire">
+    <!-- Contenu principal -->
+    <main>
+        <h1>Tableau de bord</h1>
 
-    <table class="tableau">
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Catégorie</th>
-          <th>Prix (€)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Lunettes de soleil</td>
-          <td>Mode</td>
-          <td>45</td>
-        </tr>
-        <tr>
-          <td>Sac à main</td>
-          <td>Mode</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>Montre</td>
-          <td>Accessoire</td>
-          <td>90</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        <div class="container">
+          <!-- Colonne gauche -->
+          <div class="left">
+            <h2>Mes accessoires</h2>
+            <div class="accessoires">
+              <a class="card" href="light.html">Lumières connectés</a>
+              <a class="card" href="aircon.html">Air Conditionné</a>
+              <a class="card" href="store.html">Volets </a>
+      
+            </div>
+          </div>
+
+          <!-- Colonne droite -->
+          <div class="right">
+            <img src="https://via.placeholder.com/300x400" alt="Photo d'accessoire">
+
+            <table class="tableau">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Catégorie</th>
+                  <th>Prix (€)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lunettes de soleil</td>
+                  <td>Mode</td>
+                  <td>45</td>
+                </tr>
+                <tr>
+                  <td>Sac à main</td>
+                  <td>Mode</td>
+                  <td>120</td>
+                </tr>
+                <tr>
+                  <td>Montre</td>
+                  <td>Accessoire</td>
+                  <td>90</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </main>
 </div>
 
-<style>
-body {
-  font-family: sans-serif;
-  background: #f8f9fa;
-  margin: 0;
-  padding: 40px;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Colonne gauche */
-.left {
-  flex: 1;
-}
-
-/* Colonne droite */
-.right {
-  flex: 1;
-}
-
-.right img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* Liste de cartes */
-.accessoires {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Tableau */
-.tableau {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.tableau th, .tableau td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #eee;
-  text-align: left;
-}
-
-.tableau th {
-  background: #f1f3f5;
-  font-weight: bold;
-}
-
-.tableau tr:last-child td {
-  border-bottom: none;
-}
-</style>
+<script>
+  fetch("../layout/menu.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("sidebar").innerHTML = data)
+    .catch(err => console.error("Erreur fetch :", err));
+</script>
 
 </body>
-
+</html>
