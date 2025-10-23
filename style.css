@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #f87e13, #cf764d);
+  background: linear-gradient(135deg, #ffffff, #ffffff);
 }
 
 /* --- Conteneur principal --- */
@@ -89,4 +89,58 @@ body {
 
 .register-link a:hover {
   text-decoration: underline;
+}
+/* Reset basique */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Container pour sidebar + contenu */
+.container {
+  display: flex;
+  height: 100%;
+  padding-top: 60px; /* espace pour navbar */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background:  #f48530;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed; /* reste collée même quand scroll */
+  top: 0px;
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Contenu principal */
+.content {
+  margin-left: 200px; /* largeur de la sidebar */
+  padding: 20px;
+  flex: 1;
+  min-height: calc(100vh - 60px); /* pour occuper le reste */
 }
