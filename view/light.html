@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Light</title>
+</head>
+<body>
+<div class="page-lumiere">
+  <!-- En-tête -->
+  <div class="header">
+    <h2>Light</h2>
+    <div class="header-buttons">
+      <button class="btn-all">Toutes les lumières</button>
+      <button class="btn-add">+</button>
+    </div>
+  </div>
+
+  <!-- Liste de pièces -->
+  <div class="list-pieces">
+    <div class="piece-card">
+      <h3>Salon</h3>
+      <p>3 lumières</p>
+    </div>
+    <div class="piece-card">
+      <h3>Chambre</h3>
+      <p>2 lumières</p>
+    </div>
+    <div class="piece-card">
+      <h3>Cuisine</h3>
+      <p>4 lumières</p>
+    </div>
+    <div class="piece-card">
+      <h3>Salle de bain</h3>
+      <p>1 lumière</p>
+    </div>
+  </div>
+</div>
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f6f8fa;
+  margin: 0;
+  padding: 40px;
+}
+
+.page-lumiere {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- En-tête --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --- Bouton “Toutes les lumières” --- */
+.btn-all {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-all:hover {
+  background-color: #005fca;
+}
+
+/* --- Bouton “+” --- */
+.btn-add {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-add:hover {
+  background-color: #3b8c3f;
+  transform: scale(1.05);
+}
+
+/* --- Liste des pièces (verticale) --- */
+.list-pieces {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- Carte de pièce --- */
+.piece-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.piece-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.piece-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.piece-card p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+</style>
