@@ -60,7 +60,7 @@ int main(void) {
     /* --- Configuration du simulateur --- */
     const char *sim_host = "192.168.56.1";   
     // const char *sim_host = "127.0.0.1";
-    const int sim_port = 57411;              // Port du simulateur
+    const int sim_port = 64826;              // Port du simulateur
 
     /* --- Actions utilisateur --- */
     if (qs && strstr(qs, "action=on")) {
