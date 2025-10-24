@@ -1,61 +1,236 @@
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 127.0.0.1:55818 : 192.168.0.100,00010111,ON
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 127.0.0.1:55818 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[ERREUR] Connexion au simulateur impossible : 127.0.0.1:55818 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[ERREUR] Connexion au simulateur impossible : 127.0.0.1:55818 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[ERREUR] Connexion au simulateur impossible : 127.0.0.1:55818 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[ERREUR] Connexion au simulateur impossible : 127.0.0.1:55818 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[ERREUR] Connexion au simulateur impossible : 127.0.0.1:55818 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[ERREUR] Connexion au simulateur impossible : 127.0.0.1:55818 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,OFF
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,OFF
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,OFF
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,OFF
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,OFF
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,OFF
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,ON
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message envoyé → 192.168.56.1:49671 : 192.168.0.100,00010111,OFF
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : lamp1
+[ERREUR] get_lamp_info: device lamp1 non trouvé.
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[ERREUR] Device lamp1 non trouvé dans JSON.
+[ERREUR] Connexion au simulateur impossible : 192.168.56.1:50177 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[ERREUR] Connexion au simulateur impossible : 192.168.56.1:50177 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[ERREUR] Connexion au simulateur impossible : 192.168.56.1:50177 (183)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message binaire envoyé → 192.168.56.1:56346 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message binaire envoyé → 192.168.56.1:56346 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] Message texte envoyé → 192.168.56.1:51745 : 192.168.0.100 00010111 0
+
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
-[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
-[DEBUG] Écriture JSON terminée (ok=1)
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] Message texte envoyé → 192.168.56.1:57411 : 192.168.0.100 00010111 1
+

@@ -15,6 +15,7 @@
 /* JSON-based persistence (simple) */
 int set_device_state_json(const char *group, const char *device, const char *state);
 int get_device_state_json(const char *group, const char *device, char *state_out, const char *default_state);
+int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state_out);
 
 /* Gabarit HTML minimal */
 void html_header(const char *title);
