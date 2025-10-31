@@ -74,8 +74,8 @@ int main(void) {
     get_lamp_info(decoded_device, ip_auto, input_auto, current_state);
 
     /* --- Paramètres simulateur --- */
-    const char *sim_host = "127.0.0.1";   // ou "192.168.56.1"
-    const int sim_port = 55101;
+    const char *sim_host =  "192.168.56.1";//"127.0.0.1";  
+    const int sim_port = 53203;
 
     /* --- Construction du message binaire (13 octets) --- */
     unsigned char msg[13];
@@ -107,6 +107,7 @@ else if (qs && strstr(qs, "action=off")) {
         Sleep(50);
     }
 }
+
 
 
     /* --- Génération HTML --- */
