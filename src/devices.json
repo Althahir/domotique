@@ -1,0 +1,105 @@
+{
+  "lamps": {
+    "Cuisine - Luminaire entrée": {
+      "ip": "192.168.0.100",
+      "input": "00000001",
+      "state": "OFF"
+    },
+    "Cuisine - Luminaire îlot central": {
+      "ip": "192.168.0.100",
+      "input": "00000010",
+      "state": "OFF"
+    },
+    "Cuisine - Plan de travail sud": {
+      "ip": "192.168.0.100",
+      "input": "00000111",
+      "state": "OFF"
+    },
+    "Salon - Luminaire salon nord": {
+      "ip": "192.168.0.100",
+      "input": "00010111",
+      "state": "ON"
+    },
+    "Salon - Luminaire salon sud": {
+      "ip": "192.168.0.100",
+      "input": "00011000",
+      "state": "ON"
+    },
+    "Salon - Applique cheminée nord": {
+      "ip": "192.168.0.100",
+      "input": "00011010",
+      "state": "OFF"
+    },
+    "Salon - Applique cheminée sud": {
+      "ip": "192.168.0.100",
+      "input": "00011011",
+      "state": "ON"
+    },
+    "Salle à manger - Luminaire central": {
+      "ip": "192.168.0.100",
+      "input": "00011111",
+      "state": "OFF"
+    },
+    "Hall sud - Projecteur extérieur ouest": {
+      "ip": "192.168.0.100",
+      "input": "01001010",
+      "state": "OFF"
+    },
+    "Hall sud - Projecteur extérieur est": {
+      "ip": "192.168.0.100",
+      "input": "01001011",
+      "state": "OFF"
+    },
+    "Escalier central - Luminaire central": {
+      "ip": "192.168.0.100",
+      "input": "00100111",
+      "state": "OFF"
+    },
+    "Escalier central - Luminaire sud": {
+      "ip": "192.168.0.100",
+      "input": "00101000",
+      "state": "OFF"
+    },
+    "Bibliothèque - Luminaire central ouest": {
+      "ip": "192.168.0.100",
+      "input": "00101001",
+      "state": "OFF"
+    },
+    "Chambre invités - Luminaire central": {
+      "ip": "192.168.0.100",
+      "input": "00101011",
+      "state": "OFF"
+    },
+    "Suite parentale - Luminaire central": {
+      "ip": "192.168.0.100",
+      "input": "00001000",
+      "state": "OFF"
+    },
+    "Suite parentale - Applique nord-ouest": {
+      "ip": "192.168.0.100",
+      "input": "00001001",
+      "state": "OFF"
+    },
+    "Suite parentale - Applique sud": {
+      "ip": "192.168.0.100",
+      "input": "00001100",
+      "state": "OFF"
+    },
+    "Salle de bain - Luminaire central": {
+      "ip": "192.168.0.100",
+      "input": "00001110",
+      "state": "OFF"
+    },
+    "WC - Luminaire central": {
+      "ip": "192.168.0.100",
+      "input": "00100110",
+      "state": "OFF"
+    }
+  },
+  "store": {
+    "main": "CLOSED"
+  },
+  "clim": {
+    "main": "OFF"
+  }
+}
