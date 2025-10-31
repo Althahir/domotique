@@ -8,6 +8,7 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
+/* --- Fonction existante : envoi d’un message basé sur IP / input / état --- */
 int send_to_simulator(const char *host, int port, const char *ip_auto, const char *input_auto, const char *state) {
     WSADATA wsa;
     SOCKET sock;
@@ -66,3 +67,52 @@ int send_to_simulator(const char *host, int port, const char *ip_auto, const cha
     WSACleanup();
     return 1;
 }
+
+/* --- Nouvelle fonction : envoi direct de trames binaires (pour lampe.c) --- */
+int send_to_simulator_binary(const char *host, int port, const unsigned char *data, size_t len) {
+    WSADATA wsa;
+    SOCKET sock;
+    struct sockaddr_in server;
+
+    if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
+        return 0;
+
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock == INVALID_SOCKET)
+        return 0;
+
+    memset(&server, 0, sizeof(server));
+    server.sin_family = AF_INET;
+    server.sin_port = htons(port);
+    inet_pton(AF_INET, host, &server.sin_addr);
+
+    if (connect(sock, (struct sockaddr*)&server, sizeof(server)) < 0) {
+        closesocket(sock);
+        WSACleanup();
+        return 0;
+    }
+
+    // 🔹 Assure l’envoi complet (même si send() envoie partiellement)
+    size_t total_sent = 0;
+    while (total_sent < len) {
+        int sent = send(sock, (const char*)(data + total_sent), (int)(len - total_sent), 0);
+        if (sent <= 0) break;
+        total_sent += sent;
+    }
+
+    FILE *log = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
+    if (log) {
+        fprintf(log, "[TCP] %zu/%zu octets envoyés (binaire direct) vers %s:%d : ",
+                total_sent, len, host, port);
+        for (size_t i = 0; i < len; i++)
+            fprintf(log, "%02X ", data[i]);
+        fprintf(log, "\n");
+        fclose(log);
+    }
+
+    Sleep(100);
+    closesocket(sock);
+    WSACleanup();
+    return (total_sent == len);
+}
+

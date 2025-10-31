@@ -33,7 +33,7 @@
     "Salon - Applique cheminée sud": {
       "ip": "192.168.0.100",
       "input": "00011011",
-      "state": "OFF"
+      "state": "ON"
     },
     "Salle à manger - Luminaire central": {
       "ip": "192.168.0.100",

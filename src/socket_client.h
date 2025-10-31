@@ -10,5 +10,7 @@
  * state : "ON" ou "OFF"
  */
 int send_to_simulator(const char *host, int port, const char *ip_auto, const char *input_auto, const char *state);
+int send_to_simulator_binary(const char *host, int port, const unsigned char *data, size_t len);
+
 
 #endif
