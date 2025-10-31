@@ -738,3 +738,156 @@ Recherche du device : Salon - Luminaire salon nord
 [TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
 [TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
 [TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon nord
+[INFO] Lamp Salon - Luminaire salon nord -> ip=192.168.0.100, input=00010111, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 00 01 01 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique cheminée nord
+[INFO] Lamp Salon - Applique cheminée nord -> ip=192.168.0.100, input=00011010, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique cheminée nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique cheminée nord
+[INFO] Lamp Salon - Applique cheminée nord -> ip=192.168.0.100, input=00011010, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique cheminée nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique cheminée nord
+[INFO] Lamp Salon - Applique cheminée nord -> ip=192.168.0.100, input=00011010, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique cheminée nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique cheminée nord
+[INFO] Lamp Salon - Applique cheminée nord -> ip=192.168.0.100, input=00011010, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique cheminée nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique cheminée nord
+[INFO] Lamp Salon - Applique cheminée nord -> ip=192.168.0.100, input=00011010, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique cheminée nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique cheminée nord
+[INFO] Lamp Salon - Applique cheminée nord -> ip=192.168.0.100, input=00011010, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique cheminée nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique cheminée nord
+[INFO] Lamp Salon - Applique cheminée nord -> ip=192.168.0.100, input=00011010, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique cheminée nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique cheminée nord
+[INFO] Lamp Salon - Applique cheminée nord -> ip=192.168.0.100, input=00011010, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique cheminée nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 127.0.0.1:55101 : C0 A8 00 64 00 00 00 01 01 00 01 00 01 

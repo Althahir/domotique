@@ -18,7 +18,7 @@
     "Salon - Luminaire salon nord": {
       "ip": "192.168.0.100",
       "input": "00010111",
-      "state": "ON"
+      "state": "OFF"
     },
     "Salon - Luminaire salon sud": {
       "ip": "192.168.0.100",
@@ -28,7 +28,7 @@
     "Salon - Applique cheminée nord": {
       "ip": "192.168.0.100",
       "input": "00011010",
-      "state": "OFF"
+      "state": "ON"
     },
     "Salon - Applique cheminée sud": {
       "ip": "192.168.0.100",
