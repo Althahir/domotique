@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Accueil</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="page-store">
+  <!-- En-tête -->
+  <div class="header">
+    <h2>Store</h2>
+    <div class="header-buttons">
+      <button class="btn-all">Tous les stores</button>
+      <button class="btn-add">+</button>
+    </div>
+  </div>
+
+  <!-- Liste de stores -->
+  <div class="list-stores">
+    <div class="store-card">
+      <h3>Salon</h3>
+      <p>Status: <span class="status"></span></p>
+      <div class="store-buttons">
+        <button class="btn-toggle">Ouvrir</button>
+        <button class="btn-close">Fermé</button>
+      </div>
+    </div>
+    <div class="store-card">
+      <h3>Chambre</h3>
+      <p>Status: <span class="status"></span></p>
+      <div class="store-buttons">
+        <button class="btn-toggle">Ouvrir</button>
+        <button class="btn-close">Fermé</button>
+      </div>
+    </div>
+    <div class="store-card">
+      <h3>Cuisine</h3>
+      <p>Status: <span class="status"></span></p>
+      <div class="store-buttons">
+        <button class="btn-toggle">Ouvrir</button>
+        <button class="btn-close">Fermé</button>
+      </div>
+    </div>
+    <div class="store-card">
+    <div class="store-info">
+      <h3>Salle de bain</h3>
+      <p>Status: <span class="status"></span></p>
+    </div>
+    <div class="store-buttons">
+      <button class="btn-toggle">Ouvrir</button>
+      <button class="btn-close">Fermé</button>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f6f8fa;
+  margin: 0;
+  padding: 40px;
+}
+
+.page-store {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- En-tête --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --- Boutons --- */
+.btn-all {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-all:hover {
+  background-color: #005fca;
+}
+
+.btn-add {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-add:hover {
+  background-color: #3b8c3f;
+  transform: scale(1.05);
+}
+
+/* --- Liste des stores --- */
+.list-stores {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- Carte de store --- */
+.store-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  gap:16px;
+}
+.store-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* espace entre le nom et le status */
+}
+
+
+.store-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.store-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.store-card p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* --- Boutons d’action du store --- */
+.store-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-toggle {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-toggle:hover {
+  background-color: #e68900;
+  transform: scale(1.05);
+}
+
+.btn-close {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-close:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+const toggleButtons = document.querySelectorAll('.btn-toggle');
+const closeButtons = document.querySelectorAll('.btn-close');
+
+toggleButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.store-card');
+    const status = card.querySelector('.status');
+    if(status.textContent === 'Fermé') {
+      status.textContent = 'Ouvert';
+    } else {
+      status.textContent = 'Fermé';
+    }
+  });
+});
+
+closeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.store-card');
+    const status = card.querySelector('.status');
+    status.textContent = 'Fermé';
+  });
+});
+</script>
+
+ 
+
+<div class="layout">
+    <!-- Sidebar chargée dynamiquement -->
+    <div id="sidebar"></div>
+
+    <!-- Contenu principal -->
+    <main>
+
+    </main>
+    </div>
+</div>
+
+<script>
+  fetch("../layout/menu.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("sidebar").innerHTML = data)
+    .catch(err => console.error("Erreur fetch :", err));
+</script>
+
+</body>
