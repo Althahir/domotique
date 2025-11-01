@@ -193,7 +193,7 @@
     "Salon - Luminaire salon sud": {
       "ip": "192.168.0.100",
       "input": "00011000",
-      "state": "OFF"
+      "state": "ON"
     },
     "Salon - Applique nord": {
       "ip": "192.168.0.100",
@@ -1066,3 +1066,4 @@
     }
   }
 }
+

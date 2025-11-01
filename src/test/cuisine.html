@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrôle - Cuisine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* Styles Globaux */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7; 
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background-color: #FFFFFF; 
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #FF6600; 
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #FF9933; 
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #CC6600;
+            font-size: 1.6em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 5px solid #FF9933;
+        }
+        /* Grille des Appareils */
+        .device-grid {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 20px;
+            margin-bottom: 30px;
+            justify-content: center; 
+        }
+        /* Style des Tuiles/Boutons de Contrôle */
+        .control-tile {
+            padding: 15px;
+            width: 180px; 
+            height: 100px; 
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .control-tile i { margin-bottom: 5px; font-size: 2em; }
+        .control-tile span { font-size: 0.85em; line-height: 1.2; }
+        
+        /* États et Couleurs */
+        .light-tile { background-color: #FF8C00; } 
+        .store-tile { background-color: #FFB74D; color: #333; } 
+        .clim-tile { background-color: #00A896; } 
+
+        .light-tile.off { background-color: #e0e0e0; color: #333; }
+        .light-tile.off i { color: #888; }
+        
+        .light-tile.on { background-color: #FF6600; color: white; }
+        
+        .light-tile.on:hover { background-color: #e65c00; transform: translateY(-3px); }
+        .light-tile.off:hover { background-color: #ccc; color: #333; transform: translateY(-3px); }
+        .store-tile:hover { background-color: #FF9800; color: white; transform: translateY(-3px); }
+        .clim-tile:hover { background-color: #00897B; transform: translateY(-3px); }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333333;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover { background-color: #000000; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><i class="fa-solid fa-utensils"></i> Contrôle de la Cuisine</h1>
+
+    <div id="controls-container">
+        </div>
+
+    <a href="index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour aux Pièces</a>
+</div>
+
+<script>
+    // ⚠️ IMPORTANT: Simule le contenu pertinent de votre fichier devices.json
+    // J'ai pris les données de la cuisine dans le devices.json que vous avez fourni
+    const DEVICES_JSON_DATA = {
+        "lamps": {
+            "Cuisine - Luminaire entrée": { "ip": "192.168.0.100", "input": "00000001", "state": "OFF" },
+            "Cuisine - Luminaire îlot central": { "ip": "192.168.0.100", "input": "00000010", "state": "OFF" },
+            // Les autres lumières ne sont pas dans l'extrait JSON, mais je les garde pour la structure
+            "Cuisine - Plan de travail est (gauche)": { "ip": "192.168.0.100", "input": "00000011", "state": "ON" },
+            "Cuisine - Plan de travail est (droit)": { "ip": "192.168.0.100", "input": "00000100", "state": "OFF" },
+            "Cuisine - Plan de travail ouest (droite)": { "ip": "192.168.0.100", "input": "00000101", "state": "ON" },
+            "Cuisine - Plan de travail ouest (gauche)": { "ip": "192.168.0.100", "input": "00000110", "state": "OFF" },
+            "Cuisine - Plan de travail sud": { "ip": "192.168.0.100", "input": "00000111", "state": "ON" }
+        },
+        "store": {
+            "Cuisine - Volet roulant porte fenêtre terrasse": { "ip": "192.168.0.100", "input": "00000011", "state": "UP" }
+        },
+        "clim": {
+            "Cuisine - Climatisation réversible": { "ip": "192.168.0.112", "input": "00001010", "state": "ON" }
+        }
+    };
+    
+    // 💡 Définition des informations de connexion du simulateur (selon les conventions de votre code C)
+    const SIMULATOR_HOST = "192.168.56.1"; // Host typique pour la VM ou le simulateur
+    const SIMULATOR_PORT = 60804;          // Port typique pour la communication binaire
+
+    const DEVICE_TYPES = {
+        lamps: { title: "Lumières", icon: "fa-lightbulb", class: "light-tile" },
+        store: { title: "Volets Roulants", icon: "fa-blinds-open", class: "store-tile" },
+        clim: { title: "Climatisation", icon: "fa-snowflake", class: "clim-tile" }
+    };
+
+    // --- Fonction de génération de l'interface ---
+    function generateControls() {
+        const container = document.getElementById('controls-container');
+        container.innerHTML = '';
+        
+        for (const typeKey in DEVICES_JSON_DATA) {
+            const typeInfo = DEVICE_TYPES[typeKey];
+            const devices = DEVICES_JSON_DATA[typeKey];
+            const deviceNames = Object.keys(devices);
+
+            if (deviceNames.length > 0) {
+                const h2 = document.createElement('h2');
+                h2.innerHTML = `<i class="fa-solid ${typeInfo.icon}"></i> ${typeInfo.title}`;
+                container.appendChild(h2);
+
+                const grid = document.createElement('div');
+                grid.className = 'device-grid';
+
+                deviceNames.forEach(deviceName => {
+                    const deviceData = devices[deviceName];
+                    const tile = createDeviceTile(typeKey, typeInfo, deviceName, deviceData);
+                    grid.appendChild(tile);
+                });
+                
+                container.appendChild(grid);
+                container.appendChild(document.createElement('hr'));
+            }
+        }
+        
+        // Nettoyage de la dernière séparation
+        const hrs = container.querySelectorAll('hr');
+        if (hrs.length > 0) { container.removeChild(hrs[hrs.length - 1]); }
+    }
+
+    // --- Création d'une seule tuile ---
+    function createDeviceTile(typeKey, typeInfo, deviceName, deviceData) {
+        const tile = document.createElement('a');
+        tile.href = '#';
+        tile.className = `control-tile ${typeInfo.class}`;
+        tile.setAttribute('data-name', deviceName);
+        tile.setAttribute('data-type', typeKey);
+        
+        tile.classList.add(deviceData.state.toLowerCase()); 
+        
+        const shortName = deviceName.replace('Cuisine - ', '');
+
+        tile.innerHTML = `
+            <i class="fa-solid ${typeInfo.icon}"></i> 
+            <span>${shortName} (${deviceData.state})</span>
+        `;
+        
+        if (typeKey === 'lamps') {
+            tile.addEventListener('click', toggleLamp);
+        } else {
+            tile.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log(`[INFO] Tuile cliquée: ${shortName} (Type: ${typeKey}). Aucune action CGI assignée pour l'instant.`);
+            });
+        }
+        
+        return tile;
+    }
+
+
+    // --- Fonction de manipulation pour les LAMPES (Console plus verbeuse) ---
+    function toggleLamp(event) {
+        event.preventDefault();
+        const tile = event.currentTarget;
+        const deviceId = tile.getAttribute('data-name');
+        
+        const deviceData = DEVICES_JSON_DATA.lamps[deviceId];
+        if (!deviceData) return;
+
+        const currentState = tile.classList.contains('on') ? 'ON' : 'OFF';
+        const newState = currentState === 'ON' ? 'OFF' : 'ON';
+        
+        const encodedDeviceId = encodeURIComponent(deviceId);
+        const action = newState.toLowerCase();
+        
+        // L'URL cible le CGI 'lampe.exe' dans le dossier cgi-bin
+        const cgiUrl = `/cgi-bin/lampe.exe?device=${encodedDeviceId}&action=${action}`;
+
+        // 🟢 Début des messages verbeux pour la console
+        console.groupCollapsed(`[COMMANDE EN COURS] Appareil: ${deviceId} (Passage à ${newState})`);
+        console.log(`-> IP Automate cible: ${deviceData.ip}`);
+        console.log(`-> Entrée Automate (binaire): ${deviceData.input}`);
+        console.log(`-> Commande CGI (action): ${action}`);
+        console.log(`-> **SIMULATEUR CIBLE**: Envoi de la trame binaire au **TCP Host: ${SIMULATOR_HOST}** sur le **Port: ${SIMULATOR_PORT}**`);
+        console.log(`-> Requête HTTP envoyée à (CGI): ${cgiUrl}`);
+        console.groupEnd();
+
+
+        // Envoi de la requête au serveur (qui exécute le CGI lampe.exe)
+        fetch(cgiUrl)
+            .then(response => {
+                if (response.ok) {
+                    // 🟢 Log de succès
+                    console.log(`[SUCCÈS] Commande ${action} envoyée au CGI. Mise à jour de l'état local.`);
+                    
+                    // Mise à jour de l'interface (client-side)
+                    tile.classList.remove(currentState.toLowerCase());
+                    tile.classList.add(newState.toLowerCase());
+                    
+                    // Mise à jour du texte
+                    const shortName = deviceId.replace('Cuisine - ', '');
+                    tile.querySelector('span').textContent = `${shortName} (${newState})`;
+                    
+                } else {
+                    // 🔴 Log d'erreur détaillé
+                    console.error(`[ERREUR] Le serveur a retourné le code ${response.status} pour la requête CGI.`);
+                    alert(`Erreur du serveur lors du contrôle (${response.status}). Vérifiez le log du serveur Apache.`);
+                }
+            })
+            .catch(error => {
+                // 🔴 Log d'erreur de connexion
+                console.error(`[ERREUR FATALE] Échec de la connexion réseau au CGI.`, error);
+                alert(`Erreur de connexion réseau au serveur CGI. Assurez-vous que XAMPP est lancé et que lampe.exe est dans cgi-bin.`);
+            });
+    }
+    
+    document.addEventListener('DOMContentLoaded', generateControls);
+
+</script>
+
+</body>
+</html>
