@@ -93,7 +93,7 @@
     "Cuisine - Plan de travail est (gauche)": {
       "ip": "192.168.0.100",
       "input": "00000011",
-      "state": "OFF"
+      "state": "ON"
     },
     "Cuisine - Plan de travail est (droit)": {
       "ip": "192.168.0.100",
