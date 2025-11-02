@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
-        /* Styles Globaux */
+        /* Styles CSS (Non modifiés) */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7; 
@@ -42,7 +42,6 @@
             padding-left: 10px;
             border-left: 5px solid #FF9933;
         }
-        /* Grille des Appareils */
         .device-grid {
             display: flex; 
             flex-wrap: wrap; 
@@ -50,7 +49,6 @@
             margin-bottom: 30px;
             justify-content: center; 
         }
-        /* Style des Tuiles/Boutons de Contrôle */
         .control-tile {
             padding: 15px;
             width: 180px; 
@@ -68,11 +66,14 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            position: relative; 
+            overflow: hidden;
+            color: white; 
         }
+
         .control-tile i { margin-bottom: 5px; font-size: 2em; }
         .control-tile span { font-size: 0.85em; line-height: 1.2; }
         
-        /* États et Couleurs */
         .light-tile { background-color: #FF8C00; } 
         .store-tile { background-color: #FFB74D; color: #333; } 
         .clim-tile { background-color: #00A896; } 
@@ -82,10 +83,41 @@
         
         .light-tile.on { background-color: #FF6600; color: white; }
         
+        .store-tile.ouvert { background-color: #00BFFF; color: white; } 
+        .store-tile.ferme { background-color: #696969; color: white; } 
+
         .light-tile.on:hover { background-color: #e65c00; transform: translateY(-3px); }
         .light-tile.off:hover { background-color: #ccc; color: #333; transform: translateY(-3px); }
-        .store-tile:hover { background-color: #FF9800; color: white; transform: translateY(-3px); }
         .clim-tile:hover { background-color: #00897B; transform: translateY(-3px); }
+
+        .controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .controls button {
+            flex: 1;
+            padding: 5px 0;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.75em;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            transition: background-color 0.2s;
+        }
+        
+        .controls button:hover {
+            background-color: #FF6600;
+            color: white;
+        }
+
+        .controls button:first-child { border-bottom-left-radius: 12px; }
+        .controls button:last-child { border-bottom-right-radius: 12px; }
 
         .back-button {
             display: inline-block;
@@ -106,44 +138,43 @@
     <h1><i class="fa-solid fa-utensils"></i> Contrôle de la Cuisine</h1>
 
     <div id="controls-container">
-        </div>
+    </div>
 
     <a href="index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour aux Pièces</a>
 </div>
 
 <script>
     // ⚠️ IMPORTANT: Simule le contenu pertinent de votre fichier devices.json
-    // J'ai pris les données de la cuisine dans le devices.json que vous avez fourni
     const DEVICES_JSON_DATA = {
         "lamps": {
             "Cuisine - Luminaire entrée": { "ip": "192.168.0.100", "input": "00000001", "state": "OFF" },
             "Cuisine - Luminaire îlot central": { "ip": "192.168.0.100", "input": "00000010", "state": "OFF" },
-            // Les autres lumières ne sont pas dans l'extrait JSON, mais je les garde pour la structure
             "Cuisine - Plan de travail est (gauche)": { "ip": "192.168.0.100", "input": "00000011", "state": "OFF" },
             "Cuisine - Plan de travail est (droit)": { "ip": "192.168.0.100", "input": "00000100", "state": "OFF" },
             "Cuisine - Plan de travail ouest (droite)": { "ip": "192.168.0.100", "input": "00000101", "state": "OFF" },
             "Cuisine - Plan de travail ouest (gauche)": { "ip": "192.168.0.100", "input": "00000110", "state": "OFF" },
             "Cuisine - Plan de travail sud": { "ip": "192.168.0.100", "input": "00000111", "state": "OFF" }
         },
+        // Les états sont en ON/OFF pour correspondre à lampe.c dans le JSON
         "store": {
-            "Cuisine - Volet roulant porte fenêtre terrasse": { "ip": "192.168.0.100", "input": "00000011", "state": "OUVERT" }
+            "Cuisine - Volet roulant porte fenêtre terrasse": { "ip": "192.168.0.103", "input": "00101001", "state": "ON" }, // FERME
         },
         "clim": {
             "Cuisine - Climatisation réversible": { "ip": "192.168.0.112", "input": "00001010", "state": "ON" }
         }
     };
     
-    // 💡 Définition des informations de connexion du simulateur (selon les conventions de votre code C)
-    const SIMULATOR_HOST = "192.168.56.1"; // Host typique pour la VM ou le simulateur
-    const SIMULATOR_PORT = 60804;          // Port typique pour la communication binaire
+    // 💡 Définition des informations de connexion du simulateur
+    const SIMULATOR_HOST = "192.168.56.1"; 
+    const SIMULATOR_PORT = 50550;
 
     const DEVICE_TYPES = {
         lamps: { title: "Lumières", icon: "fa-lightbulb", class: "light-tile" },
-        store: { title: "Volets Roulants", icon: "fa-blinds-open", class: "store-tile" },
+        store: { title: "Volets Roulants", icon: "fa-house-chimney-window", class: "store-tile" }, 
         clim: { title: "Climatisation", icon: "fa-snowflake", class: "clim-tile" }
     };
 
-    // --- Fonction de génération de l'interface ---
+    // --- Fonction de génération de l'interface (Non modifiée) ---
     function generateControls() {
         const container = document.getElementById('controls-container');
         container.innerHTML = '';
@@ -163,7 +194,7 @@
 
                 deviceNames.forEach(deviceName => {
                     const deviceData = devices[deviceName];
-                    const tile = createDeviceTile(typeKey, typeInfo, deviceName, deviceData);
+                    const tile = createDeviceTile(typeKey, typeInfo, deviceName, deviceData); 
                     grid.appendChild(tile);
                 });
                 
@@ -172,94 +203,143 @@
             }
         }
         
-        // Nettoyage de la dernière séparation
         const hrs = container.querySelectorAll('hr');
         if (hrs.length > 0) { container.removeChild(hrs[hrs.length - 1]); }
     }
 
     // --- Création d'une seule tuile ---
     function createDeviceTile(typeKey, typeInfo, deviceName, deviceData) {
-        const tile = document.createElement('a');
-        tile.href = '#';
+        const tile = document.createElement('div'); 
         tile.className = `control-tile ${typeInfo.class}`;
         tile.setAttribute('data-name', deviceName);
         tile.setAttribute('data-type', typeKey);
         
-        tile.classList.add(deviceData.state.toLowerCase()); 
+        let displayState = deviceData.state;
+        let stateClass = deviceData.state.toLowerCase();
+        
+        if (typeKey === 'store') {
+            // Mappe ON/OFF (JSON) vers OUVERT/FERME (UI)
+            displayState = deviceData.state === 'ON' ? 'OUVERT' : 'FERME';
+            stateClass = displayState.toLowerCase();
+        }
+
+        tile.classList.add(stateClass); 
         
         const shortName = deviceName.replace('Cuisine - ', '');
 
         tile.innerHTML = `
             <i class="fa-solid ${typeInfo.icon}"></i> 
-            <span>${shortName} (${deviceData.state})</span>
+            <span>${shortName} (${displayState})</span>
         `;
         
+        const controls = document.createElement('div');
+        controls.className = 'controls';
+
+        let cgiName;
+
         if (typeKey === 'lamps') {
-            tile.addEventListener('click', toggleLamp);
-        } else {
+            cgiName = 'lampe.exe';
+            const newState1 = 'ON';
+            const newState2 = 'OFF';
+
             tile.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log(`[INFO] Tuile cliquée: ${shortName} (Type: ${typeKey}). Aucune action CGI assignée pour l'instant.`);
+                const currentState = DEVICES_JSON_DATA[typeKey][deviceName].state;
+                const nextAction = currentState === 'ON' ? 'off' : 'on';
+                const nextState = currentState === 'ON' ? 'OFF' : 'ON';
+                controlDevice(tile, deviceName, nextAction, cgiName, nextState);
             });
+        
+        } else if (typeKey === 'store') { 
+            cgiName = 'store.exe';
+            
+            // 🚨 CORRECTION ACTION : L'action envoyée dans l'URL doit être ON/OFF
+            const button1Action = 'on'; button1Text = 'Ouvrir'; // UP -> ON
+            const button2Action = 'off'; button2Text = 'Fermer'; // DOWN -> OFF
+            
+            const newState1 = 'ON';    
+            const newState2 = 'OFF';   
+            
+            const button1 = document.createElement('button');
+            button1.textContent = button1Text;
+            // Utilise 'on' comme action dans l'URL pour l'ouverture
+            button1.onclick = (e) => { e.stopPropagation(); controlDevice(tile, deviceName, button1Action, cgiName, newState1); };
+            controls.appendChild(button1);
+
+            const button2 = document.createElement('button');
+            button2.textContent = button2Text;
+            // Utilise 'off' comme action dans l'URL pour la fermeture
+            button2.onclick = (e) => { e.stopPropagation(); controlDevice(tile, deviceName, button2Action, cgiName, newState2); };
+            controls.appendChild(button2);
+
+            tile.appendChild(controls); 
+            
+            tile.addEventListener('click', (e) => e.preventDefault());
         }
         
         return tile;
     }
 
 
-    // --- Fonction de manipulation pour les LAMPES (Console plus verbeuse) ---
-    function toggleLamp(event) {
-        event.preventDefault();
-        const tile = event.currentTarget;
-        const deviceId = tile.getAttribute('data-name');
+    // --- NOUVELLE FONCTION GÉNÉRIQUE DE CONTRÔLE (MODIFIÉE POUR LE LOGGING) ---
+    function controlDevice(tile, deviceId, action, cgiName, newState) {
         
-        const deviceData = DEVICES_JSON_DATA.lamps[deviceId];
+        const typeKey = tile.getAttribute('data-type');
+        const deviceData = DEVICES_JSON_DATA[typeKey][deviceId];
         if (!deviceData) return;
 
-        const currentState = tile.classList.contains('on') ? 'ON' : 'OFF';
-        const newState = currentState === 'ON' ? 'OFF' : 'ON';
+        const currentState = deviceData.state; 
         
-        const encodedDeviceId = encodeURIComponent(deviceId);
-        const action = newState.toLowerCase();
-        
-        // L'URL cible le CGI 'lampe.exe' dans le dossier cgi-bin
-        const cgiUrl = `/cgi-bin/lampe.exe?device=${encodedDeviceId}&action=${action}`;
+        // 💡 NOUVELLE INFOS POUR LE LOGGING
+        const ipAutomate = deviceData.ip;
+        const inputAutomate = deviceData.input;
 
-        // 🟢 Début des messages verbeux pour la console
-        console.groupCollapsed(`[COMMANDE EN COURS] Appareil: ${deviceId} (Passage à ${newState})`);
-        console.log(`-> IP Automate cible: ${deviceData.ip}`);
-        console.log(`-> Entrée Automate (binaire): ${deviceData.input}`);
-        console.log(`-> Commande CGI (action): ${action}`);
-        console.log(`-> **SIMULATEUR CIBLE**: Envoi de la trame binaire au **TCP Host: ${SIMULATOR_HOST}** sur le **Port: ${SIMULATOR_PORT}**`);
+        const encodedDeviceId = encodeURIComponent(deviceId);
+        // L'URL contient maintenant action=on ou action=off pour store.exe
+        const cgiUrl = `/cgi-bin/${cgiName}?device=${encodedDeviceId}&action=${action}`;
+
+        console.groupCollapsed(`[COMMANDE EN COURS] Appareil: ${deviceId} (Action: ${action})`);
+        console.log(`-> Commande CGI: ${cgiName}`);
         console.log(`-> Requête HTTP envoyée à (CGI): ${cgiUrl}`);
+        // 🚩 AJOUT : Log des informations de l'automate pour le débogage
+        console.log(`-> IP Automate: ${ipAutomate}`);
+        console.log(`-> Input Binaire: ${inputAutomate}`);
         console.groupEnd();
 
-
-        // Envoi de la requête au serveur (qui exécute le CGI lampe.exe)
         fetch(cgiUrl)
             .then(response => {
                 if (response.ok) {
-                    // 🟢 Log de succès
-                    console.log(`[SUCCÈS] Commande ${action} envoyée au CGI. Mise à jour de l'état local.`);
+                    console.log(`[SUCCÈS] Commande ${action} envoyée. Mise à jour de l'état local à ${newState}.`);
                     
-                    // Mise à jour de l'interface (client-side)
-                    tile.classList.remove(currentState.toLowerCase());
-                    tile.classList.add(newState.toLowerCase());
+                    let displayClassToRemove = currentState.toLowerCase(); 
+                    let displayClassToAdd = newState.toLowerCase(); 
+                    let humanDisplayState = newState;
+
+                    if (typeKey === 'store') {
+                        // Mappe l'état ON/OFF vers les classes CSS ouvertes/fermées
+                        displayClassToRemove = currentState === 'ON' ? 'ouvert' : 'ferme';
+                        displayClassToAdd = newState === 'ON' ? 'ouvert' : 'ferme';
+                        
+                        // Mappe l'état ON/OFF vers le texte OUVERT/FERME
+                        humanDisplayState = newState === 'ON' ? 'OUVERT' : 'FERME';
+                    }
+
+                    tile.classList.remove(displayClassToRemove);
+                    tile.classList.add(displayClassToAdd);
                     
-                    // Mise à jour du texte
                     const shortName = deviceId.replace('Cuisine - ', '');
-                    tile.querySelector('span').textContent = `${shortName} (${newState})`;
+                    tile.querySelector('span').textContent = `${shortName} (${humanDisplayState})`;
+                    
+                    DEVICES_JSON_DATA[typeKey][deviceId].state = newState; 
                     
                 } else {
-                    // 🔴 Log d'erreur détaillé
-                    console.error(`[ERREUR] Le serveur a retourné le code ${response.status} pour la requête CGI.`);
+                    console.error(`[ERREUR] Le serveur a retourné le code ${response.status} pour la requête CGI.`, response);
                     alert(`Erreur du serveur lors du contrôle (${response.status}). Vérifiez le log du serveur Apache.`);
                 }
             })
             .catch(error => {
-                // 🔴 Log d'erreur de connexion
                 console.error(`[ERREUR FATALE] Échec de la connexion réseau au CGI.`, error);
-                alert(`Erreur de connexion réseau au serveur CGI. Assurez-vous que XAMPP est lancé et que lampe.exe est dans cgi-bin.`);
+                alert(`Erreur de connexion réseau au serveur CGI. Assurez-vous que XAMPP est lancé et que le CGI est dans cgi-bin.`);
             });
     }
     

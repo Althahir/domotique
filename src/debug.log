@@ -2251,3 +2251,694 @@ Recherche du device : Cuisine - Luminaire entrée
 [TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
 [TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
 [TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (gauche) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (gauche) -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (gauche) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (droit) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail sud -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail ouest (gauche) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail ouest (droite) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 01 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OUVERT (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OUVERT (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> FERME (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OUVERT (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : 00 00 01 00 01 00 00 01 67 00 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[ERREUR] get_device_info: device Cuisine - Store fenêtre sud non trouvé dans le groupe lamps.
+[ERREUR] get_device_info: device Cuisine - Store fenêtre sud non trouvé dans le groupe lamps.
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenetre terrasse -> OFF (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenetre terrasse -> ON (ok=1)
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:58802 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR STORE.C] Device décodé non trouvé: Cuisine - Volet roulant porte fenêtre terrasse
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR STORE.C] Device décodé non trouvé: Cuisine - Volet roulant porte fenêtre terrasse
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR STORE.C] Device décodé non trouvé: Cuisine - Volet roulant porte fenêtre terrasse
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR STORE.C] Device décodé non trouvé: Cuisine - Volet roulant porte fenêtre terrasse
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR STORE.C] Device décodé non trouvé: Cuisine - Volet roulant porte fenêtre terrasse
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (gauche) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[ERREUR] get_device_info: device Cuisine - Volet roulant porte fenêtre terrasse non trouvé dans le groupe lamps.
+[ERREUR STORE.C] Device décodé non trouvé: Cuisine - Volet roulant porte fenêtre terrasse
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 02 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 02 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 02 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 02 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 02 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 02 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 02 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 02 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 02 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[TCP] 22/22 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 00 C0 A8 00 67 01 00 00 00 01 00 00 00 01 00 01 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (gauche) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (gauche) -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 01 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (droit) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 01 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 01 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 01 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (droit) -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 01 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 01 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 01 00 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55713 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Volet roulant porte fenêtre terrasse
+[INFO] Lamp Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59492 : 02 00 00 01 00 01 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:50550 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 

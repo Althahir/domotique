@@ -185,8 +185,7 @@ int get_device_state_json(const char *group, const char *device, char *state_out
 }
 
 /* ------------------------------------------------------------ */
-/* 🔍 Nouvelle fonction : récupération IP + input + state */
-/* Récupère les infos d’une lampe : ip, input, state */
+/* 🔍 Récupération IP + input + state pour les lampes */
 int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state_out) {
     FILE *debug = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
 
@@ -194,11 +193,10 @@ int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state
     snprintf(path, sizeof(path), "%s", STATE_JSON_PATH);
     char *json = read_json_file(path);
     if (debug) {
-    fprintf(debug, "\n=== DEBUG get_lamp_info ===\n");
-    fprintf(debug, "Recherche du device : %s\n", device);
-    // fprintf(debug, "Contenu début du JSON (200 premiers caractères) :\n%.200s\n", json);
-    fclose(debug);
-}
+        fprintf(debug, "\n=== DEBUG get_lamp_info ===\n");
+        fprintf(debug, "Recherche du device : %s\n", device);
+        fclose(debug);
+    }
     if (!json) return 0;
 
     /* Cherche la section "lamps" */
@@ -221,7 +219,6 @@ int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state
     char *block = strchr(dev, '{');
     if (!block) { free(json); return 0; }
 
-    /* Utilitaire pour extraire une valeur clé/valeur */
     #define EXTRACT_VALUE(KEY, DEST) { \
         char *k = strstr(block, "\"" KEY "\""); \
         if (k) { \
@@ -253,6 +250,59 @@ int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state
     return 1;
 }
 
+/* ------------------------------------------------------------ */
+/* 🆕 Nouvelle fonction générique : get_device_info() */
+int get_device_info(const char *group_name, const char *device, char *ip_out, char *input_out, char *state_out) {
+    char path[260];
+    snprintf(path, sizeof(path), "%s", STATE_JSON_PATH);
+    char *json = read_json_file(path);
+    if (!json) return 0;
+
+    char pattern[128];
+    snprintf(pattern, sizeof(pattern), "\"%s\"", group_name);
+    char *group = strstr(json, pattern);
+    if (!group) { free(json); return 0; }
+    group = strchr(group, '{');
+    if (!group) { free(json); return 0; }
+
+    char search[128];
+    snprintf(search, sizeof(search), "\"%s\"", device);
+    char *dev = strstr(group, search);
+    if (!dev) { free(json); return 0; }
+
+    char *block = strchr(dev, '{');
+    if (!block) { free(json); return 0; }
+
+    #define EXTRACT_VALUE(KEY, DEST) { \
+        char *k = strstr(block, "\"" KEY "\""); \
+        if (k) { \
+            k = strchr(k, ':'); \
+            if (k) { \
+                k++; \
+                while (*k && (*k == ' ' || *k == '\t' || *k == '\n' || *k == '\"')) k++; \
+                char *end = k; \
+                while (*end && *end != '\"' && *end != ',' && *end != '}') end++; \
+                size_t len = end - k; \
+                if (len > 0 && len < 128) { strncpy(DEST, k, len); DEST[len] = '\0'; } \
+            } \
+        } \
+    }
+
+    EXTRACT_VALUE("ip", ip_out);
+    EXTRACT_VALUE("input", input_out);
+    EXTRACT_VALUE("state", state_out);
+
+    #undef EXTRACT_VALUE
+
+    FILE *log = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
+    if (log) {
+        fprintf(log, "[INFO] Device (%s) %s -> ip=%s, input=%s, state=%s\n", group_name, device, ip_out, input_out, state_out);
+        fclose(log);
+    }
+
+    free(json);
+    return 1;
+}
 
 /* ------------------------------------------------------------ */
 /* HTML helpers */
