@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion au système domotique</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #FF6600;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .connexion-box {
+      background-color: white;
+      border-radius: 15px;
+      padding: 40px 50px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    input[type="number"] {
+      width: 200px;
+      padding: 12px;
+      border: 2px solid #FF9933;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 1em;
+      text-align: center;
+    }
+
+    button {
+      background-color: #FF9933;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #FF6600;
+    }
+
+    .error {
+      color: red;
+      margin-top: 15px;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="connexion-box">
+    <h1><i class="fa-solid fa-network-wired"></i> Connexion au système</h1>
+    <form id="portForm">
+      <input type="number" id="portInput" placeholder="Entrez le port (ex : 50550)" required>
+      <br>
+      <button type="submit">Valider</button>
+      <div class="error" id="errorMsg">Veuillez entrer un numéro de port valide.</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("portForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const port = document.getElementById("portInput").value.trim();
+      const error = document.getElementById("errorMsg");
+
+      if (!port || isNaN(port)) {
+        error.style.display = "block";
+        return;
+      }
+
+      try {
+        const response = await fetch(`/cgi-bin/set_port.exe?port=${port}`);
+        if (response.ok) {
+          window.location.href = "index.html";
+        } else {
+          error.textContent = "Erreur serveur : impossible d’enregistrer le port.";
+          error.style.display = "block";
+        }
+      } catch {
+        error.textContent = "Erreur de communication avec le serveur.";
+        error.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>

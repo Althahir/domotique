@@ -1,159 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface Domotique - Sélection de Pièce</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <style>
-        /* Couleurs : Orange Principal (#FF6600), Orange Clair (#FF9933), Blanc (#FFFFFF), Texte Foncé (#333333) */
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7; 
-            color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord - Domotique</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            background-color: #FFFFFF; 
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
+    h1 {
+      background-color: #FF6600;
+      color: white;
+      padding: 20px 0;
+      margin: 0;
+      width: 100%;
+      font-size: 2.5em;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-        h1 {
-            color: #FF6600; 
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2.5em;
-            border-bottom: 3px solid #FF9933; 
-            padding-bottom: 15px;
-        }
+    .main-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 60px;
+    }
 
-        .floor-section {
-            margin-bottom: 40px;
-            padding: 25px;
-            border: 1px solid #ffcc99; 
-            border-radius: 10px;
-            background-color: #fff8f5; 
-        }
+    .main-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 260px;
+      height: 200px;
+      border-radius: 20px;
+      background-color: #FF9933;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.3em;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
 
-        .floor-section h2 {
-            color: #FF6600; 
-            font-size: 1.8em;
-            margin-top: 0;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed #ff9933;
-        }
+    .main-tile:hover {
+      background-color: #FF6600;
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
 
-        .piece-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Légèrement plus étroit pour plus de colonnes */
-            gap: 20px; /* Plus d'espace entre les tuiles */
-        }
+    .main-tile i {
+      font-size: 4em;
+      margin-bottom: 15px;
+    }
 
-        .piece-tile {
-            background-color: #FF9933; /* Orange clair */
-            color: white;
-            padding: 20px;
-            height: 120px; /* Hauteur fixe pour un look tuile */
-            border: none;
-            border-radius: 12px; /* Bords légèrement plus arrondis */
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-            text-align: center;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column; /* Organiser icône et texte verticalement */
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
-        }
-
-        .piece-tile i {
-            margin-bottom: 8px; /* Espace entre l'icône et le texte */
-            font-size: 2.2em; /* Icône beaucoup plus grande */
-        }
-        
-        .piece-tile span {
-            font-size: 0.9em; /* Rendre le texte légèrement plus petit */
-            line-height: 1.2;
-        }
-
-        .piece-tile:hover {
-            background-color: #FF6600; 
-            transform: translateY(-5px); /* Effet de soulèvement plus marqué */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Couleurs pour les catégories */
-        .rdc-tile { background-color: #FF8000; } 
-        .etage-tile { background-color: #FF9933; } 
-        .ext-tile { background-color: #CC6600; } 
-
-        .rdc-tile:hover { background-color: #FF6600; }
-        .etage-tile:hover { background-color: #FF6600; }
-        .ext-tile:hover { background-color: #B35900; }
-    </style>
+    footer {
+      position: fixed;
+      bottom: 10px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
+  <h1><i class="fa-solid fa-house"></i> Tableau de Bord Domotique</h1>
 
-<div class="container">
-    <h1><i class="fa-solid fa-house-chimney"></i>NOM DU LOGICIEL</h1>
+  <div class="main-grid">
 
-    <div class="floor-section">
-        <h2>Rez-de-Chaussée (RDC)</h2>
-        <div class="piece-grid">
-            <a href="./cuisine.html" class="piece-tile rdc-tile"><i class="fa-solid fa-utensils"></i> <span>Cuisine</span></a>
-            <a href="#Salon" class="piece-tile rdc-tile"><i class="fa-solid fa-couch"></i> <span>Salon</span></a>
-            <a href="#SalleAManger" class="piece-tile rdc-tile"><i class="fa-solid fa-chair"></i> <span>Salle à manger</span></a>
-            <a href="#SuiteParentale" class="piece-tile rdc-tile"><i class="fa-solid fa-bed"></i> <span>Suite parentale</span></a>
-            <a href="#ChambreInvites" class="piece-tile rdc-tile"><i class="fa-solid fa-door-open"></i> <span>Chambre invités</span></a>
-            <a href="#Bibliothèque" class="piece-tile rdc-tile"><i class="fa-solid fa-book"></i> <span>Bibliothèque</span></a>
-            <a href="#HallNord" class="piece-tile rdc-tile"><i class="fa-solid fa-up-right-from-square"></i> <span>Hall nord</span></a>
-            <a href="#HallSud" class="piece-tile rdc-tile"><i class="fa-solid fa-up-right-from-square"></i> <span>Hall sud</span></a>
-            <a href="#EscalierCentral" class="piece-tile rdc-tile"><i class="fa-solid fa-stairs"></i> <span>Escalier central</span></a>
-            <a href="#WC_RDC" class="piece-tile rdc-tile"><i class="fa-solid fa-toilet"></i> <span>WC (RDC)</span></a>
-            <a href="#Placard" class="piece-tile rdc-tile"><i class="fa-solid fa-box-archive"></i> <span>Placard</span></a>
-        </div>
-    </div>
+    <!-- Tuile 1 : Gestion par pièce -->
+    <a href="gestion_piece.html" class="main-tile">
+      <i class="fa-solid fa-grid-2"></i>
+      <span>Gestion par pièce</span>
+    </a>
 
-    <div class="floor-section">
-        <h2>Étage(s) Supérieur(s)</h2>
-        <div class="piece-grid">
-            <a href="#ChambreNE" class="piece-tile etage-tile"><i class="fa-solid fa-bed"></i> <span>Chambre NE</span></a>
-            <a href="#ChambreSE" class="piece-tile etage-tile"><i class="fa-solid fa-bed"></i> <span>Chambre SE</span></a>
-            <a href="#ChambreSO" class="piece-tile etage-tile"><i class="fa-solid fa-bed"></i> <span>Chambre SO</span></a>
-            <a href="#ChambreNO" class="piece-tile etage-tile"><i class="fa-solid fa-bed"></i> <span>Chambre NO</span></a>
-            <a href="#Bureau" class="piece-tile etage-tile"><i class="fa-solid fa-computer"></i> <span>Bureau</span></a>
-            <a href="#SalleDeJeux" class="piece-tile etage-tile"><i class="fa-solid fa-gamepad"></i> <span>Salle de jeux</span></a>
-            <a href="#EscalierEst" class="piece-tile etage-tile"><i class="fa-solid fa-stairs"></i> <span>Escalier est</span></a>
-            <a href="#CouloirCirculaire" class="piece-tile etage-tile"><i class="fa-solid fa-arrows-to-circle"></i> <span>Couloir</span></a>
-            <a href="#WC_Etage" class="piece-tile etage-tile"><i class="fa-solid fa-toilet"></i> <span>WC (Étage)</span></a>
-            <a href="#Grenier" class="piece-tile etage-tile"><i class="fa-solid fa-attic"></i> <span>Accès grenier</span></a>
-        </div>
-    </div>
+    <!-- Tuile 2 : Scénarios -->
+    <a href="scenarios.html" class="main-tile">
+      <i class="fa-solid fa-diagram-project"></i>
+      <span>Scénarios</span>
+    </a>
 
-    <div class="floor-section">
-        <h2>Extérieurs & Garages</h2>
-        <div class="piece-grid">
-            <a href="#GaragesNord" class="piece-tile ext-tile"><i class="fa-solid fa-warehouse"></i> <span>Garages nord</span></a>
-            <a href="#GaragesOuest" class="piece-tile ext-tile"><i class="fa-solid fa-warehouse"></i> <span>Garages ouest</span></a>
-            <a href="#Terrasse" class="piece-tile ext-tile"><i class="fa-solid fa-sun"></i> <span>Terrasse</span></a>
-            <a href="#Balcon" class="piece-tile ext-tile"><i class="fa-solid fa-wind"></i> <span>Balcon</span></a>
-        </div>
-    </div>
-</div>
+  </div>
 
+  <footer>© 2025 - Système Domotique Intelligent</footer>
 </body>
 </html>

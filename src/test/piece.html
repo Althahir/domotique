@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contrôle - Cuisine</title>
+  <title>Contrôle - Pièce</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     body {
@@ -78,7 +78,6 @@
       margin-bottom: 8px;
     }
 
-    /* Couleurs */
     .light-on { background-color: #FF6600; }
     .light-off { background-color: #bfbfbf; color: #333; }
 
@@ -128,7 +127,7 @@
 
 <body>
 <div class="container">
-  <h1><i class="fa-solid fa-utensils"></i> Contrôle de la Cuisine</h1>
+  <h1 id="page-title"><i class="fa-solid fa-house"></i> Contrôle de la Pièce</h1>
   <div id="controls-container"></div>
   <a href="index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour aux Pièces</a>
 </div>
@@ -140,12 +139,26 @@
     clim: { title: "Climatisation", icon: "fa-snowflake" }
   };
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const rawRoomName = urlParams.get('room')?.trim() || '';
+
+  function normalizeName(name) {
+    return name.toLowerCase()
+      .replace(/_/g, ' ')
+      .replace(/-/g, ' ')
+      .replace(/\s+/g, '')
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, '');
+  }
+
+  const normalizedRoom = normalizeName(rawRoomName);
+  document.title = `Contrôle - ${rawRoomName}`;
+  document.getElementById("page-title").innerHTML = `<i class="fa-solid fa-house"></i> Contrôle de ${rawRoomName}`;
+
   async function loadDevices() {
     try {
       const response = await fetch("../devices.json");
       if (!response.ok) throw new Error("Erreur de chargement du JSON");
       const data = await response.json();
-      console.log("✅ JSON chargé :", data);
       return data;
     } catch (err) {
       console.error("❌ Erreur chargement JSON :", err);
@@ -164,12 +177,29 @@
     const container = document.getElementById('controls-container');
     container.innerHTML = '';
 
+    if (!rawRoomName) {
+      container.innerHTML = "<p>⚠️ Aucune pièce spécifiée dans l’URL.</p>";
+      return;
+    }
+
     for (const typeKey in DEVICES_JSON_DATA) {
       const typeInfo = DEVICE_TYPES[typeKey];
       const devices = DEVICES_JSON_DATA[typeKey];
       if (!typeInfo || !devices) continue;
 
-      const deviceNames = Object.keys(devices).filter(n => n.startsWith("Cuisine -"));
+      const deviceNames = Object.keys(devices).filter(deviceName => {
+        const deviceRoom = deviceName.split(' - ')[0];
+        const normalizedDevice = normalizeName(deviceRoom);
+
+        if (normalizedRoom === 'chambrene') {
+          return (normalizedDevice === 'chambrene' || normalizedDevice === 'chambrenordest');
+        }
+        if (normalizedRoom === 'chambreso') {
+          return (normalizedDevice === 'chambreso' || normalizedDevice === 'chambresudouest');
+        }
+        return normalizedDevice === normalizedRoom;
+      });
+
       if (deviceNames.length === 0) continue;
 
       const h2 = document.createElement('h2');
@@ -195,9 +225,8 @@
 
   function createDeviceTile(typeKey, typeInfo, deviceName, deviceData) {
     const tile = document.createElement('div');
-    const shortName = deviceName.replace('Cuisine - ', '');
+    const shortName = deviceName.split(' - ')[1] || deviceName;
 
-    // 🌡️ CLIMATISATION
     if (typeKey === 'clim') {
       const initialClass = getClimClass(deviceData.mode, deviceData.state);
       tile.className = `control-tile ${initialClass}`;
@@ -217,6 +246,7 @@
         div.textContent = btnInfo.label;
         div.addEventListener('click', (e) => {
           e.stopPropagation();
+          console.log(`🔥 Clic CLIM → ${deviceName} | Action = ${btnInfo.action}`);
           sendClimCommand(deviceName, btnInfo.action, tile);
         });
         btnContainer.appendChild(div);
@@ -226,7 +256,6 @@
       return tile;
     }
 
-    // 💡 LUMIÈRES / 🏠 VOLETS
     let displayState = getDisplayState(typeKey, deviceData.state);
     let cssClass = getCssClass(typeKey, deviceData.state);
 
@@ -235,64 +264,59 @@
 
     tile.addEventListener('click', () => {
       const nextAction = deviceData.state === 'ON' ? 'off' : 'on';
+      console.log(`💡 Clic ${typeKey.toUpperCase()} → ${deviceName} | Action = ${nextAction}`);
       sendDeviceCommand(typeKey, deviceName, nextAction, tile, deviceData);
     });
 
     return tile;
   }
 
-  // === COMMANDES ===
   function sendDeviceCommand(typeKey, deviceName, action, tile, deviceData) {
     let cgi = (typeKey === 'lamps') ? 'lampe.exe' : 'store.exe';
     const url = `/cgi-bin/${cgi}?device=${encodeURIComponent(deviceName)}&action=${action}`;
-    console.group(`🖱️ ${deviceName}`);
-    console.log("➡️ Envoi CGI :", url);
+    console.log(`➡️ Envoi CGI : ${url}`);
 
     fetch(url)
-      .then(r => r.text())
-      .then(txt => {
-        console.log("📨 Réponse CGI :", txt.substring(0, 150));
+      .then(r => {
+        console.log(`✅ Réponse HTTP : ${r.status}`);
+        return r.text();
+      })
+      .then(() => {
         deviceData.state = (action === 'on') ? 'ON' : 'OFF';
         updateTileVisual(tile, typeKey, deviceName, deviceData);
+        console.log(`🔄 État mis à jour → ${deviceName} = ${deviceData.state}`);
       })
-      .catch(err => console.error("❌ Erreur CGI :", err))
-      .finally(() => console.groupEnd());
+      .catch(err => console.error("❌ Erreur CGI :", err));
   }
 
   async function sendClimCommand(deviceName, action, tile) {
     const url = `/cgi-bin/clim.exe?device=${encodeURIComponent(deviceName)}&action=${action}`;
-    console.group(`🌡️ Commande CLIM ${action} → ${deviceName}`);
-    console.log("➡️ Envoi CGI :", url);
-
+    console.log(`🌬️ Envoi commande CLIM : ${url}`);
     try {
-      await fetch(url);
+      const response = await fetch(url);
+      console.log(`✅ Réponse CLIM HTTP : ${response.status}`);
       const updatedData = await loadDevices();
       const climData = updatedData.clim?.[deviceName];
 
       if (climData) {
         const newClass = getClimClass(climData.mode, climData.state);
         tile.className = `control-tile ${newClass}`;
-        console.log(`🎨 Mise à jour couleur selon mode=${climData.mode}, état=${climData.state}`);
+        console.log(`♻️ Nouvelle couleur CLIM : mode=${climData.mode}, état=${climData.state}`);
       }
     } catch (err) {
       console.error("❌ Erreur CLIM :", err);
-    } finally {
-      console.groupEnd();
     }
   }
 
-  // === MISE À JOUR VISUELLE ===
   function updateTileVisual(tile, typeKey, deviceName, deviceData) {
-    const shortName = deviceName.replace('Cuisine - ', '');
+    const shortName = deviceName.split(' - ')[1] || deviceName;
     const displayState = getDisplayState(typeKey, deviceData.state);
     const cssClass = getCssClass(typeKey, deviceData.state);
     const icon = DEVICE_TYPES[typeKey].icon;
-
     tile.className = `control-tile ${cssClass}`;
     tile.innerHTML = `<i class="fa-solid ${icon}"></i><span>${shortName} (${displayState})</span>`;
   }
 
-  // === UTILITAIRES ===
   function getDisplayState(typeKey, state) {
     if (typeKey === 'store') return state === 'ON' ? 'OUVERT' : 'FERMÉ';
     return state;
