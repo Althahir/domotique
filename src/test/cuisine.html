@@ -6,7 +6,7 @@
     <title>Contrôle - Cuisine</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
-    <style>
+  <style>
         /* Styles CSS (Non modifiés) */
         body {
             font-family: 'Arial', sans-serif;
@@ -77,7 +77,19 @@
         .light-tile { background-color: #FF8C00; } 
         .store-tile { background-color: #FFB74D; color: #333; } 
         .clim-tile { background-color: #00A896; } 
-
+/* ✅ États visuels pour la climatisation */
+.clim-tile.clim-off {
+    background-color: #b0b0b0; /* gris éteinte */
+    color: #333;
+}
+.clim-tile.clim-cool {
+    background-color: #3498db; /* bleu climatisation */
+    color: white;
+}
+.clim-tile.clim-heat {
+    background-color: #e74c3c; /* rouge chauffage */
+    color: white;
+}
         .light-tile.off { background-color: #e0e0e0; color: #333; }
         .light-tile.off i { color: #888; }
         
@@ -144,7 +156,6 @@
 </div>
 
 <script>
-    // ⚠️ IMPORTANT: Simule le contenu pertinent de votre fichier devices.json
     const DEVICES_JSON_DATA = {
         "lamps": {
             "Cuisine - Luminaire entrée": { "ip": "192.168.0.100", "input": "00000001", "state": "OFF" },
@@ -155,16 +166,19 @@
             "Cuisine - Plan de travail ouest (gauche)": { "ip": "192.168.0.100", "input": "00000110", "state": "OFF" },
             "Cuisine - Plan de travail sud": { "ip": "192.168.0.100", "input": "00000111", "state": "OFF" }
         },
-        // Les états sont en ON/OFF pour correspondre à lampe.c dans le JSON
         "store": {
-            "Cuisine - Volet roulant porte fenêtre terrasse": { "ip": "192.168.0.103", "input": "00101001", "state": "ON" }, // FERME
+            "Cuisine - Volet roulant porte fenêtre terrasse": { "ip": "192.168.0.103", "input": "00101001", "state": "OFF" }
         },
         "clim": {
-            "Cuisine - Climatisation réversible": { "ip": "192.168.0.112", "input": "00001010", "state": "ON" }
+            "Cuisine - Climatisation réversible": { 
+                "ip": "192.168.0.102", 
+                "input": "00001101", 
+                "state": "ON", 
+                "mode": 1 
+            }
         }
     };
-    
-    // 💡 Définition des informations de connexion du simulateur
+
     const SIMULATOR_HOST = "192.168.56.1"; 
     const SIMULATOR_PORT = 50550;
 
@@ -174,7 +188,6 @@
         clim: { title: "Climatisation", icon: "fa-snowflake", class: "clim-tile" }
     };
 
-    // --- Fonction de génération de l'interface (Non modifiée) ---
     function generateControls() {
         const container = document.getElementById('controls-container');
         container.innerHTML = '';
@@ -207,7 +220,6 @@
         if (hrs.length > 0) { container.removeChild(hrs[hrs.length - 1]); }
     }
 
-    // --- Création d'une seule tuile ---
     function createDeviceTile(typeKey, typeInfo, deviceName, deviceData) {
         const tile = document.createElement('div'); 
         tile.className = `control-tile ${typeInfo.class}`;
@@ -218,7 +230,6 @@
         let stateClass = deviceData.state.toLowerCase();
         
         if (typeKey === 'store') {
-            // Mappe ON/OFF (JSON) vers OUVERT/FERME (UI)
             displayState = deviceData.state === 'ON' ? 'OUVERT' : 'FERME';
             stateClass = displayState.toLowerCase();
         }
@@ -252,99 +263,112 @@
         
         } else if (typeKey === 'store') { 
             cgiName = 'store.exe';
-            
-            // 🚨 CORRECTION ACTION : L'action envoyée dans l'URL doit être ON/OFF
-            const button1Action = 'on'; button1Text = 'Ouvrir'; // UP -> ON
-            const button2Action = 'off'; button2Text = 'Fermer'; // DOWN -> OFF
-            
-            const newState1 = 'ON';    
-            const newState2 = 'OFF';   
-            
             const button1 = document.createElement('button');
-            button1.textContent = button1Text;
-            // Utilise 'on' comme action dans l'URL pour l'ouverture
-            button1.onclick = (e) => { e.stopPropagation(); controlDevice(tile, deviceName, button1Action, cgiName, newState1); };
+            button1.textContent = 'Ouvrir';
+            button1.onclick = (e) => { e.stopPropagation(); controlDevice(tile, deviceName, 'on', cgiName, 'ON'); };
             controls.appendChild(button1);
 
             const button2 = document.createElement('button');
-            button2.textContent = button2Text;
-            // Utilise 'off' comme action dans l'URL pour la fermeture
-            button2.onclick = (e) => { e.stopPropagation(); controlDevice(tile, deviceName, button2Action, cgiName, newState2); };
+            button2.textContent = 'Fermer';
+            button2.onclick = (e) => { e.stopPropagation(); controlDevice(tile, deviceName, 'off', cgiName, 'OFF'); };
             controls.appendChild(button2);
 
             tile.appendChild(controls); 
-            
             tile.addEventListener('click', (e) => e.preventDefault());
         }
-        
+
+        else if (typeKey === 'clim') {
+            cgiName = 'clim.exe';
+
+            const buttons = [
+                { text: 'Allumer', action: 'on', newState: 'ON' },
+                { text: 'Éteindre', action: 'off', newState: 'OFF' },
+                { text: 'Chauffage', action: 'heat', newState: 'ON' },
+                { text: 'Climatisation', action: 'cool', newState: 'ON' }
+            ];
+
+            buttons.forEach(btn => {
+                const b = document.createElement('button');
+                b.textContent = btn.text;
+                b.onclick = (e) => { e.stopPropagation(); controlDevice(tile, deviceName, btn.action, cgiName, btn.newState); };
+                controls.appendChild(b);
+            });
+
+            tile.appendChild(controls);
+            tile.addEventListener('click', (e) => e.preventDefault());
+        }
+
         return tile;
     }
 
+function controlDevice(tile, deviceId, action, cgiName, newState) {
+    const typeKey = tile.getAttribute('data-type');
+    const deviceData = DEVICES_JSON_DATA[typeKey][deviceId];
+    if (!deviceData) return;
 
-    // --- NOUVELLE FONCTION GÉNÉRIQUE DE CONTRÔLE (MODIFIÉE POUR LE LOGGING) ---
-    function controlDevice(tile, deviceId, action, cgiName, newState) {
-        
-        const typeKey = tile.getAttribute('data-type');
-        const deviceData = DEVICES_JSON_DATA[typeKey][deviceId];
-        if (!deviceData) return;
+    const encodedDeviceId = encodeURIComponent(deviceId);
+    const cgiUrl = `/cgi-bin/${cgiName}?device=${encodedDeviceId}&action=${action}`;
 
-        const currentState = deviceData.state; 
-        
-        // 💡 NOUVELLE INFOS POUR LE LOGGING
-        const ipAutomate = deviceData.ip;
-        const inputAutomate = deviceData.input;
+    console.log(`[CGI] → ${cgiUrl}`);
+    fetch(cgiUrl)
+        .then(response => {
+            if (response.ok) {
+                DEVICES_JSON_DATA[typeKey][deviceId].state = newState;
+                const shortName = deviceId.replace('Cuisine - ', '');
 
-        const encodedDeviceId = encodeURIComponent(deviceId);
-        // L'URL contient maintenant action=on ou action=off pour store.exe
-        const cgiUrl = `/cgi-bin/${cgiName}?device=${encodedDeviceId}&action=${action}`;
-
-        console.groupCollapsed(`[COMMANDE EN COURS] Appareil: ${deviceId} (Action: ${action})`);
-        console.log(`-> Commande CGI: ${cgiName}`);
-        console.log(`-> Requête HTTP envoyée à (CGI): ${cgiUrl}`);
-        // 🚩 AJOUT : Log des informations de l'automate pour le débogage
-        console.log(`-> IP Automate: ${ipAutomate}`);
-        console.log(`-> Input Binaire: ${inputAutomate}`);
-        console.groupEnd();
-
-        fetch(cgiUrl)
-            .then(response => {
-                if (response.ok) {
-                    console.log(`[SUCCÈS] Commande ${action} envoyée. Mise à jour de l'état local à ${newState}.`);
-                    
-                    let displayClassToRemove = currentState.toLowerCase(); 
-                    let displayClassToAdd = newState.toLowerCase(); 
-                    let humanDisplayState = newState;
-
-                    if (typeKey === 'store') {
-                        // Mappe l'état ON/OFF vers les classes CSS ouvertes/fermées
-                        displayClassToRemove = currentState === 'ON' ? 'ouvert' : 'ferme';
-                        displayClassToAdd = newState === 'ON' ? 'ouvert' : 'ferme';
-                        
-                        // Mappe l'état ON/OFF vers le texte OUVERT/FERME
-                        humanDisplayState = newState === 'ON' ? 'OUVERT' : 'FERME';
+                // --- Lampe ---
+                if (typeKey === 'lamps') {
+                    if (newState === 'ON') {
+                        tile.classList.add('on');
+                        tile.classList.remove('off');
+                    } else {
+                        tile.classList.add('off');
+                        tile.classList.remove('on');
                     }
-
-                    tile.classList.remove(displayClassToRemove);
-                    tile.classList.add(displayClassToAdd);
-                    
-                    const shortName = deviceId.replace('Cuisine - ', '');
-                    tile.querySelector('span').textContent = `${shortName} (${humanDisplayState})`;
-                    
-                    DEVICES_JSON_DATA[typeKey][deviceId].state = newState; 
-                    
-                } else {
-                    console.error(`[ERREUR] Le serveur a retourné le code ${response.status} pour la requête CGI.`, response);
-                    alert(`Erreur du serveur lors du contrôle (${response.status}). Vérifiez le log du serveur Apache.`);
+                    tile.querySelector('span').textContent = `${shortName} (${newState})`;
                 }
-            })
-            .catch(error => {
-                console.error(`[ERREUR FATALE] Échec de la connexion réseau au CGI.`, error);
-                alert(`Erreur de connexion réseau au serveur CGI. Assurez-vous que XAMPP est lancé et que le CGI est dans cgi-bin.`);
-            });
-    }
-    
-    document.addEventListener('DOMContentLoaded', generateControls);
 
+                // --- Volet roulant ---
+                else if (typeKey === 'store') {
+                    const humanState = (newState === 'ON') ? 'OUVERT' : 'FERME';
+                    const removeClass = (newState === 'ON') ? 'ferme' : 'ouvert';
+                    const addClass = (newState === 'ON') ? 'ouvert' : 'ferme';
+                    tile.classList.remove(removeClass);
+                    tile.classList.add(addClass);
+                    tile.querySelector('span').textContent = `${shortName} (${humanState})`;
+                }
+
+                // --- Climatisation ---
+                else if (typeKey === 'clim') {
+                    // Réinitialise les classes d’état
+                    tile.classList.remove('clim-off', 'clim-cool', 'clim-heat');
+
+                    if (action === 'off') {
+                        tile.classList.add('clim-off');
+                        tile.querySelector('span').textContent = `${shortName} (OFF)`;
+                    } 
+                    else if (action === 'on') {
+                        // Si on ne connaît pas encore le mode, on garde la couleur par défaut
+                        tile.classList.add('clim-cool');
+                        tile.querySelector('span').textContent = `${shortName} (ON)`;
+                    } 
+                    else if (action === 'cool') {
+                        tile.classList.add('clim-cool');
+                        tile.querySelector('span').textContent = `${shortName} (Climatisation)`;
+                    } 
+                    else if (action === 'heat') {
+                        tile.classList.add('clim-heat');
+                        tile.querySelector('span').textContent = `${shortName} (Chauffage)`;
+                    }
+                }
+            } else {
+                alert(`Erreur CGI (${response.status})`);
+            }
+        })
+        .catch(() => alert("Erreur de connexion au serveur CGI."));
+}
+
+    document.addEventListener('DOMContentLoaded', generateControls);
 </script>
 
 </body>

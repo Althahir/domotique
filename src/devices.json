@@ -8,7 +8,7 @@
     "Cuisine - Luminaire îlot central": {
       "ip": "192.168.0.100",
       "input": "00000010",
-      "state": "OFF"
+      "state": "ON"
     },
     "Salon - Luminaire salon nord": {
       "ip": "192.168.0.100",
@@ -93,7 +93,7 @@
     "Cuisine - Plan de travail est (gauche)": {
       "ip": "192.168.0.100",
       "input": "00000011",
-      "state": "OFF"
+      "state": "ON"
     },
     "Cuisine - Plan de travail est (droit)": {
       "ip": "192.168.0.100",
@@ -651,7 +651,7 @@
     "Cuisine - Volet roulant porte fenêtre terrasse": {
       "ip": "192.168.0.103",
       "input": "00101001",
-      "state":"ON"
+      "state":"OFF"
     },
     "Balcon - Volet roulant fenêtre est": {
       "ip": "192.168.0.113",
@@ -943,7 +943,7 @@
       "ip": "192.168.0.102",
       "input": "00001101",
       "state": "ON",
-      "mode": 1
+      "mode": 0
     },
     "Suite parentale - Salle de bain - Climatisation réversible": {
       "ip": "192.168.0.102",
