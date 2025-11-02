@@ -134,7 +134,10 @@ static int json_set_mode(const char *device, int mode_value) {
 int main(void) {
     const char *group = "clim";
     const char *sim_host = "192.168.56.1";
-    const int   sim_port = 50550;
+    // const int   sim_port = 49995;
+    int sim_port = get_simulator_port();
+if (sim_port <= 0) sim_port = 49995; // valeur de secours
+
 
     char *qs = getenv("QUERY_STRING");
     char decoded_device[MAX_LEN] = "";

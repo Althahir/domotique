@@ -75,7 +75,11 @@ int main(void) {
 
     /* --- Paramètres simulateur --- */
     const char *sim_host =  "192.168.56.1";//"127.0.0.1";  
-    const int sim_port = 50550;
+    // const int sim_port = 49995;
+    int sim_port = get_simulator_port();
+if (sim_port <= 0) sim_port = 49995; // valeur de secours
+
+    
 
     /* --- Construction du message binaire (13 octets) --- */
     unsigned char msg[13];

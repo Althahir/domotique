@@ -303,6 +303,35 @@ int get_device_info(const char *group_name, const char *device, char *ip_out, ch
     free(json);
     return 1;
 }
+/* ------------------------------------------------------------ */
+/* 🔌 Récupération du port du simulateur depuis le JSON racine */
+int get_simulator_port(void) {
+    char path[260];
+    snprintf(path, sizeof(path), "%s", STATE_JSON_PATH);
+
+    char *json = read_json_file(path);
+    if (!json) return 0; // valeur par défaut = 0 si non trouvé
+
+    char *k = strstr(json, "\"port\"");
+    if (!k) { free(json); return 0; }
+
+    k = strchr(k, ':');
+    if (!k) { free(json); return 0; }
+    k++;
+
+    while (*k && (*k == ' ' || *k == '\t' || *k == '\r' || *k == '\n')) k++;
+
+    int port = atoi(k); // conversion texte → entier
+
+    FILE *log = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
+    if (log) {
+        fprintf(log, "[INFO] Port simulateur lu depuis JSON : %d\n", port);
+        fclose(log);
+    }
+
+    free(json);
+    return port;
+}
 
 /* ------------------------------------------------------------ */
 /* HTML helpers */

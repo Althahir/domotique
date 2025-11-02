@@ -16,6 +16,8 @@
 int set_device_state_json(const char *group, const char *device, const char *state);
 int get_device_state_json(const char *group, const char *device, char *state_out, const char *default_state);
 int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state_out);
+/* Récupère le port du simulateur depuis le JSON global */
+int get_simulator_port(void);
 
 // ⬅️ NOUVELLE LIGNE : Fonction générique pour lire l'IP, l'Input et l'État de n'importe quel groupe
 int get_device_info(const char *group_name, const char *device, char *ip_out, char *input_out, char *state_out);

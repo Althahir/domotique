@@ -1,9 +1,10 @@
 {
+  "port": 52101,
   "lamps": {
     "Cuisine - Luminaire entrée": {
       "ip": "192.168.0.100",
       "input": "00000001",
-      "state": "OFF"
+      "state": "ON"
     },
     "Cuisine - Luminaire îlot central": {
       "ip": "192.168.0.100",
@@ -942,7 +943,7 @@
     "Cuisine - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001101",
-      "state": "ON",
+      "state": "OFF",
       "mode": 0
     },
     "Suite parentale - Salle de bain - Climatisation réversible": {
