@@ -3569,3 +3569,423 @@ Recherche du device : Cuisine - Luminaire entrée
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire îlot central
+[INFO] Lamp Cuisine - Luminaire îlot central -> ip=192.168.0.100, input=00000010, state=ON
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire îlot central
+[INFO] Lamp Cuisine - Luminaire îlot central -> ip=192.168.0.100, input=00000010, state=OFF
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire îlot central -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 01 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 52101
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 52101
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:52101 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 49838
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 49838
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 49838
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 49838
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 49838
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 49838
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 49838
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 49838
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 49838
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:49838 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 63327
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 63327
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 63327
+[INFO] Device (store) Cuisine - Volet roulant porte fenêtre terrasse -> ip=192.168.0.103, input=00101001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Volet roulant porte fenêtre terrasse -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 67 00 00 01 00 01 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 63327
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 63327
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 00 
+[INFO] Port simulateur lu depuis JSON : 63327
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 63327
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 63327
+[INFO] Device (clim) Cuisine - Climatisation réversible -> ip=192.168.0.102, input=00001101, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63327 : C0 A8 00 66 00 00 00 00 01 01 00 01 01 01 

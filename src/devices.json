@@ -1,15 +1,15 @@
 {
-  "port": 52101,
+  "port": 63327,
   "lamps": {
     "Cuisine - Luminaire entrée": {
       "ip": "192.168.0.100",
       "input": "00000001",
-      "state": "ON"
+      "state": "OFF"
     },
     "Cuisine - Luminaire îlot central": {
       "ip": "192.168.0.100",
       "input": "00000010",
-      "state": "ON"
+      "state": "OFF"
     },
     "Salon - Luminaire salon nord": {
       "ip": "192.168.0.100",
@@ -94,7 +94,7 @@
     "Cuisine - Plan de travail est (gauche)": {
       "ip": "192.168.0.100",
       "input": "00000011",
-      "state": "ON"
+      "state": "OFF"
     },
     "Cuisine - Plan de travail est (droit)": {
       "ip": "192.168.0.100",
@@ -104,17 +104,17 @@
     "Cuisine - Plan de travail ouest (droite)": {
       "ip": "192.168.0.100",
       "input": "00000101",
-      "state": "ON"
+      "state": "OFF"
     },
     "Cuisine - Plan de travail ouest (gauche)": {
       "ip": "192.168.0.100",
       "input": "00000110",
-      "state": "ON"
+      "state": "OFF"
     },
     "Cuisine - Plan de travail sud": {
       "ip": "192.168.0.100",
       "input": "00000111",
-      "state": "ON"
+      "state": "OFF"
     },
     "Suite parentale - Luminaire central": {
       "ip": "192.168.0.100",
@@ -943,8 +943,8 @@
     "Cuisine - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001101",
-      "state": "OFF",
-      "mode": 0
+      "state": "ON",
+      "mode": 1
     },
     "Suite parentale - Salle de bain - Climatisation réversible": {
       "ip": "192.168.0.102",
