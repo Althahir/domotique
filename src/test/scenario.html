@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Scénarios - Domotique</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #FF6600;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 2.3em;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .tile {
+      width: 220px;
+      height: 160px;
+      border-radius: 15px;
+      background-color: #FF9933;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+      text-align: center;
+      position: relative;
+    }
+
+    .tile:hover {
+      background-color: #FF6600;
+      transform: translateY(-6px);
+    }
+
+    .tile i {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .tile.disabled {
+      background-color: #cccccc !important;
+      cursor: not-allowed;
+      transform: none;
+      opacity: 0.8;
+    }
+
+    .log {
+      margin-top: 25px;
+      text-align: left;
+      background: transparent;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      max-height: 300px;
+      overflow-y: auto;
+      font-size: 0.9em;
+      width: 100%;
+      color: #333;
+    }
+
+    /* -------- Info-bulle (tooltip) -------- */
+    .tile::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(50, 50, 50, 0.9);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      width: 80%;                 /* ✅ largeur égale à la tuile */
+      white-space: normal;         /* ✅ retour à la ligne autorisé */
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      z-index: 20;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      backdrop-filter: blur(2px);
+      line-height: 1.3;
+    }
+
+    .tile::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: rgba(50, 50, 50, 0.9);
+      opacity: 0;
+      transition: opacity 0.25s;
+      z-index: 20;
+    }
+
+    .tile:hover::after,
+    .tile:hover::before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px);
+    }
+
+    /* -------- Version responsive pour mobile -------- */
+    @media (max-width: 768px) {
+      .tile::after {
+        bottom: auto;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+        line-height: 1.4;
+      }
+
+      .tile::before {
+        bottom: auto;
+        top: 100%;
+        border: 6px solid transparent;
+        border-bottom-color: rgba(50, 50, 50, 0.9);
+      }
+
+      .tile:hover::after,
+      .tile:hover::before {
+        transform: translateX(-50%) translateY(4px);
+      }
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 25px;
+      padding: 12px 24px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      border: none;
+      font-size: 1em;
+      width: auto;
+      align-self: center;
+    }
+
+    .back-button:hover {
+      background-color: #000;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <header><i class="fa-solid fa-gears"></i> Gestion des Scénarios</header>
+
+  <div class="container">
+    <div class="grid">
+      <div class="tile" data-tooltip="Allume toutes les clims en mode chaud. Ouvre les volets et éteint les lumières." onclick="runScenario(this, 'winter')">
+        <i class="fa-solid fa-fire"></i>
+        <span>Matin d'hiver</span>
+      </div>
+
+      <div class="tile" data-tooltip="Allume toutes les clims en mode froid. Ouvre les volets et éteint les lumières." onclick="runScenario(this, 'summer')">
+        <i class="fa-solid fa-sun"></i>
+        <span>Matin d'été</span>
+      </div>
+
+      <div class="tile" data-tooltip="Éteint toutes les clims et lumières. Ferme les volets pour la durée des vacances." onclick="runScenario(this, 'vacation')">
+        <i class="fa-solid fa-suitcase-rolling"></i>
+        <span>Départ en vacances</span>
+      </div>
+
+      <div class="tile" data-tooltip="Éteint toutes les lumières et les clims. Ferme les volets pour la soirée." onclick="runScenario(this, 'evening')">
+        <i class="fa-solid fa-moon"></i>
+        <span>Soirée</span>
+      </div>
+    </div>
+
+    <div id="log" class="log"></div>
+    <a href="./index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+  </div>
+
+  <script>
+    async function runScenario(tileElement, type) {
+      const log = document.getElementById('log');
+      const label = tileElement.querySelector('span');
+      const originalText = label.textContent;
+
+      // ⏳ Désactivation visuelle
+      tileElement.classList.add('disabled');
+      label.textContent = 'Traitement en cours...';
+      log.innerHTML = `<p>▶ Exécution du scénario <strong>${type}</strong>...</p>`;
+
+      try {
+        const res = await fetch(`/cgi-bin/scenario.exe?type=${type}`);
+        const text = await res.text();
+        log.innerHTML += `<pre>${text}</pre>`;
+      } catch (err) {
+        log.innerHTML += `<p style="color:red;">❌ Erreur : ${err}</p>`;
+      }
+
+      // ✅ Restauration du bouton
+      label.textContent = originalText;
+      tileElement.classList.remove('disabled');
+    }
+  </script>
+</body>
+</html>
