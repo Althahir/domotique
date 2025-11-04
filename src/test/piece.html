@@ -36,12 +36,12 @@
     }
 
     h2 {
-      color: #CC6600;
+      color: #FF6600;
       font-size: 1.6em;
       margin-top: 30px;
       margin-bottom: 15px;
       padding-left: 10px;
-      border-left: 5px solid #FF9933;
+      /* border-left: 5px solid #FF9933; */
     }
 
     .device-grid {
@@ -53,8 +53,9 @@
     }
 
     .control-tile {
-      width: 200px;
+      width: 230px;
       height: 130px;
+      padding: 10px;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       cursor: pointer;
@@ -69,8 +70,9 @@
     }
 
     .control-tile:hover {
+      /* background-color: #FF9933; */
       transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     }
 
     .control-tile i {
@@ -81,12 +83,12 @@
     .light-on { background-color: #FF6600; }
     .light-off { background-color: #bfbfbf; color: #333; }
 
-    .store-open { background-color: #2ecc71; }
+    .store-open { background-color: #FF6600; }
     .store-closed { background-color: #bfbfbf; color: #333; }
 
     .clim-on { background-color: #2ecc71; }
     .clim-off { background-color: #bfbfbf; color: #333; }
-    .clim-heat { background-color: #e74c3c; }
+    .clim-heat { background-color: #FF6600; }
     .clim-cool { background-color: #3498db; }
 
     .clim-buttons {
@@ -203,7 +205,7 @@
       if (deviceNames.length === 0) continue;
 
       const h2 = document.createElement('h2');
-      h2.innerHTML = `<i class="fa-solid ${typeInfo.icon}"></i> ${typeInfo.title}`;
+      h2.innerHTML =`${typeInfo.title}`;
       container.appendChild(h2);
 
       const grid = document.createElement('div');

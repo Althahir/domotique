@@ -48,7 +48,7 @@
       width: 220px;
       height: 160px;
       border-radius: 15px;
-      background-color: #FF9933;
+      background-color: #FF6600 ;
       color: white;
       display: flex;
       flex-direction: column;
@@ -64,7 +64,7 @@
     }
 
     .tile:hover {
-      background-color: #FF6600;
+      background-color:#FF9933;
       transform: translateY(-6px);
     }
 
@@ -215,29 +215,6 @@
     <a href="./index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour</a>
   </div>
 
-  <script>
-    async function runScenario(tileElement, type) {
-      const log = document.getElementById('log');
-      const label = tileElement.querySelector('span');
-      const originalText = label.textContent;
 
-      // ⏳ Désactivation visuelle
-      tileElement.classList.add('disabled');
-      label.textContent = 'Traitement en cours...';
-      log.innerHTML = `<p>▶ Exécution du scénario <strong>${type}</strong>...</p>`;
-
-      try {
-        const res = await fetch(`/cgi-bin/scenario.exe?type=${type}`);
-        const text = await res.text();
-        log.innerHTML += `<pre>${text}</pre>`;
-      } catch (err) {
-        log.innerHTML += `<p style="color:red;">❌ Erreur : ${err}</p>`;
-      }
-
-      // ✅ Restauration du bouton
-      label.textContent = originalText;
-      tileElement.classList.remove('disabled');
-    }
-  </script>
 </body>
 </html>

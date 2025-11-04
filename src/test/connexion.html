@@ -32,7 +32,7 @@
       text-align: center;
     }
 
-    input[type="number"] {
+    input {
       width: 200px;
       padding: 12px;
       border: 2px solid #FF9933;
@@ -70,7 +70,7 @@
   <div class="connexion-box">
     <h1><i class="fa-solid fa-network-wired"></i> Connexion au système</h1>
     <form id="portForm">
-      <input type="number" id="portInput" placeholder="Entrez le port (ex : 50550)" required>
+      <input type="text" id="portInput" placeholder="Entrez le port" required>
       <br>
       <button type="submit">Valider</button>
       <div class="error" id="errorMsg">Veuillez entrer un numéro de port valide.</div>
