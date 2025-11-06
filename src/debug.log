@@ -17312,3 +17312,58 @@ Recherche du device : Suite parentale - Salle de bain et dressing - Luminaire su
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 00 01 
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 00 01 
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Suite parentale - Luminaire central
+[INFO] Lamp Suite parentale - Luminaire central -> ip=192.168.0.100, input=00001000, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Luminaire central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Suite parentale - Luminaire central
+[INFO] Lamp Suite parentale - Luminaire central -> ip=192.168.0.100, input=00001000, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Luminaire central -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 00 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (store) Suite parentale - Volet roulant bow window ouest fenêtre nord -> ip=192.168.0.103, input=00001110, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Volet roulant bow window ouest fenêtre nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 01 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 01 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 01 01 00 00 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (store) Suite parentale - Volet roulant bow window ouest fenêtre nord -> ip=192.168.0.103, input=00001110, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Volet roulant bow window ouest fenêtre nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 01 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 01 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 01 01 00 01 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (clim) Suite parentale - Climatisation réversible -> ip=192.168.0.102, input=00000001, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 01 00 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 01 00 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (clim) Suite parentale - Climatisation réversible -> ip=192.168.0.102, input=00000001, state=ON
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 01 01 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (clim) Suite parentale - Climatisation réversible -> ip=192.168.0.102, input=00000001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 00 01 00 01 
+[INFO] Port simulateur lu depuis JSON : 63262
+[INFO] Device (store) Salle à manger - Volet roulant bow window sud fenêtre est -> ip=192.168.0.103, input=00011111, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salle à manger - Volet roulant bow window sud fenêtre est -> ON (ok=1)

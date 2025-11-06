@@ -1,5 +1,5 @@
 {
-  "port": 64141,
+  "port": 63262,
   "lamps": {
     "Cuisine - Luminaire entrée": {
       "ip": "192.168.0.100",
@@ -641,7 +641,7 @@
     "Salle à manger - Volet roulant bow window sud fenêtre est": {
       "ip": "192.168.0.103",
       "input": "00011111",
-      "state": "OFF"
+      "state": "ON"
     },
     "Chambre invités - Volet roulant porte fenêtre terrasse": {
       "ip": "192.168.0.103",
