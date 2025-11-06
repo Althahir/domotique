@@ -17367,3 +17367,64 @@ Recherche du device : Suite parentale - Luminaire central
 [INFO] Device (store) Salle à manger - Volet roulant bow window sud fenêtre est -> ip=192.168.0.103, input=00011111, state=OFF
 [DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
 [DEBUG] Mise à jour de Salle à manger - Volet roulant bow window sud fenêtre est -> ON (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Garages nord - Luminaire central sud-est
+[INFO] Lamp Garages nord - Luminaire central sud-est -> ip=192.168.0.100, input=00111001, state=ON
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages nord - Luminaire central sud-est -> OFF (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Garages nord - Luminaire central sud-est
+[INFO] Lamp Garages nord - Luminaire central sud-est -> ip=192.168.0.100, input=00111001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages nord - Luminaire central sud-est -> OFF (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Garages nord - Luminaire central nord-ouest
+[INFO] Lamp Garages nord - Luminaire central nord-ouest -> ip=192.168.0.100, input=00110110, state=OFF
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages nord - Luminaire central nord-ouest -> ON (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Plan de travail sud
+[INFO] Lamp Cuisine - Plan de travail sud -> ip=192.168.0.100, input=00000111, state=OFF
+[INFO] Port simulateur lu depuis JSON : 59013
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail sud -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59013 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59013 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59013 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Plan de travail ouest (gauche)
+[INFO] Lamp Cuisine - Plan de travail ouest (gauche) -> ip=192.168.0.100, input=00000110, state=OFF
+[INFO] Port simulateur lu depuis JSON : 59013
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail ouest (gauche) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59013 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59013 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59013 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Plan de travail ouest (gauche)
+[INFO] Lamp Cuisine - Plan de travail ouest (gauche) -> ip=192.168.0.100, input=00000110, state=OFF
+[INFO] Port simulateur lu depuis JSON : 55078
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail ouest (gauche) -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55078 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55078 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55078 : C0 A8 00 64 00 00 00 00 00 01 01 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Plan de travail sud
+[INFO] Lamp Cuisine - Plan de travail sud -> ip=192.168.0.100, input=00000111, state=OFF
+[INFO] Port simulateur lu depuis JSON : 55078
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail sud -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55078 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55078 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:55078 : C0 A8 00 64 00 00 00 00 00 01 01 01 01 

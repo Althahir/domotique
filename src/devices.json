@@ -1,5 +1,5 @@
 {
-  "port": 63262,
+  "port": 55078,
   "lamps": {
     "Cuisine - Luminaire entrée": {
       "ip": "192.168.0.100",
@@ -109,12 +109,12 @@
     "Cuisine - Plan de travail ouest (gauche)": {
       "ip": "192.168.0.100",
       "input": "00000110",
-      "state": "OFF"
+      "state": "ON"
     },
     "Cuisine - Plan de travail sud": {
       "ip": "192.168.0.100",
       "input": "00000111",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Luminaire central": {
       "ip": "192.168.0.100",
@@ -339,7 +339,7 @@
     "Garages nord - Luminaire central nord-ouest": {
       "ip": "192.168.0.100",
       "input": "00110110",
-      "state": "OFF"
+      "state": "ON"
     },
     "Garages nord - Luminaire central nord-est": {
       "ip": "192.168.0.100",
@@ -354,7 +354,7 @@
     "Garages nord - Luminaire central sud-est": {
       "ip": "192.168.0.100",
       "input": "00111001",
-      "state": "ON"
+      "state": "OFF"
     },
     "Garages ouest - Luminaire central nord-ouest": {
       "ip": "192.168.0.100",
@@ -641,7 +641,7 @@
     "Salle à manger - Volet roulant bow window sud fenêtre est": {
       "ip": "192.168.0.103",
       "input": "00011111",
-      "state": "ON"
+      "state": "OFF"
     },
     "Chambre invités - Volet roulant porte fenêtre terrasse": {
       "ip": "192.168.0.103",
