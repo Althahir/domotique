@@ -16967,3 +16967,348 @@ Recherche du device : Bibliothèque - Luminaire central est
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63262 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63262 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
 [TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:63262 : C0 A8 00 66 00 00 00 00 01 01 00 01 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 59285
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59285 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59285 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59285 : C0 A8 00 64 00 00 00 00 00 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 59285
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59285 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59285 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:59285 : C0 A8 00 64 00 00 00 00 00 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=ON
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> OFF (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Luminaire entrée
+[INFO] Lamp Cuisine - Luminaire entrée -> ip=192.168.0.100, input=00000001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Luminaire entrée -> ON (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon sud
+[INFO] Lamp Salon - Luminaire salon sud -> ip=192.168.0.100, input=00011000, state=OFF
+[INFO] Port simulateur lu depuis JSON : 61625
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon sud -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:61625 : C0 A8 00 64 00 00 00 01 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:61625 : C0 A8 00 64 00 00 00 01 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:61625 : C0 A8 00 64 00 00 00 01 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Luminaire salon sud
+[INFO] Lamp Salon - Luminaire salon sud -> ip=192.168.0.100, input=00011000, state=ON
+[INFO] Port simulateur lu depuis JSON : 61625
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Luminaire salon sud -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:61625 : C0 A8 00 64 00 00 00 01 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:61625 : C0 A8 00 64 00 00 00 01 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:61625 : C0 A8 00 64 00 00 00 01 01 00 00 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Plan de travail est (gauche)
+[INFO] Lamp Cuisine - Plan de travail est (gauche) -> ip=192.168.0.100, input=00000011, state=ON
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (gauche) -> OFF (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Cuisine - Plan de travail est (gauche)
+[INFO] Lamp Cuisine - Plan de travail est (gauche) -> ip=192.168.0.100, input=00000011, state=OFF
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Cuisine - Plan de travail est (gauche) -> OFF (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Escalier central - Luminaire central
+[INFO] Lamp Escalier central - Luminaire central -> ip=192.168.0.100, input=00100111, state=ON
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Escalier central - Luminaire central -> OFF (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Escalier central - Luminaire sud
+[INFO] Lamp Escalier central - Luminaire sud -> ip=192.168.0.100, input=00101000, state=ON
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Escalier central - Luminaire sud -> OFF (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Escalier central - Luminaire central
+[INFO] Lamp Escalier central - Luminaire central -> ip=192.168.0.100, input=00100111, state=OFF
+[INFO] Port simulateur lu depuis JSON : 63792
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Escalier central - Luminaire central -> ON (ok=1)
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique nord
+[INFO] Lamp Salon - Applique nord -> ip=192.168.0.100, input=00011001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique nord
+[INFO] Lamp Salon - Applique nord -> ip=192.168.0.100, input=00011001, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique sud
+[INFO] Lamp Salon - Applique sud -> ip=192.168.0.100, input=00011100, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique sud -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique sud
+[INFO] Lamp Salon - Applique sud -> ip=192.168.0.100, input=00011100, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique sud -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique grand mur nord
+[INFO] Lamp Salon - Applique grand mur nord -> ip=192.168.0.100, input=00011101, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique grand mur nord -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Salon - Applique grand mur nord
+[INFO] Lamp Salon - Applique grand mur nord -> ip=192.168.0.100, input=00011101, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Salon - Applique grand mur nord -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 01 01 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (store) Garages ouest - Porte basculante ouest -> ip=192.168.0.103, input=00001010, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages ouest - Porte basculante ouest -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 01 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 01 00 01 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (store) Garages ouest - Porte basculante ouest -> ip=192.168.0.103, input=00001010, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages ouest - Porte basculante ouest -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 01 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 01 00 00 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (store) Garages ouest - Porte basculante est -> ip=192.168.0.103, input=00001001, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages ouest - Porte basculante est -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (store) Garages ouest - Porte basculante est -> ip=192.168.0.103, input=00001001, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages ouest - Porte basculante est -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 67 00 00 00 00 01 00 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (clim) Garages ouest - Climatisation réversible -> ip=192.168.0.102, input=00001000, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages ouest - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 01 00 00 00 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 01 00 00 00 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 01 00 00 00 01 01 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (clim) Garages ouest - Climatisation réversible -> ip=192.168.0.102, input=00001000, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages ouest - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 01 00 00 00 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 01 00 00 00 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 01 00 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Escalier central - Luminaire sud
+[INFO] Lamp Escalier central - Luminaire sud -> ip=192.168.0.100, input=00101000, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Escalier central - Luminaire sud -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Escalier central - Luminaire sud
+[INFO] Lamp Escalier central - Luminaire sud -> ip=192.168.0.100, input=00101000, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Escalier central - Luminaire sud -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 00 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Garages nord - Luminaire central sud-est
+[INFO] Lamp Garages nord - Luminaire central sud-est -> ip=192.168.0.100, input=00111001, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages nord - Luminaire central sud-est -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Garages nord - Luminaire central sud-est
+[INFO] Lamp Garages nord - Luminaire central sud-est -> ip=192.168.0.100, input=00111001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages nord - Luminaire central sud-est -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Garages ouest - Luminaire central sud-est
+[INFO] Lamp Garages ouest - Luminaire central sud-est -> ip=192.168.0.100, input=00111101, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages ouest - Luminaire central sud-est -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 01 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 01 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 01 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Garages ouest - Luminaire central sud-est
+[INFO] Lamp Garages ouest - Luminaire central sud-est -> ip=192.168.0.100, input=00111101, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Garages ouest - Luminaire central sud-est -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 01 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 01 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 01 01 01 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Chambre invités - Luminaire central
+[INFO] Lamp Chambre invités - Luminaire central -> ip=192.168.0.100, input=00101011, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Chambre invités - Luminaire central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 01 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 01 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Chambre invités - Luminaire central
+[INFO] Lamp Chambre invités - Luminaire central -> ip=192.168.0.100, input=00101011, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Chambre invités - Luminaire central -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 01 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 01 00 01 00 01 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Suite parentale - Applique nord-ouest
+[INFO] Lamp Suite parentale - Applique nord-ouest -> ip=192.168.0.100, input=00001001, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Applique nord-ouest -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Suite parentale - Applique nord-ouest
+[INFO] Lamp Suite parentale - Applique nord-ouest -> ip=192.168.0.100, input=00001001, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Applique nord-ouest -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 01 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Suite parentale - Luminaire central
+[INFO] Lamp Suite parentale - Luminaire central -> ip=192.168.0.100, input=00001000, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Luminaire central -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Suite parentale - Luminaire central
+[INFO] Lamp Suite parentale - Luminaire central -> ip=192.168.0.100, input=00001000, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Luminaire central -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 00 01 00 00 00 00 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Suite parentale - Salle de bain et dressing - Luminaire sud dressing
+[INFO] Lamp Suite parentale - Salle de bain et dressing - Luminaire sud dressing -> ip=192.168.0.100, input=00010101, state=OFF
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Salle de bain et dressing - Luminaire sud dressing -> ON (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 00 01 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 00 01 00 01 01 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 00 01 00 01 01 
+
+=== DEBUG get_lamp_info ===
+Recherche du device : Suite parentale - Salle de bain et dressing - Luminaire sud dressing
+[INFO] Lamp Suite parentale - Salle de bain et dressing - Luminaire sud dressing -> ip=192.168.0.100, input=00010101, state=ON
+[INFO] Port simulateur lu depuis JSON : 64141
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Salle de bain et dressing - Luminaire sud dressing -> OFF (ok=1)
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 00 01 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 00 01 00 01 00 
+[TCP] 13/13 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 64 00 00 00 01 00 01 00 01 00 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (clim) Suite parentale - Dressing - Climatisation réversible -> ip=192.168.0.102, input=00000011, state=OFF
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Dressing - Climatisation réversible -> ON (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 01 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 01 01 
+[INFO] Port simulateur lu depuis JSON : 64141
+[INFO] Device (clim) Suite parentale - Dressing - Climatisation réversible -> ip=192.168.0.102, input=00000011, state=ON
+[DEBUG] Tentative d'ouverture du JSON: C:\xampp\htdocs\c\src\devices.json
+[DEBUG] Mise à jour de Suite parentale - Dressing - Climatisation réversible -> OFF (ok=1)
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 00 01 
+[TCP] 14/14 octets envoyés (binaire direct) vers 192.168.56.1:64141 : C0 A8 00 66 00 00 00 00 00 00 01 01 00 01 

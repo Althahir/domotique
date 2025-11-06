@@ -1,10 +1,10 @@
 {
-  "port": 63262,
+  "port": 59564,
   "lamps": {
     "Cuisine - Luminaire entrée": {
       "ip": "192.168.0.100",
       "input": "00000001",
-      "state": "ON"
+      "state": "OFF"
     },
     "Cuisine - Luminaire îlot central": {
       "ip": "192.168.0.100",
@@ -119,22 +119,22 @@
     "Suite parentale - Luminaire central": {
       "ip": "192.168.0.100",
       "input": "00001000",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Applique nord-ouest": {
       "ip": "192.168.0.100",
       "input": "00001001",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Applique nord-est": {
       "ip": "192.168.0.100",
       "input": "00001010",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Applique sud-ouest": {
       "ip": "192.168.0.100",
       "input": "00001011",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Applique sud": {
       "ip": "192.168.0.100",
@@ -144,47 +144,47 @@
     "Suite parentale - Salle de bain et dressing - Luminaire entrée salle de bain": {
       "ip": "192.168.0.100",
       "input": "00001101",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Salle de bain et dressing - Luminaire salle de bain central": {
       "ip": "192.168.0.100",
       "input": "00001110",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Salle de bain et dressing - Baignoire": {
       "ip": "192.168.0.100",
       "input": "00001111",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Salle de bain et dressing - Lavabo nord": {
       "ip": "192.168.0.100",
       "input": "00010000",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Salle de bain et dressing - Lavabo est": {
       "ip": "192.168.0.100",
       "input": "00010001",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Salle de bain et dressing - Luminaire douche": {
       "ip": "192.168.0.100",
       "input": "00010010",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Salle de bain et dressing - Luminaire WC": {
       "ip": "192.168.0.100",
       "input": "00010011",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Salle de bain et dressing - Luminaire nord dressing": {
       "ip": "192.168.0.100",
       "input": "00010100",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Salle de bain et dressing - Luminaire sud dressing": {
       "ip": "192.168.0.100",
       "input": "00010101",
-      "state": "OFF"
+      "state": "ON"
     },
     "Suite parentale - Vestibule - Luminaire vestibule": {
       "ip": "192.168.0.100",
@@ -509,12 +509,12 @@
     "Salle de jeux - Luminaire central sud": {
       "ip": "192.168.0.110",
       "input": "00001100",
-      "state": "ON "
+      "state": "OFF"
     },
     "Salle de jeux - Applique nord ouest": {
       "ip": "192.168.0.110",
       "input": "00011100",
-      "state": "ON "
+      "state": "OFF"
     },
     "Salle de jeux - Applique nord est": {
       "ip": "192.168.0.110",
@@ -627,7 +627,7 @@
     "Garages nord - Porte basculante nord": {
       "ip": "192.168.0.103",
       "input": "00000110",
-      "state": "OFF"
+      "state": "ON "
     },
     "Garages ouest - Porte basculante est": {
       "ip": "192.168.0.103",
@@ -647,12 +647,12 @@
     "Chambre invités - Volet roulant porte fenêtre terrasse": {
       "ip": "192.168.0.103",
       "input": "00100101",
-      "state": "OFF"
+      "state": "ON "
     },
     "Cuisine - Volet roulant porte fenêtre terrasse": {
       "ip": "192.168.0.103",
       "input": "00101001",
-      "state":"ON"
+      "state":"OFF"
     },
     "Balcon - Volet roulant fenêtre est": {
       "ip": "192.168.0.113",
@@ -682,7 +682,7 @@
     "Garages nord - Porte basculante sud": {
       "ip": "192.168.0.103",
       "input": "00000111",
-      "state": "OFF"
+      "state": "ON "
     },
     "Garages ouest - Volet roulant fenêtre est": {
       "ip": "192.168.0.103",
@@ -712,32 +712,32 @@
     "Suite parentale - Volet roulant bow window ouest fenêtre nord": {
       "ip": "192.168.0.103",
       "input": "00001110",
-      "state": "OFF"
+      "state": "ON "
     },
     "Suite parentale - Volet roulant bow window ouest fenêtre ouest": {
       "ip": "192.168.0.103",
       "input": "00001111",
-      "state": "ON"
+      "state": "ON "
     },
     "Suite parentale - Volet roulant bow window ouest fenêtre sud": {
       "ip": "192.168.0.103",
       "input": "00010000",
-      "state": "ON"
+      "state": "ON "
     },
     "Suite parentale - Volet roulant bow window sud fenêtre ouest": {
       "ip": "192.168.0.103",
       "input": "00010001",
-      "state": "ON"
+      "state": "ON "
     },
     "Suite parentale - Volet roulant bow window sud fenêtre sud": {
       "ip": "192.168.0.103",
       "input": "00010010",
-      "state": "OFF  "
+      "state": "ON "
     },
     "Suite parentale - Volet roulant bow window sud fenêtre est": {
       "ip": "192.168.0.103",
       "input": "00010011",
-      "state": "ON"
+      "state": "ON "
     },
     "Suite parentale - Salle de bain - Volet roulant bow window fenêtre nord": {
       "ip": "192.168.0.103",
@@ -772,7 +772,7 @@
     "Bibliothèque - Volet roulant fenêtre sud-ouest": {
       "ip": "192.168.0.103",
       "input": "00011011",
-      "state": "ON"
+      "state": "ON "
     },
     "Bibliothèque - Volet roulant fenêtre sud": {
       "ip": "192.168.0.103",
@@ -842,7 +842,7 @@
     "Chambre NE - Volet roulant fenêtre est": {
       "ip": "192.168.0.113",
       "input": "00000011",
-      "state": "OFF"
+      "state": "ON "
     },
     "Chambre SE - Volet roulant fenêtre sud": {
       "ip": "192.168.0.113",
@@ -885,36 +885,12 @@
       "state": "ON"
     }
   },
-
-  "prises": {
-    "Cuisine - Prise ouest porte terrasse": {
-      "ip": "192.168.0.101",
-      "input": "00000001",
-      "state": "ON"
-    },
-    "Cuisine - Prise est porte terrasse": {
-      "ip": "192.168.0.101",
-      "input": "00000010",
-      "state": "ON"
-    },
-    "Cuisine - Prise nord îlot central": {
-      "ip": "192.168.0.101",
-      "input": "00000011",
-      "state": "ON"
-    },
-    "Cuisine - Prise sud îlot central": {
-      "ip": "192.168.0.101",
-      "input": "00000100",
-      "state": "ON"
-    }
-  },
-
  
   "clim": {
     "Suite parentale - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00000001",
-      "state": "ON",
+      "state": "ON ",
       "mode": 0
     },
     "Salon - Climatisation réversible": {
@@ -938,13 +914,13 @@
     "Cuisine - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001101",
-      "state": "ON",
+      "state": "OFF",
       "mode": 1
     },
     "Suite parentale - Salle de bain - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00000010",
-      "state": "ON",
+      "state": "ON ",
       "mode": 0
     },
     "Suite parentale - Dressing - Climatisation réversible": {
@@ -980,13 +956,13 @@
     "Garages ouest - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001000",
-      "state": "OFF",
+      "state": "ON ",
       "mode": 0
     },
     "WC_RDC - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001001",
-      "state": "OFF",
+      "state": "ON ",
       "mode": 0
     },
     "Escalier central - Climatisation réversible": {
@@ -998,7 +974,7 @@
     "Bibliothèque - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001111",
-      "state": "ON",
+      "state": "ON ",
       "mode": 0
     },
     "Bureau - Climatisation réversible": {
