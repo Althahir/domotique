@@ -48,7 +48,7 @@
       width: 220px;
       height: 160px;
       border-radius: 15px;
-      background-color: #FF6600 ;
+      background-color: #FF6600;
       color: white;
       display: flex;
       flex-direction: column;
@@ -64,7 +64,7 @@
     }
 
     .tile:hover {
-      background-color:#FF9933;
+      background-color: #FF9933;
       transform: translateY(-6px);
     }
 
@@ -80,21 +80,7 @@
       opacity: 0.8;
     }
 
-    .log {
-      margin-top: 25px;
-      text-align: left;
-      background: transparent;
-      padding: 0;
-      border: none;
-      box-shadow: none;
-      max-height: 300px;
-      overflow-y: auto;
-      font-size: 0.9em;
-      width: 100%;
-      color: #333;
-    }
-
-    /* -------- Info-bulle (tooltip) -------- */
+    /* -------- Info-bulle -------- */
     .tile::after {
       content: attr(data-tooltip);
       position: absolute;
@@ -106,8 +92,8 @@
       padding: 8px 12px;
       border-radius: 6px;
       font-size: 0.9em;
-      width: 80%;                 /* ✅ largeur égale à la tuile */
-      white-space: normal;         /* ✅ retour à la ligne autorisé */
+      width: 80%;
+      white-space: normal;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.25s, transform 0.25s;
@@ -136,7 +122,7 @@
       transform: translateX(-50%) translateY(-4px);
     }
 
-    /* -------- Version responsive pour mobile -------- */
+    /* -------- Responsive -------- */
     @media (max-width: 768px) {
       .tile::after {
         bottom: auto;
@@ -211,10 +197,26 @@
       </div>
     </div>
 
-    <div id="log" class="log"></div>
     <a href="./index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour</a>
   </div>
 
+  <script>
+  async function runScenario(tileElement, type) {
+    const label = tileElement.querySelector('span');
+    const originalText = label.textContent;
 
+    tileElement.classList.add('disabled');
+    label.textContent = 'Traitement en cours...';
+
+    try {
+      await fetch(`/cgi-bin/scenario.exe?type=${type}`);
+    } catch (err) {
+      console.error("Erreur lors de l'exécution du scénario :", err);
+    }
+
+    label.textContent = originalText;
+    tileElement.classList.remove('disabled');
+  }
+  </script>
 </body>
 </html>

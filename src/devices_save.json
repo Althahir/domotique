@@ -884,28 +884,6 @@
       "state": "ON"
     }
   },
-  "prises": {
-    "Cuisine - Prise ouest porte terrasse": {
-      "ip": "192.168.0.101",
-      "input": "00000001",
-      "state": "ON"
-    },
-    "Cuisine - Prise est porte terrasse": {
-      "ip": "192.168.0.101",
-      "input": "00000010",
-      "state": "ON"
-    },
-    "Cuisine - Prise nord îlot central": {
-      "ip": "192.168.0.101",
-      "input": "00000011",
-      "state": "ON"
-    },
-    "Cuisine - Prise sud îlot central": {
-      "ip": "192.168.0.101",
-      "input": "00000100",
-      "state": "ON"
-    }
-  },
   "clim": {
     "Suite parentale - Climatisation réversible": {
       "ip": "192.168.0.102",
