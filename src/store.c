@@ -1,12 +1,33 @@
-#include "domotique.h"
-#include "socket_client.h"
+#include "domotique.h"       // Gestion du JSON et gabarit HTML
+#include "socket_client.h"   // Communication TCP vers le simulateur
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <windows.h>   // pour Sleep()
+#include <windows.h>         // Pour Sleep()
 
-/* --- Fonction pour décoder %20 → espace, %xx → caractère (réutilisée de lampe.c) --- */
+/* ============================================================================
+   ⚙️ MODULE : store.c
+   Ce programme CGI gère l’ouverture et la fermeture des volets roulants.
+
+   Il communique avec :
+   - Le fichier JSON (pour lire et mettre à jour l’état du volet)
+   - Le simulateur TCP (pour envoyer la commande binaire)
+
+   Étapes principales :
+   1️⃣ Lecture du paramètre `device` dans la requête HTTP (QUERY_STRING)
+   2️⃣ Récupération de l’IP, de l’entrée automate et de l’état actuel dans le JSON
+   3️⃣ Construction de la trame binaire (13 octets)
+   4️⃣ Envoi de la commande vers le simulateur (3 répétitions)
+   5️⃣ Génération d’une page HTML récapitulative
+   ============================================================================ */
+
+
+/* ---------------------------------------------------------------------------
+   🔹 urldecode()
+   Décodage d’une chaîne URL (ex : %20 → espace)
+   Utilisée pour décoder le nom du périphérique passé dans la requête CGI.
+   --------------------------------------------------------------------------- */
 void urldecode(char *dst, const char *src) {
     char a, b;
     while (*src) {
@@ -27,14 +48,21 @@ void urldecode(char *dst, const char *src) {
     *dst = '\0';
 }
 
-/* --- Convertit "00010111" → 8 octets (0x00 ou 0x01) --- */
+/* ---------------------------------------------------------------------------
+   🔹 input_to_bytes()
+   Convertit une chaîne binaire de 8 caractères ("00010111")
+   en 8 octets (valeurs 0x00 ou 0x01).
+   --------------------------------------------------------------------------- */
 void input_to_bytes(const char *input, unsigned char *buffer) {
     for (int i = 0; i < 8; i++) {
         buffer[i] = (input[i] == '1') ? 1 : 0;
     }
 }
 
-/* --- Convertit "192.168.0.100" → 4 octets --- */
+/* ---------------------------------------------------------------------------
+   🔹 ip_to_bytes()
+   Convertit une adresse IPv4 texte (ex : "192.168.0.100") en 4 octets.
+   --------------------------------------------------------------------------- */
 void ip_to_bytes(const char *ip, unsigned char *buffer) {
     unsigned int a, b, c, d;
     sscanf(ip, "%u.%u.%u.%u", &a, &b, &c, &d);
@@ -44,10 +72,10 @@ void ip_to_bytes(const char *ip, unsigned char *buffer) {
     buffer[3] = (unsigned char)d;
 }
 
-/* ------------------------------------------------------------------- */
-/* PROGRAMME PRINCIPAL                                                 */
-/* ------------------------------------------------------------------- */
 
+/* ---------------------------------------------------------------------------
+   🚀 PROGRAMME PRINCIPAL
+   --------------------------------------------------------------------------- */
 int main(void) {
     char *qs = getenv("QUERY_STRING");
     char *device_param = NULL;
@@ -57,16 +85,18 @@ int main(void) {
     char input_auto[9] = "";
     char current_state[8] = "";
 
-    const char *group = "store";
+    const char *group = "store";        // Groupe dans le JSON
     const char *sim_host = "192.168.56.1";
-    // const int sim_port = 49995;
-    int sim_port = get_simulator_port();
-if (sim_port <= 0) sim_port = 49995; // valeur de secours
+    int sim_port = get_simulator_port(); // Lecture dynamique depuis le JSON
+    if (sim_port <= 0) sim_port = 49995; // Valeur de secours
 
 
-    /* 1. Extraction et décodage du paramètre 'device' */
+    /* -----------------------------------------------------------------------
+       1️⃣ Lecture et décodage du paramètre `device`
+       Exemple d’appel : /cgi-bin/store.exe?device=Volet_Salon&action=on
+       ----------------------------------------------------------------------- */
     if (qs && (device_param = strstr(qs, "device="))) {
-        device_param += 7; // Passe 'device='
+        device_param += 7;
         char *end = strchr(device_param, '&');
 
         char encoded_device[MAX_LEN];
@@ -80,38 +110,50 @@ if (sim_port <= 0) sim_port = 49995; // valeur de secours
         urldecode(decoded_device, encoded_device);
     }
 
-    /* 2. Lecture des informations du périphérique (IP et Input) */
+    /* -----------------------------------------------------------------------
+       2️⃣ Lecture des infos du périphérique depuis le JSON
+       (IP automate, entrée automate, état actuel)
+       ----------------------------------------------------------------------- */
     if (!get_device_info(group, decoded_device, ip_auto, input_auto, current_state)) {
         html_header("Erreur CGI");
 
         FILE *log = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
         if (log) {
-            fprintf(log, "[ERREUR STORE.C] Appareil introuvable dans le groupe '%s' : %s\n", group, decoded_device);
+            fprintf(log, "[ERREUR STORE.C] Appareil introuvable dans le groupe '%s' : %s\n",
+                    group, decoded_device);
             fclose(log);
         }
 
-        printf("<p style='color:red;'>❌ ERREUR : Appareil %s introuvable dans le JSON (groupe %s).</p>", decoded_device, group);
+        printf("<p style='color:red;'>❌ ERREUR : Appareil %s introuvable dans le JSON (groupe %s).</p>",
+               decoded_device, group);
         html_footer();
         return 0;
     }
 
-    /* 3. Préparation du message binaire (13 octets) */
+    /* -----------------------------------------------------------------------
+       3️⃣ Construction de la trame binaire (13 octets)
+       Structure :
+       [0–3]  → IP automate
+       [4–11] → Entrées automate
+       [12]   → État (0 = fermé, 1 = ouvert)
+       ----------------------------------------------------------------------- */
     unsigned char msg[13] = {0};
-
-    // Octets 0–3 : IP
     ip_to_bytes(ip_auto, msg);
-
-    // Octets 4–11 : input binaire
     input_to_bytes(input_auto, &msg[4]);
 
     char etat[16] = "";
 
-    /* 4. Traitement de la requête */
+
+    /* -----------------------------------------------------------------------
+       4️⃣ Exécution de l’action demandée
+       (on → ouvrir le volet / off → fermer le volet)
+       ----------------------------------------------------------------------- */
     if (qs && strstr(qs, "action=on")) {
         set_device_state_json(group, decoded_device, "ON");
         strcpy(etat, "OUVERT");
-        msg[12] = 1; // Commande ouverture
+        msg[12] = 1;
 
+        // Envoi 3 fois la trame
         for (int i = 0; i < 3; i++) {
             send_to_simulator_binary(sim_host, sim_port, msg, sizeof(msg));
             Sleep(50);
@@ -120,33 +162,12 @@ if (sim_port <= 0) sim_port = 49995; // valeur de secours
     else if (qs && strstr(qs, "action=off")) {
         set_device_state_json(group, decoded_device, "OFF");
         strcpy(etat, "FERME");
-        msg[12] = 0; // Commande fermeture
+        msg[12] = 0;
 
         for (int i = 0; i < 3; i++) {
             send_to_simulator_binary(sim_host, sim_port, msg, sizeof(msg));
             Sleep(50);
         }
     }
-
-    /* 5. Génération HTML */
-    html_header("Contrôle du Volet");
-    printf("<div class='wrap'>");
-    printf("<h2>Volet %s</h2>", decoded_device);
-    printf("<p><em>IP automate :</em> %s<br><em>Entrée automate :</em> %s</p>",
-           ip_auto[0] ? ip_auto : "(non défini)",
-           input_auto[0] ? input_auto : "(non défini)");
-
-    if (etat[0]) {
-        printf("<p style='color:green;'>✅ Commande envoyée : <strong>%s</strong>. Nouvel état : <strong>%s</strong></p>",
-               (strstr(qs, "action=on") ? "Ouvrir" : "Fermer"),
-               etat);
-    } else {
-        printf("<p style='color:orange;'>⚠️ Aucune action spécifiée (on/off).</p>");
-    }
-
-    printf("<p><a href='/c/cuisine.html'>&larr; Retour au contrôle</a></p>");
-    printf("</div>");
-    html_footer();
-
     return 0;
 }

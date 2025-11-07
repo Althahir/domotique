@@ -1,51 +1,66 @@
-#include "domotique.h"
+#include "domotique.h"  // Fichier d’en-tête principal contenant définitions globales et macros (ex: STATE_JSON_PATH)
 
-/* Lire tout le fichier JSON dans un buffer (malloc) */
+/* ---------------------------------------------------------------------------
+   🔹 Fonction utilitaire : lecture complète d’un fichier JSON en mémoire
+   --------------------------------------------------------------------------- */
 static char *read_json_file(const char *path) {
-    FILE *f = fopen(path, "rb");
-    if (!f) return NULL;
-    fseek(f, 0, SEEK_END);
-    long size = ftell(f);
-    rewind(f);
+    FILE *f = fopen(path, "rb");           // Ouvre le fichier en mode binaire
+    if (!f) return NULL;                   // Si erreur → NULL
+    fseek(f, 0, SEEK_END);                 // Place le curseur à la fin
+    long size = ftell(f);                  // Récupère la taille du fichier
+    rewind(f);                             // Retour au début
     if (size < 0) { fclose(f); return NULL; }
-    char *buf = malloc((size_t)size + 1);
+
+    char *buf = malloc((size_t)size + 1);  // Alloue un buffer pour le contenu
     if (!buf) { fclose(f); return NULL; }
-    fread(buf, 1, (size_t)size, f);
-    buf[size] = '\0';
+
+    fread(buf, 1, (size_t)size, f);        // Lit tout le fichier
+    buf[size] = '\0';                      // Termine par un caractère nul
     fclose(f);
-    return buf;
+    return buf;                            // Retourne le texte JSON complet
 }
 
-/* Écrire du texte dans un fichier */
+/* ---------------------------------------------------------------------------
+   🔹 Fonction utilitaire : écriture d’un texte dans un fichier
+   --------------------------------------------------------------------------- */
 static int write_json_file(const char *path, const char *buf) {
-    FILE *f = fopen(path, "wb");
+    FILE *f = fopen(path, "wb");           // Ouvre en écriture binaire
     if (!f) return 0;
     size_t len = strlen(buf);
-    size_t wrote = fwrite(buf, 1, len, f);
+    size_t wrote = fwrite(buf, 1, len, f); // Écrit le buffer entier
     fclose(f);
-    return wrote == len;
+    return wrote == len;                   // Retourne 1 si tout a été écrit
 }
 
-/* --- Fonction robuste : recherche d’un bloc device (indépendante des retours à la ligne) --- */
+/* ---------------------------------------------------------------------------
+   🔹 Recherche d’un bloc "device" dans le JSON
+   Fonction tolérante aux retours à la ligne et espaces
+   Exemple : trouve la position du “{” du bloc d’un appareil donné.
+   --------------------------------------------------------------------------- */
 static char *find_device_block(char *json, const char *device) {
-    char *d = strstr(json, device);
+    char *d = strstr(json, device);        // Recherche le nom du device
     if (!d) return NULL;
-    while (*d && *d != '{') d++;  // avance jusqu’à la première accolade
+    while (*d && *d != '{') d++;           // Avance jusqu’à la première accolade ouvrante
     if (*d != '{') return NULL;
-    return d;
+    return d;                              // Retourne le pointeur vers le début du bloc
 }
 
-/* Modifier l’état d’un device */
+/* ---------------------------------------------------------------------------
+   ⚙️  set_device_state_json() : Modifie la valeur "state" d’un appareil
+   Exemple : "OFF" → "ON" dans le fichier JSON de l’état global
+   --------------------------------------------------------------------------- */
 int set_device_state_json(const char *group, const char *device, const char *state) {
     char path[260];
-    snprintf(path, sizeof(path), "%s", STATE_JSON_PATH);
+    snprintf(path, sizeof(path), "%s", STATE_JSON_PATH); // Chemin du JSON global
 
+    // Ajout d’un message de debug (écrit dans un fichier log local)
     FILE *log = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
     if (log) {
         fprintf(log, "[DEBUG] Tentative d'ouverture du JSON: %s\n", path);
         fclose(log);
     }
 
+    // Lecture du JSON
     char *json = read_json_file(path);
     if (!json) {
         FILE *log2 = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
@@ -56,7 +71,7 @@ int set_device_state_json(const char *group, const char *device, const char *sta
         return 0;
     }
 
-    /* Localiser le bloc group */
+    /* Recherche du bloc de groupe (ex: "lamps", "clim", etc.) */
     char groupPattern[128];
     snprintf(groupPattern, sizeof(groupPattern), "\"%s\"", group);
     char *grp = strstr(json, groupPattern);
@@ -64,7 +79,7 @@ int set_device_state_json(const char *group, const char *device, const char *sta
     grp = strchr(grp, '{');
     if (!grp) { free(json); return 0; }
 
-    /* Limiter la recherche au bloc du groupe */
+    /* Délimite la fin du bloc du groupe (en comptant les accolades imbriquées) */
     char *grp_end = grp;
     int brace = 1;
     while (*++grp_end && brace > 0) {
@@ -73,7 +88,7 @@ int set_device_state_json(const char *group, const char *device, const char *sta
     }
     if (brace != 0) { free(json); return 0; }
 
-    /* Cherche le bloc device */
+    /* Cherche le bloc du device dans ce groupe */
     char *device_block = find_device_block(grp, device);
     if (!device_block) {
         FILE *log3 = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
@@ -85,20 +100,21 @@ int set_device_state_json(const char *group, const char *device, const char *sta
         return 0;
     }
 
-    /* Cherche la clé "state" */
+    /* Recherche la clé "state" dans le bloc du device */
     char *state_key = strstr(device_block, "\"state\"");
     if (!state_key || state_key > grp_end) { free(json); return 0; }
 
+    /* Trouve la valeur après les deux points */
     char *val_start = strchr(state_key, ':');
     if (!val_start) { free(json); return 0; }
     val_start++;
-    while (*val_start && (*val_start == ' ' || *val_start == '\t' || *val_start == '\r' || *val_start == '\n')) val_start++;
+    while (*val_start && isspace(*val_start)) val_start++;
     if (*val_start != '\"') { free(json); return 0; }
     val_start++;
     char *val_end = strchr(val_start, '\"');
     if (!val_end) { free(json); return 0; }
 
-    /* Remplacement */
+    /* Construit le nouveau JSON avec la valeur modifiée */
     size_t before_len = (size_t)(val_start - json);
     size_t after_len = strlen(val_end);
     char *new_json = malloc(before_len + strlen(state) + after_len + 2);
@@ -108,8 +124,9 @@ int set_device_state_json(const char *group, const char *device, const char *sta
     memcpy(new_json + before_len, state, strlen(state));
     strcpy(new_json + before_len + strlen(state), val_end);
 
-    int ok = write_json_file(path, new_json);
+    int ok = write_json_file(path, new_json); // Écrit la nouvelle version du fichier
 
+    // Log de confirmation
     FILE *log5 = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
     if (log5) {
         fprintf(log5, "[DEBUG] Mise à jour de %s -> %s (ok=%d)\n", device, state, ok);
@@ -118,10 +135,13 @@ int set_device_state_json(const char *group, const char *device, const char *sta
 
     free(new_json);
     free(json);
-    return ok;
+    return ok;  // Retourne 1 si succès
 }
 
-/* Lire l’état d’un device */
+/* ---------------------------------------------------------------------------
+   ⚙️  get_device_state_json() : Lit l’état d’un appareil (ON/OFF)
+   Retourne 1 si trouvé, sinon 0 (et remplit une valeur par défaut)
+   --------------------------------------------------------------------------- */
 int get_device_state_json(const char *group, const char *device, char *state_out, const char *default_state) {
     char path[260];
     snprintf(path, sizeof(path), "%s", STATE_JSON_PATH);
@@ -133,23 +153,22 @@ int get_device_state_json(const char *group, const char *device, char *state_out
         return 0;
     }
 
+    /* Recherche du bloc de groupe */
     char groupPattern[128];
     snprintf(groupPattern, sizeof(groupPattern), "\"%s\"", group);
     char *grp = strstr(json, groupPattern);
     if (!grp) {
         strncpy(state_out, default_state, MAX_LEN - 1);
-        state_out[MAX_LEN - 1] = '\0';
         free(json);
         return 0;
     }
     grp = strchr(grp, '{');
     if (!grp) { strncpy(state_out, default_state, MAX_LEN - 1); free(json); return 0; }
 
-    /* Chercher bloc device */
+    /* Recherche du device */
     char *device_block = find_device_block(grp, device);
     if (!device_block) {
         strncpy(state_out, default_state, MAX_LEN - 1);
-        state_out[MAX_LEN - 1] = '\0';
         FILE *log3 = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
         if (log3) {
             fprintf(log3, "[ERREUR] Device %s non trouvé dans JSON (lecture)\n", device);
@@ -159,23 +178,20 @@ int get_device_state_json(const char *group, const char *device, char *state_out
         return 0;
     }
 
-    /* Lire la clé "state" */
+    /* Lecture de la clé "state" */
     char *state_key = strstr(device_block, "\"state\"");
-    if (!state_key) {
-        strncpy(state_out, default_state, MAX_LEN - 1);
-        state_out[MAX_LEN - 1] = '\0';
-        free(json);
-        return 0;
-    }
+    if (!state_key) { strncpy(state_out, default_state, MAX_LEN - 1); free(json); return 0; }
+
     char *val_start = strchr(state_key, ':');
     if (!val_start) { free(json); return 0; }
     val_start++;
-    while (*val_start && (*val_start == ' ' || *val_start == '\t' || *val_start == '\r' || *val_start == '\n')) val_start++;
+    while (*val_start && isspace(*val_start)) val_start++;
     if (*val_start != '\"') { free(json); return 0; }
     val_start++;
     char *val_end = strchr(val_start, '\"');
     if (!val_end) { free(json); return 0; }
 
+    /* Copie la valeur dans le buffer de sortie */
     size_t len = val_end - val_start;
     if (len >= MAX_LEN) len = MAX_LEN - 1;
     memcpy(state_out, val_start, len);
@@ -184,14 +200,17 @@ int get_device_state_json(const char *group, const char *device, char *state_out
     return 1;
 }
 
-/* ------------------------------------------------------------ */
-/* 🔍 Récupération IP + input + state pour les lampes */
+/* ---------------------------------------------------------------------------
+   💡 get_lamp_info() : récupère ip / input / state pour un appareil "lampe"
+   Cherche dans la section "lamps" du JSON
+   --------------------------------------------------------------------------- */
 int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state_out) {
     FILE *debug = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
 
     char path[260];
     snprintf(path, sizeof(path), "%s", STATE_JSON_PATH);
     char *json = read_json_file(path);
+
     if (debug) {
         fprintf(debug, "\n=== DEBUG get_lamp_info ===\n");
         fprintf(debug, "Recherche du device : %s\n", device);
@@ -199,13 +218,13 @@ int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state
     }
     if (!json) return 0;
 
-    /* Cherche la section "lamps" */
+    /* Recherche du groupe "lamps" */
     char *group = strstr(json, "\"lamps\"");
     if (!group) { free(json); return 0; }
     group = strchr(group, '{');
     if (!group) { free(json); return 0; }
 
-    /* Cherche le bloc du device */
+    /* Recherche du bloc du device */
     char search[128];
     snprintf(search, sizeof(search), "\"%s\"", device);
     char *dev = strstr(group, search);
@@ -219,6 +238,7 @@ int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state
     char *block = strchr(dev, '{');
     if (!block) { free(json); return 0; }
 
+    /* Macro pour extraire proprement une clé/valeur d’un bloc JSON */
     #define EXTRACT_VALUE(KEY, DEST) { \
         char *k = strstr(block, "\"" KEY "\""); \
         if (k) { \
@@ -250,14 +270,17 @@ int get_lamp_info(const char *device, char *ip_out, char *input_out, char *state
     return 1;
 }
 
-/* ------------------------------------------------------------ */
-/* 🆕 Nouvelle fonction générique : get_device_info() */
+/* ---------------------------------------------------------------------------
+   🧩 get_device_info() : fonction générique (pour clim, lampe, etc.)
+   Retourne ip, input, state à partir du nom du groupe et du device
+   --------------------------------------------------------------------------- */
 int get_device_info(const char *group_name, const char *device, char *ip_out, char *input_out, char *state_out) {
     char path[260];
     snprintf(path, sizeof(path), "%s", STATE_JSON_PATH);
     char *json = read_json_file(path);
     if (!json) return 0;
 
+    /* Recherche du bloc de groupe */
     char pattern[128];
     snprintf(pattern, sizeof(pattern), "\"%s\"", group_name);
     char *group = strstr(json, pattern);
@@ -265,6 +288,7 @@ int get_device_info(const char *group_name, const char *device, char *ip_out, ch
     group = strchr(group, '{');
     if (!group) { free(json); return 0; }
 
+    /* Recherche du bloc du device */
     char search[128];
     snprintf(search, sizeof(search), "\"%s\"", device);
     char *dev = strstr(group, search);
@@ -291,7 +315,6 @@ int get_device_info(const char *group_name, const char *device, char *ip_out, ch
     EXTRACT_VALUE("ip", ip_out);
     EXTRACT_VALUE("input", input_out);
     EXTRACT_VALUE("state", state_out);
-
     #undef EXTRACT_VALUE
 
     FILE *log = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
@@ -303,14 +326,17 @@ int get_device_info(const char *group_name, const char *device, char *ip_out, ch
     free(json);
     return 1;
 }
-/* ------------------------------------------------------------ */
-/* 🔌 Récupération du port du simulateur depuis le JSON racine */
+
+/* ---------------------------------------------------------------------------
+   ⚙️ get_simulator_port() : lit le port du simulateur depuis le JSON racine
+   Extrait la clé "port" (nombre entier)
+   --------------------------------------------------------------------------- */
 int get_simulator_port(void) {
     char path[260];
     snprintf(path, sizeof(path), "%s", STATE_JSON_PATH);
 
     char *json = read_json_file(path);
-    if (!json) return 0; // valeur par défaut = 0 si non trouvé
+    if (!json) return 0;
 
     char *k = strstr(json, "\"port\"");
     if (!k) { free(json); return 0; }
@@ -319,9 +345,9 @@ int get_simulator_port(void) {
     if (!k) { free(json); return 0; }
     k++;
 
-    while (*k && (*k == ' ' || *k == '\t' || *k == '\r' || *k == '\n')) k++;
+    while (*k && isspace(*k)) k++;
 
-    int port = atoi(k); // conversion texte → entier
+    int port = atoi(k); // Convertit la valeur texte en entier
 
     FILE *log = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
     if (log) {
@@ -333,21 +359,4 @@ int get_simulator_port(void) {
     return port;
 }
 
-/* ------------------------------------------------------------ */
-/* HTML helpers */
-void html_header(const char *title) {
-    printf("Content-type: text/html\r\n\r\n");
-    printf("<!DOCTYPE html><html lang='fr'><head><meta charset='utf-8'>");
-    printf("<title>%s</title>", title ? title : "Domotique");
-    printf("<style>"
-           "body{font-family:Arial; text-align:center; padding:20px}"
-           "button{margin:8px; padding:10px 18px; font-size:15px}"
-           ".on{color:green; font-weight:bold}"
-           ".off{color:#c00; font-weight:bold}"
-           ".wrap{display:inline-block; padding:16px; border:1px solid #ddd; border-radius:10px}"
-           "</style></head><body>");
-}
 
-void html_footer(void) {
-    printf("</body></html>");
-}
