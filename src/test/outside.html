@@ -3,49 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart home / Gestion des pièces</title>
+  <title>Smart Home – Extérieurs & Garages</title>
   <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
+    :root {
+      --accent: #ff6600;
+      --bg-dark: #0a0a0d;
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f2f2f2;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    h1 {
-      background-color: #FF6600;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
       color: white;
-      padding: 20px 0;
-      margin-bottom: 20px;
-      font-size: 2.5em;
-      letter-spacing: 1px;
+      margin: 0;
+      padding: 40px 20px;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+      min-height: 100vh;
+      position: relative;
     }
 
+    /* ----- FOND ANIMÉ ----- */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .light {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent), transparent 70%);
+      filter: blur(100px);
+      opacity: 0.8;
+      animation: moveLight 14s infinite ease-in-out, colorShift 10s infinite alternate;
+    }
+
+    @keyframes moveLight {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(150px, -100px); }
+      50% { transform: translate(-120px, 150px); }
+      75% { transform: translate(90px, 70px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes colorShift {
+      0% { background: radial-gradient(circle, #ff6600, transparent 70%); }
+      25% { background: radial-gradient(circle, #ff8800, transparent 70%); }
+      50% { background: radial-gradient(circle, #ffaa00, transparent 70%); }
+      75% { background: radial-gradient(circle, #ff3300, transparent 70%); }
+      100% { background: radial-gradient(circle, #ff6600, transparent 70%); }
+    }
+
+    /* ----- TITRE ----- */
+    h1 {
+      color: var(--accent);
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      text-shadow: 0 0 25px rgba(255, 102, 0, 0.6);
+      z-index: 1;
+    }
+
+    h1 img {
+      width: 100px;
+      border-radius: 12px;
+      filter: drop-shadow(0 0 20px var(--accent));
+    }
+
+    /* ----- SECTIONS ----- */
     .floor-section {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 30px 25px;
       margin: 40px auto;
       max-width: 1200px;
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      padding: 25px 15px;
+      backdrop-filter: blur(12px);
+      box-shadow:
+        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
+        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
+      z-index: 1;
     }
 
     .floor-section h2 {
-      text-align: left;
-      color: #FF6600;
-      margin-left: 25px;
-      margin-bottom: 25px;
-      /* border-left: 6px solid #FF9933; */
-      padding-left: 12px;
+      color: var(--accent);
       font-size: 1.7em;
+      text-align: left;
+      margin: 0 0 25px 15px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+      text-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
     }
 
     .piece-grid {
@@ -55,60 +116,90 @@
       gap: 25px;
     }
 
+    /* ----- TUILES ----- */
     .piece-tile {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 160px;
-      height: 130px;
-      border-radius: 15px;
-      background-color: #FF6600;
+      width: 180px;
+      height: 140px;
+      border-radius: 20px;
+      background: var(--accent);
+      backdrop-filter: blur(10px);
+      box-shadow:
+        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
+        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      transition: all 0.25s ease-in-out;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
     }
 
     .piece-tile:hover {
-      background-color: #FF9933;
-      transform: translateY(-5px);
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow:
+        4px 10px 15px 2px rgba(97, 97, 97, 0.5),
+        inset -8px -6px 14px rgba(0, 0, 0, 0.4);
+      color: var(--accent);
     }
 
     .piece-tile i {
       font-size: 2.2em;
       margin-bottom: 10px;
+      color: white;
+      transition: color 0.3s;
     }
-    
 
+    .piece-tile:hover i {
+      color: var(--accent);
+    }
+
+    /* ----- BOUTON RETOUR ----- */
     .back-button {
       display: inline-block;
-      margin: 20px;
+      margin: 40px 0 20px 0;
       padding: 10px 20px;
-      background-color: #333;
+      background: rgba(255, 255, 255, 0.08);
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      box-shadow:
+        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
+        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
+      transition: all 0.3s ease-in-out;
+      z-index: 1;
     }
 
     .back-button:hover {
-      background-color: #000;
       transform: scale(1.05);
+      color: var(--accent);
     }
 
   </style>
 </head>
 
 <body>
-  <!-- <h1><i class="fa-solid fa-house"></i> Tableau de Contrôle</h1> -->
-  <h1><img src="../logo.png" alt="" width="100px">SMART HOME - Tabeau de controle</h1>
+  <!-- Lumières du fond -->
+  <div class="background">
+    <div class="light" style="top:5%; left:10%; animation-delay:0s;"></div>
+    <div class="light" style="top:15%; left:40%; animation-delay:1s;"></div>
+    <div class="light" style="top:25%; left:80%; animation-delay:2s;"></div>
+    <div class="light" style="top:35%; left:25%; animation-delay:3s;"></div>
+    <div class="light" style="top:50%; left:70%; animation-delay:4s;"></div>
+    <div class="light" style="top:60%; left:10%; animation-delay:5s;"></div>
+    <div class="light" style="top:70%; left:50%; animation-delay:6s;"></div>
+    <div class="light" style="top:80%; left:85%; animation-delay:7s;"></div>
+  </div>
 
+  <!-- Titre -->
+  <h1><img src="../logo.png" alt="Logo"> Smart Home – Extérieurs & Garages</h1>
 
   <!-- Extérieurs & Garages -->
   <div class="floor-section">
-    <h2>Extérieurs & Garages</h2>
     <div class="piece-grid">
       <a href="piece.html?room=Garages_nord" class="piece-tile"><i class="fa-solid fa-warehouse"></i> <span>Garages nord</span></a>
       <a href="piece.html?room=Garages_ouest" class="piece-tile"><i class="fa-solid fa-warehouse"></i> <span>Garages ouest</span></a>
@@ -116,6 +207,8 @@
       <a href="piece.html?room=Balcon" class="piece-tile"><i class="fa-solid fa-wind"></i> <span>Balcon</span></a>
     </div>
   </div>
-<a href="./dashboard.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+
+  <!-- Bouton retour -->
+  <a href="./dashboard.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour</a>
 </body>
 </html>
