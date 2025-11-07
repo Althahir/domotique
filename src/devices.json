@@ -912,7 +912,7 @@
     "Cuisine - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001101",
-      "state": "OFF",
+      "state": "ON",
       "mode": 1
     },
     "Suite parentale - Salle de bain - Climatisation réversible": {

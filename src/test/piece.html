@@ -125,11 +125,11 @@
 
     .control-tile:hover {
       transform: scale(1.03);
-      background: rgba(255, 255, 255, 0.12);
+      /* background: rgba(255, 255, 255, 0.12);
       box-shadow:
         4px 10px 15px 2px rgba(97, 97, 97, 0.5),
         inset -8px -6px 14px rgba(0, 0, 0, 0.4),
-        0 0 25px rgba(255, 102, 0, 0.3);
+        0 0 25px rgba(255, 102, 0, 0.3); */
     }
 
     .control-tile i {
@@ -185,12 +185,12 @@
   opacity: 0.8;
 }
 
-.clim-on {
+/* .clim-on {
   background: rgba(46, 204, 113, 0.9);
   box-shadow:
     0 0 25px rgba(46, 204, 113, 0.8),
     inset 0 0 15px rgba(255, 255, 255, 0.2);
-}
+} */
 
 .clim-off {
   background: rgba(255, 255, 255, 0.05);
@@ -211,15 +211,12 @@
     inset 0 0 15px rgba(255, 255, 255, 0.2);
 }
 .light-on i,
-.store-open i{
+.store-open i,
+.clim-heat i,
+.clim-cool i{
   color: white !important;
 }
-.clim-heat i{
-  color: blue;
-}
-.clim-cool i {
-  color : red
-}
+
 
 
     /* ----- BOUTON RETOUR ----- */
@@ -239,11 +236,8 @@
     }
 
     .back-button:hover {
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow:
-        4px 10px 15px 2px rgba(97, 97, 97, 0.5),
-        inset -8px -6px 14px rgba(0, 0, 0, 0.4),
-        0 0 25px rgba(255, 102, 0, 0.3);
+      transform: scale(1.03);
+      color:#ff6600
     }
 
   </style>
@@ -456,7 +450,7 @@
     function getClimClass(mode, state) {
       if (state === 'OFF') return 'clim-off';
       if (mode === 1) return 'clim-heat';
-      if (mode === 2) return 'clim-cool';
+      if (mode === 0) return 'clim-cool';
       return 'clim-on';
     }
   </script>
