@@ -145,6 +145,30 @@
   transition: all 0.3s ease-in-out;
 }
 
+  .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      box-shadow:
+        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
+        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow:
+        4px 10px 15px 2px rgba(97, 97, 97, 0.5),
+        inset -8px -6px 14px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(255, 102, 0, 0.3);
+    }
+
+
 /* Effet verre illuminé au survol */
 .main-tile:hover {
   transform: scale(1.03);
@@ -207,17 +231,22 @@
   </header>
 
   <div class="main-grid">
-    <a href="./dashboard.html" class="main-tile">
+    <a href="./ground_floor.html" class="main-tile">
       <i class="fa-solid fa-house"></i>
-      <span>Gestion par pièce</span>
+      <span>Rez-de-chaussée</span>
     </a>
 
-    <a href="./scenario.html" class="main-tile">
-      <i class="fa-solid fa-diagram-project"></i>
-      <span>Scénarios</span>
+    <a href="./floors.html" class="main-tile">
+      <i class="fa-solid fa-stairs"></i>
+      <span>Étage(s) Supérieur(s)</span>
+    </a>
+
+    <a href="./outside.html" class="main-tile">
+      <i class="fa-solid fa-car"></i>
+      <span>Extérieurs & Garages</span>
     </a>
   </div>
 
-  <footer>2025 - Tous droits réservés à Smart Home© Corporation</footer>
+<a href="./index.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour</a>
 </body>
 </html>
