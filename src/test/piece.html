@@ -6,90 +6,137 @@
   <title>Contrôle - Pièce</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
+    :root {
+      --accent: #ff6600;
+      --bg-dark: #0a0a0d;
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: white;
       margin: 0;
-      padding: 20px;
+      padding: 40px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
     }
 
+    /* ----- FOND ANIMÉ ----- */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .light {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent), transparent 70%);
+      filter: blur(100px);
+      opacity: 0.8;
+      animation: moveLight 14s infinite ease-in-out, colorShift 10s infinite alternate;
+    }
+
+    @keyframes moveLight {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(150px, -100px); }
+      50% { transform: translate(-120px, 150px); }
+      75% { transform: translate(90px, 70px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes colorShift {
+      0% { background: radial-gradient(circle, #ff6600, transparent 70%); }
+      25% { background: radial-gradient(circle, #ff8800, transparent 70%); }
+      50% { background: radial-gradient(circle, #ffaa00, transparent 70%); }
+      75% { background: radial-gradient(circle, #ff3300, transparent 70%); }
+      100% { background: radial-gradient(circle, #ff6600, transparent 70%); }
+    }
+
+    /* ----- CONTAINER ----- */
     .container {
       width: 90%;
       max-width: 1200px;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow:
+        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
+        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
+      z-index: 1;
     }
 
     h1 {
-      color: #FF6600;
+      color: var(--accent);
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       font-size: 2.5em;
-      border-bottom: 3px solid #FF9933;
-      padding-bottom: 15px;
+      text-shadow: 0 0 25px rgba(255, 102, 0, 0.6);
     }
 
     h2 {
-      color: #FF6600;
+      color: var(--accent);
       font-size: 1.6em;
-      margin-top: 30px;
+      margin-top: 40px;
       margin-bottom: 15px;
+      border-left: 4px solid var(--accent);
       padding-left: 10px;
-      /* border-left: 5px solid #FF9933; */
     }
 
     .device-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
+    /* ----- CARTE DE CONTRÔLE (EFFET VERRE) ----- */
     .control-tile {
       width: 230px;
-      height: 130px;
-      padding: 10px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      height: 150px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      box-shadow:
+        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
+        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
       cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       color: white;
-      font-weight: bold;
+      font-weight: 600;
       text-align: center;
-      transition: all 0.25s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
 
     .control-tile:hover {
-      /* background-color: #FF9933; */
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow:
+        4px 10px 15px 2px rgba(97, 97, 97, 0.5),
+        inset -8px -6px 14px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(255, 102, 0, 0.3);
     }
 
     .control-tile i {
       font-size: 2.8em;
       margin-bottom: 8px;
+      color: var(--accent);
     }
-
-    .light-on { background-color: #FF6600; }
-    .light-off { background-color: #bfbfbf; color: #333; }
-
-    .store-open { background-color: #FF6600; }
-    .store-closed { background-color: #bfbfbf; color: #333; }
-
-    .clim-on { background-color: #2ecc71; }
-    .clim-off { background-color: #bfbfbf; color: #333; }
-    .clim-heat { background-color: #FF6600; }
-    .clim-cool { background-color: #3498db; }
 
     .clim-buttons {
       display: flex;
@@ -112,230 +159,306 @@
       background-color: rgba(255, 255, 255, 0.25);
     }
 
+    /* ----- ÉTATS DES APPAREILS ----- */
+/* ----- ÉTATS DES APPAREILS ----- */
+.light-on {
+  background: rgba(255, 102, 0, 0.9);
+  box-shadow:
+    0 0 25px rgba(255, 102, 0, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.light-off {
+  background: rgba(255, 255, 255, 0.05);
+  opacity: 0.8;
+}
+
+.store-open {
+  background: rgba(255, 102, 0, 0.9);
+  box-shadow:
+    0 0 25px rgba(255, 102, 0, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.store-closed {
+  background: rgba(255, 255, 255, 0.05);
+  opacity: 0.8;
+}
+
+.clim-on {
+  background: rgba(46, 204, 113, 0.9);
+  box-shadow:
+    0 0 25px rgba(46, 204, 113, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.clim-off {
+  background: rgba(255, 255, 255, 0.05);
+  opacity: 0.8;
+}
+
+.clim-heat {
+  background: rgba(255, 102, 0, 0.9);
+  box-shadow:
+    0 0 25px rgba(255, 102, 0, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.clim-cool {
+  background: rgba(52, 152, 219, 0.9);
+  box-shadow:
+    0 0 25px rgba(52, 152, 219, 0.8),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+.light-on i,
+.store-open i{
+  color: white !important;
+}
+.clim-heat i{
+  color: blue;
+}
+.clim-cool i {
+  color : red
+}
+
+
+    /* ----- BOUTON RETOUR ----- */
     .back-button {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #333;
+      background: rgba(255, 255, 255, 0.08);
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      box-shadow:
+        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
+        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
+      transition: all 0.3s ease-in-out;
     }
 
-    .back-button:hover { background-color: #000; }
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow:
+        4px 10px 15px 2px rgba(97, 97, 97, 0.5),
+        inset -8px -6px 14px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(255, 102, 0, 0.3);
+    }
+
   </style>
 </head>
 
 <body>
-<div class="container">
-  <h1 id="page-title"><i class="fa-solid fa-house"></i> Contrôle de la Pièce</h1>
-  <div id="controls-container"></div>
-  <a href="./gestion_piece.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour aux Pièces</a>
-</div>
+  <div class="background">
+    <!-- mêmes lumières que sur la page d’accueil -->
+    <div class="light" style="top:5%; left:10%; animation-delay:0s;"></div>
+    <div class="light" style="top:15%; left:40%; animation-delay:1s;"></div>
+    <div class="light" style="top:25%; left:80%; animation-delay:2s;"></div>
+    <div class="light" style="top:35%; left:25%; animation-delay:3s;"></div>
+    <div class="light" style="top:50%; left:70%; animation-delay:4s;"></div>
+    <div class="light" style="top:60%; left:10%; animation-delay:5s;"></div>
+    <div class="light" style="top:70%; left:50%; animation-delay:6s;"></div>
+    <div class="light" style="top:80%; left:85%; animation-delay:7s;"></div>
+  </div>
 
-<script>
-  const DEVICE_TYPES = {
-    lamps: { title: "Lumières", icon: "fa-lightbulb" },
-    store: { title: "Volets Roulants", icon: "fa-house-chimney-window" },
-    clim: { title: "Climatisation révérsible", icon: "fa-snowflake" }
-  };
+  <div class="container">
+    <h1 id="page-title"><i class="fa-solid fa-house"></i> Contrôle de la Pièce</h1>
+    <div id="controls-container"></div>
+    <a href="./gestion_piece.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour aux Pièces</a>
+  </div>
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const rawRoomName = urlParams.get('room')?.trim() || '';
+  <script>
+    /* Ton script JavaScript d'origine intact */
+    const DEVICE_TYPES = {
+      lamps: { title: "Lumières", icon: "fa-lightbulb" },
+      store: { title: "Volets Roulants", icon: "fa-house-chimney-window" },
+      clim: { title: "Climatisation révérsible", icon: "fa-snowflake" }
+    };
 
-  function normalizeName(name) {
-    return name.toLowerCase()
-      .replace(/_/g, ' ')
-      .replace(/-/g, ' ')
-      .replace(/\s+/g, '')
-      .normalize("NFD").replace(/[\u0300-\u036f]/g, '');
-  }
+    const urlParams = new URLSearchParams(window.location.search);
+    const rawRoomName = urlParams.get('room')?.trim() || '';
 
-  const normalizedRoom = normalizeName(rawRoomName);
-  document.title = `Contrôle - ${rawRoomName}`;
-  document.getElementById("page-title").innerHTML = `<i class="fa-solid fa-house"></i> Contrôle de ${rawRoomName}`;
-
-  async function loadDevices() {
-    try {
-      const response = await fetch("../devices.json");
-      if (!response.ok) throw new Error("Erreur de chargement du JSON");
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      console.error("❌ Erreur chargement JSON :", err);
-      return {};
-    }
-  }
-
-  let DEVICES_JSON_DATA = {};
-
-  document.addEventListener("DOMContentLoaded", async () => {
-    DEVICES_JSON_DATA = await loadDevices();
-    generateControls();
-  });
-
-  function generateControls() {
-    const container = document.getElementById('controls-container');
-    container.innerHTML = '';
-
-    if (!rawRoomName) {
-      container.innerHTML = "<p>⚠️ Aucune pièce spécifiée dans l’URL.</p>";
-      return;
+    function normalizeName(name) {
+      return name.toLowerCase()
+        .replace(/_/g, ' ')
+        .replace(/-/g, ' ')
+        .replace(/\s+/g, '')
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, '');
     }
 
-    for (const typeKey in DEVICES_JSON_DATA) {
-      const typeInfo = DEVICE_TYPES[typeKey];
-      const devices = DEVICES_JSON_DATA[typeKey];
-      if (!typeInfo || !devices) continue;
+    const normalizedRoom = normalizeName(rawRoomName);
+    document.title = `Contrôle - ${rawRoomName}`;
+    document.getElementById("page-title").innerHTML = `<i class="fa-solid fa-house"></i> Contrôle de ${rawRoomName}`;
 
-      const deviceNames = Object.keys(devices).filter(deviceName => {
-        const deviceRoom = deviceName.split(' - ')[0];
-        const normalizedDevice = normalizeName(deviceRoom);
-
-        if (normalizedRoom === 'chambrene') {
-          return (normalizedDevice === 'chambrene' || normalizedDevice === 'chambrenordest');
-        }
-        if (normalizedRoom === 'chambreso') {
-          return (normalizedDevice === 'chambreso' || normalizedDevice === 'chambresudouest');
-        }
-        return normalizedDevice === normalizedRoom;
-      });
-
-      if (deviceNames.length === 0) continue;
-
-      const h2 = document.createElement('h2');
-      h2.innerHTML =`${typeInfo.title}`;
-      container.appendChild(h2);
-
-      const grid = document.createElement('div');
-      grid.className = 'device-grid';
-
-      deviceNames.forEach(deviceName => {
-        const deviceData = devices[deviceName];
-        const tile = createDeviceTile(typeKey, typeInfo, deviceName, deviceData);
-        grid.appendChild(tile);
-      });
-
-      container.appendChild(grid);
-      container.appendChild(document.createElement('hr'));
+    async function loadDevices() {
+      try {
+        const response = await fetch("../devices.json");
+        if (!response.ok) throw new Error("Erreur de chargement du JSON");
+        const data = await response.json();
+        return data;
+      } catch (err) {
+        console.error("❌ Erreur chargement JSON :", err);
+        return {};
+      }
     }
 
-    const hrs = container.querySelectorAll('hr');
-    if (hrs.length > 0) container.removeChild(hrs[hrs.length - 1]);
-  }
+    let DEVICES_JSON_DATA = {};
 
-  function createDeviceTile(typeKey, typeInfo, deviceName, deviceData) {
-    const tile = document.createElement('div');
-    const shortName = deviceName.split(' - ')[1] || deviceName;
+    document.addEventListener("DOMContentLoaded", async () => {
+      DEVICES_JSON_DATA = await loadDevices();
+      generateControls();
+    });
 
-    if (typeKey === 'clim') {
-      const initialClass = getClimClass(deviceData.mode, deviceData.state);
-      tile.className = `control-tile ${initialClass}`;
-      tile.innerHTML = `<i class="fa-solid ${typeInfo.icon}"></i><span>${shortName}</span>`;
+    function generateControls() {
+      const container = document.getElementById('controls-container');
+      container.innerHTML = '';
 
-      const btnContainer = document.createElement('div');
-      btnContainer.className = 'clim-buttons';
-      const actions = [
-        { label: 'ON', action: 'on' },
-        { label: 'OFF', action: 'off' },
-        { label: 'CHAUD', action: 'heat' },
-        { label: 'FROID', action: 'cool' }
-      ];
+      if (!rawRoomName) {
+        container.innerHTML = "<p>⚠️ Aucune pièce spécifiée dans l’URL.</p>";
+        return;
+      }
 
-      actions.forEach(btnInfo => {
-        const div = document.createElement('div');
-        div.textContent = btnInfo.label;
-        div.addEventListener('click', (e) => {
-          e.stopPropagation();
-          console.log(`🔥 Clic CLIM → ${deviceName} | Action = ${btnInfo.action}`);
-          sendClimCommand(deviceName, btnInfo.action, tile);
+      for (const typeKey in DEVICES_JSON_DATA) {
+        const typeInfo = DEVICE_TYPES[typeKey];
+        const devices = DEVICES_JSON_DATA[typeKey];
+        if (!typeInfo || !devices) continue;
+
+        const deviceNames = Object.keys(devices).filter(deviceName => {
+          const deviceRoom = deviceName.split(' - ')[0];
+          const normalizedDevice = normalizeName(deviceRoom);
+
+          if (normalizedRoom === 'chambrene') {
+            return (normalizedDevice === 'chambrene' || normalizedDevice === 'chambrenordest');
+          }
+          if (normalizedRoom === 'chambreso') {
+            return (normalizedDevice === 'chambreso' || normalizedDevice === 'chambresudouest');
+          }
+          return normalizedDevice === normalizedRoom;
         });
-        btnContainer.appendChild(div);
+
+        if (deviceNames.length === 0) continue;
+
+        const h2 = document.createElement('h2');
+        h2.innerHTML = `${typeInfo.title}`;
+        container.appendChild(h2);
+
+        const grid = document.createElement('div');
+        grid.className = 'device-grid';
+
+        deviceNames.forEach(deviceName => {
+          const deviceData = devices[deviceName];
+          const tile = createDeviceTile(typeKey, typeInfo, deviceName, deviceData);
+          grid.appendChild(tile);
+        });
+
+        container.appendChild(grid);
+        container.appendChild(document.createElement('hr'));
+      }
+
+      const hrs = container.querySelectorAll('hr');
+      if (hrs.length > 0) container.removeChild(hrs[hrs.length - 1]);
+    }
+
+    function createDeviceTile(typeKey, typeInfo, deviceName, deviceData) {
+      const tile = document.createElement('div');
+      const shortName = deviceName.split(' - ')[1] || deviceName;
+
+      if (typeKey === 'clim') {
+        const initialClass = getClimClass(deviceData.mode, deviceData.state);
+        tile.className = `control-tile ${initialClass}`;
+        tile.innerHTML = `<i class="fa-solid ${typeInfo.icon}"></i><span>${shortName}</span>`;
+
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'clim-buttons';
+        const actions = [
+          { label: 'ON', action: 'on' },
+          { label: 'OFF', action: 'off' },
+          { label: 'CHAUD', action: 'heat' },
+          { label: 'FROID', action: 'cool' }
+        ];
+
+        actions.forEach(btnInfo => {
+          const div = document.createElement('div');
+          div.textContent = btnInfo.label;
+          div.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sendClimCommand(deviceName, btnInfo.action, tile);
+          });
+          btnContainer.appendChild(div);
+        });
+
+        tile.appendChild(btnContainer);
+        return tile;
+      }
+
+      let displayState = getDisplayState(typeKey, deviceData.state);
+      let cssClass = getCssClass(typeKey, deviceData.state);
+
+      tile.className = `control-tile ${cssClass}`;
+      tile.innerHTML = `<i class="fa-solid ${typeInfo.icon}"></i><span>${shortName} (${displayState})</span>`;
+
+      tile.addEventListener('click', () => {
+        const nextAction = deviceData.state === 'ON' ? 'off' : 'on';
+        sendDeviceCommand(typeKey, deviceName, nextAction, tile, deviceData);
       });
 
-      tile.appendChild(btnContainer);
       return tile;
     }
 
-    let displayState = getDisplayState(typeKey, deviceData.state);
-    let cssClass = getCssClass(typeKey, deviceData.state);
-
-    tile.className = `control-tile ${cssClass}`;
-    tile.innerHTML = `<i class="fa-solid ${typeInfo.icon}"></i><span>${shortName} (${displayState})</span>`;
-
-    tile.addEventListener('click', () => {
-      const nextAction = deviceData.state === 'ON' ? 'off' : 'on';
-      console.log(`💡 Clic ${typeKey.toUpperCase()} → ${deviceName} | Action = ${nextAction}`);
-      sendDeviceCommand(typeKey, deviceName, nextAction, tile, deviceData);
-    });
-
-    return tile;
-  }
-
-  function sendDeviceCommand(typeKey, deviceName, action, tile, deviceData) {
-    let cgi = (typeKey === 'lamps') ? 'lampe.exe' : 'store.exe';
-    const url = `/cgi-bin/${cgi}?device=${encodeURIComponent(deviceName)}&action=${action}`;
-    console.log(`➡️ Envoi CGI : ${url}`);
-
-    fetch(url)
-      .then(r => {
-        console.log(`✅ Réponse HTTP : ${r.status}`);
-        return r.text();
-      })
-      .then(() => {
-        deviceData.state = (action === 'on') ? 'ON' : 'OFF';
-        updateTileVisual(tile, typeKey, deviceName, deviceData);
-        console.log(`🔄 État mis à jour → ${deviceName} = ${deviceData.state}`);
-      })
-      .catch(err => console.error("❌ Erreur CGI :", err));
-  }
-
-  async function sendClimCommand(deviceName, action, tile) {
-    const url = `/cgi-bin/clim.exe?device=${encodeURIComponent(deviceName)}&action=${action}`;
-    console.log(`🌬️ Envoi commande CLIM : ${url}`);
-    try {
-      const response = await fetch(url);
-      console.log(`✅ Réponse CLIM HTTP : ${response.status}`);
-      const updatedData = await loadDevices();
-      const climData = updatedData.clim?.[deviceName];
-
-      if (climData) {
-        const newClass = getClimClass(climData.mode, climData.state);
-        tile.className = `control-tile ${newClass}`;
-        console.log(`♻️ Nouvelle couleur CLIM : mode=${climData.mode}, état=${climData.state}`);
-      }
-    } catch (err) {
-      console.error("❌ Erreur CLIM :", err);
+    function sendDeviceCommand(typeKey, deviceName, action, tile, deviceData) {
+      let cgi = (typeKey === 'lamps') ? 'lampe.exe' : 'store.exe';
+      const url = `/cgi-bin/${cgi}?device=${encodeURIComponent(deviceName)}&action=${action}`;
+      fetch(url)
+        .then(r => r.text())
+        .then(() => {
+          deviceData.state = (action === 'on') ? 'ON' : 'OFF';
+          updateTileVisual(tile, typeKey, deviceName, deviceData);
+        })
+        .catch(err => console.error("❌ Erreur CGI :", err));
     }
-  }
 
-  function updateTileVisual(tile, typeKey, deviceName, deviceData) {
-    const shortName = deviceName.split(' - ')[1] || deviceName;
-    const displayState = getDisplayState(typeKey, deviceData.state);
-    const cssClass = getCssClass(typeKey, deviceData.state);
-    const icon = DEVICE_TYPES[typeKey].icon;
-    tile.className = `control-tile ${cssClass}`;
-    tile.innerHTML = `<i class="fa-solid ${icon}"></i><span>${shortName} (${displayState})</span>`;
-  }
+    async function sendClimCommand(deviceName, action, tile) {
+      const url = `/cgi-bin/clim.exe?device=${encodeURIComponent(deviceName)}&action=${action}`;
+      try {
+        const response = await fetch(url);
+        const updatedData = await loadDevices();
+        const climData = updatedData.clim?.[deviceName];
+        if (climData) {
+          const newClass = getClimClass(climData.mode, climData.state);
+          tile.className = `control-tile ${newClass}`;
+        }
+      } catch (err) {
+        console.error("❌ Erreur CLIM :", err);
+      }
+    }
 
-  function getDisplayState(typeKey, state) {
-    if (typeKey === 'store') return state === 'ON' ? 'OUVERT' : 'FERMÉ';
-    return state;
-  }
+    function updateTileVisual(tile, typeKey, deviceName, deviceData) {
+      const shortName = deviceName.split(' - ')[1] || deviceName;
+      const displayState = getDisplayState(typeKey, deviceData.state);
+      const cssClass = getCssClass(typeKey, deviceData.state);
+      const icon = DEVICE_TYPES[typeKey].icon;
+      tile.className = `control-tile ${cssClass}`;
+      tile.innerHTML = `<i class="fa-solid ${icon}"></i><span>${shortName} (${displayState})</span>`;
+    }
 
-  function getCssClass(typeKey, state) {
-    if (typeKey === 'lamps') return state === 'ON' ? 'light-on' : 'light-off';
-    if (typeKey === 'store') return state === 'ON' ? 'store-open' : 'store-closed';
-    return '';
-  }
+    function getDisplayState(typeKey, state) {
+      if (typeKey === 'store') return state === 'ON' ? 'OUVERT' : 'FERMÉ';
+      return state;
+    }
 
-  function getClimClass(mode, state) {
-    if (state === 'OFF') return 'clim-off';
-    if (mode === 1) return 'clim-heat';
-    if (mode === 2) return 'clim-cool';
-    return 'clim-on';
-  }
-</script>
+    function getCssClass(typeKey, state) {
+      if (typeKey === 'lamps') return state === 'ON' ? 'light-on' : 'light-off';
+      if (typeKey === 'store') return state === 'ON' ? 'store-open' : 'store-closed';
+      return '';
+    }
+
+    function getClimClass(mode, state) {
+      if (state === 'OFF') return 'clim-off';
+      if (mode === 1) return 'clim-heat';
+      if (mode === 2) return 'clim-cool';
+      return 'clim-on';
+    }
+  </script>
 </body>
 </html>

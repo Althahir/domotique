@@ -3,70 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <title>Smart home / Index</title>
+  <title>Smart Home - Index</title>
   <link rel="shortcut icon" href="../logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
-    body {
-     
-      font-family: 'Arial', sans-serif;
-      background-color: #FFFFFF;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      justify-content: center;
-      align-items: center;
+    /* ----- VARIABLES ----- */
+    :root {
+      --accent: #ff6600;
+      --bg-dark: #0a0a0d;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.15);
     }
 
-    header {
-      width: 100%;
-      /* background-color: #fff; */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background-color: var(--bg-dark);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 20px;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* ----- FOND ANIMÉ ----- */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .light {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent), transparent 70%);
+      filter: blur(100px);
+      opacity: 0.8;
+      animation: moveLight 14s infinite ease-in-out, colorShift 10s infinite alternate;
+    }
+
+    @keyframes moveLight {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(150px, -100px); }
+      50% { transform: translate(-120px, 150px); }
+      75% { transform: translate(90px, 70px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes colorShift {
+      0% { background: radial-gradient(circle, #ff6600, transparent 70%); }
+      25% { background: radial-gradient(circle, #ff8800, transparent 70%); }
+      50% { background: radial-gradient(circle, #ffaa00, transparent 70%); }
+      75% { background: radial-gradient(circle, #ff3300, transparent 70%); }
+      100% { background: radial-gradient(circle, #ff6600, transparent 70%); }
+    }
+
+    /* ----- HEADER ----- */
+    header {
+      text-align: center;
+      z-index: 1;
     }
 
     header img {
-      width: 300px;
-      height: auto;
+      width: 200px;
       border-radius: 20px;
-      /* box-shadow: 1px 8px transparent; */
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 20px var(--accent));
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
 
     header img:hover {
-      /* background-color: #FF9933; */
-      transform: translateY(-8px);
-      transition: all 0.3s ease-in-out;
-
-      /* box-shadow: 0 10px 25px rgba(0,0,0,0.25); */
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 40px var(--accent));
     }
 
     h1 {
-      background: linear-gradient(to right, #FFFFFF, #FF6600, #FFFFFF);
-      color: white;
-      padding: 20px 0;
-      margin: 20px 0 0 0;
-      width: 100%;
-      font-size: 2.5em;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-size: 3em;
+      color: var(--accent);
+      text-shadow: 0 0 30px rgba(255, 102, 0, 0.7);
+      margin-top: 10px;
+      letter-spacing: 3px;
     }
 
+    /* ----- TUILES ----- */
     .main-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 40px;
       margin-top: 60px;
+      z-index: 1;
     }
 
-    .main-tile {
+    /* .main-tile {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -74,55 +118,106 @@
       width: 260px;
       height: 200px;
       border-radius: 20px;
-      background-color: #FF6600;
-      color: white;
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 0 25px rgba(255,255,255,0.05);
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.3em;
+      color: white;
       transition: all 0.3s ease-in-out;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
+    } */
+.main-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 200px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  /* border: 1px solid rgba(255, 255, 255, 0.15); */
+  box-shadow:
+    3px 9px 11px 0px rgba(58, 58, 58, 0.3),
+    inset -11px -7px 12px rgba(37, 37, 37, 0.5);
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
 
-    .main-tile:hover {
-      background-color: #FF9933;
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
+/* Effet verre illuminé au survol */
+.main-tile:hover {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.12);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+  box-shadow:
+    4px 10px 15px 2px rgba(97, 97, 97, 0.5),
+    inset -8px -6px 14px rgba(0, 0, 0, 0.4)
+    /* 0 0 25px rgba(255, 102, 0, 0.4);  */
+}
+
 
     .main-tile i {
       font-size: 4em;
+      color: var(--accent);
       margin-bottom: 15px;
     }
 
+    .main-tile span {
+      font-size: 1.3em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ----- FOOTER ----- */
     footer {
       position: fixed;
       bottom: 10px;
       font-size: 0.9em;
-      color: #777;
+      color: #aaa;
+      z-index: 1;
     }
   </style>
 </head>
 
 <body>
+  <div class="background">
+    <!-- Lumières puissantes et nombreuses -->
+    <div class="light" style="top:5%; left:10%; animation-delay: 0s;"></div>
+    <div class="light" style="top:15%; left:40%; animation-delay: 1s;"></div>
+    <div class="light" style="top:20%; left:80%; animation-delay: 2s;"></div>
+    <div class="light" style="top:35%; left:25%; animation-delay: 3s;"></div>
+    <div class="light" style="top:40%; left:70%; animation-delay: 4s;"></div>
+    <div class="light" style="top:55%; left:10%; animation-delay: 5s;"></div>
+    <div class="light" style="top:60%; left:50%; animation-delay: 6s;"></div>
+    <div class="light" style="top:70%; left:80%; animation-delay: 7s;"></div>
+    <div class="light" style="top:75%; left:30%; animation-delay: 8s;"></div>
+    <!-- <div class="light" style="top:85%; left:60%; animation-delay: 9s;"></div>
+    <div class="light" style="top:10%; left:60%; animation-delay: 10s;"></div>
+    <div class="light" style="top:50%; left:5%; animation-delay: 11s;"></div>
+    <div class="light" style="top:80%; left:15%; animation-delay: 12s;"></div>
+    <div class="light" style="top:30%; left:90%; animation-delay: 13s;"></div>
+    <div class="light" style="top:65%; left:40%; animation-delay: 14s;"></div>
+    <div class="light" style="top:90%; left:70%; animation-delay: 15s;"></div> -->
+  </div>
+
   <header>
     <img src="../logo.png" alt="Logo domotique">
-    <h1>SMART HOME</h1>
+    <h1>Smart Home</h1>
   </header>
 
   <div class="main-grid">
-    <!-- Tuile 1 : Gestion par pièce -->
     <a href="./gestion_piece.html" class="main-tile">
       <i class="fa-solid fa-house"></i>
       <span>Gestion par pièce</span>
     </a>
 
-    <!-- Tuile 2 : Scénarios -->
     <a href="./scenario.html" class="main-tile">
       <i class="fa-solid fa-diagram-project"></i>
       <span>Scénarios</span>
     </a>
   </div>
 
-  <footer>© 2025 - Système Domotique Intelligent</footer>
+  <footer>2025 - Tous droits réservés à Smart Home© Corporation</footer>
 </body>
 </html>

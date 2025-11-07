@@ -1,5 +1,5 @@
 {
-  "port": 49644,
+  "port": 50575,
   "lamps": {
     "Cuisine - Luminaire entrée": {
       "ip": "192.168.0.100",
@@ -514,52 +514,52 @@
     "Salle de jeux - Applique nord ouest": {
       "ip": "192.168.0.110",
       "input": "00011100",
-      "state": "ON "
+      "state": "OFF"
     },
     "Salle de jeux - Applique nord est": {
       "ip": "192.168.0.110",
       "input": "00011101",
-      "state": "ON "
+      "state": "OFF"
     },
     "Salle de jeux - Applique ouest": {
       "ip": "192.168.0.110",
       "input": "00011110",
-      "state": "ON "
+      "state": "OFF"
     },
     "Salle de jeux - Applique sud ouest": {
       "ip": "192.168.0.110",
       "input": "00011111",
-      "state": "ON "
+      "state": "OFF"
     },
     "Salle de jeux - Applique sud est": {
       "ip": "192.168.0.110",
       "input": "00100000",
-      "state": "ON "
+      "state": "OFF"
     },
     "Salle de jeux - Applique est": {
       "ip": "192.168.0.110",
       "input": "00100001",
-      "state": "ON "
+      "state": "OFF"
     },
     "Chambre nord ouest - Luminaire central": {
       "ip": "192.168.0.110",
       "input": "00001101",
-      "state": "ON "
+      "state": "OFF"
     },
     "Chambre nord ouest - Dressing - Luminaire central": {
       "ip": "192.168.0.110",
       "input": "00001110",
-      "state": "ON "
+      "state": "OFF"
     },
     "Chambre nord ouest - Salle de bain - Luminaire central": {
       "ip": "192.168.0.110",
       "input": "00001111",
-      "state": "ON "
+      "state": "OFF"
     },
     "Chambre nord ouest - Applique nord": {
       "ip": "192.168.0.110",
       "input": "00101000",
-      "state": "ON "
+      "state": "OFF"
     },
     "Chambre nord ouest - Applique sud": {
       "ip": "192.168.0.110",
@@ -626,12 +626,12 @@
     "Garages nord - Porte basculante nord": {
       "ip": "192.168.0.103",
       "input": "00000110",
-      "state": "ON "
+      "state": "OFF"
     },
     "Garages ouest - Porte basculante est": {
       "ip": "192.168.0.103",
       "input": "00001001",
-      "state": "ON "
+      "state": "OFF"
     },
     "Salon - Volet roulant fenêtre sud": {
       "ip": "192.168.0.103",
@@ -641,7 +641,7 @@
     "Salle à manger - Volet roulant bow window sud fenêtre est": {
       "ip": "192.168.0.103",
       "input": "00011111",
-      "state": "ON "
+      "state": "OFF"
     },
     "Chambre invités - Volet roulant porte fenêtre terrasse": {
       "ip": "192.168.0.103",
@@ -681,7 +681,7 @@
     "Garages nord - Porte basculante sud": {
       "ip": "192.168.0.103",
       "input": "00000111",
-      "state": "ON "
+      "state": "OFF"
     },
     "Garages ouest - Volet roulant fenêtre est": {
       "ip": "192.168.0.103",
@@ -691,7 +691,7 @@
     "Garages ouest - Porte basculante ouest": {
       "ip": "192.168.0.103",
       "input": "00001010",
-      "state": "ON "
+      "state": "OFF"
     },
     "Garages ouest - Volet roulant bow window ouest fenêtre nord": {
       "ip": "192.168.0.103",
@@ -884,28 +884,6 @@
       "state": "ON"
     }
   },
-  "prises": {
-    "Cuisine - Prise ouest porte terrasse": {
-      "ip": "192.168.0.101",
-      "input": "00000001",
-      "state": "ON"
-    },
-    "Cuisine - Prise est porte terrasse": {
-      "ip": "192.168.0.101",
-      "input": "00000010",
-      "state": "ON"
-    },
-    "Cuisine - Prise nord îlot central": {
-      "ip": "192.168.0.101",
-      "input": "00000011",
-      "state": "ON"
-    },
-    "Cuisine - Prise sud îlot central": {
-      "ip": "192.168.0.101",
-      "input": "00000100",
-      "state": "ON"
-    }
-  },
   "clim": {
     "Suite parentale - Climatisation réversible": {
       "ip": "192.168.0.102",
@@ -934,7 +912,7 @@
     "Cuisine - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001101",
-      "state": "ON",
+      "state": "OFF",
       "mode": 1
     },
     "Suite parentale - Salle de bain - Climatisation réversible": {
@@ -946,7 +924,7 @@
     "Suite parentale - Dressing - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00000011",
-      "state": "ON ",
+      "state": "OFF",
       "mode": 1
     },
     "Chambre invités - Climatisation réversible": {
@@ -970,13 +948,13 @@
     "Garages nord - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00000111",
-      "state": "ON ",
+      "state": "OFF",
       "mode": 1
     },
     "Garages ouest - Climatisation réversible": {
       "ip": "192.168.0.102",
       "input": "00001000",
-      "state": "ON ",
+      "state": "OFF",
       "mode": 1
     },
     "WC - Climatisation réversible (RDC)": {
@@ -1048,7 +1026,7 @@
     "Chambre sud ouest - Salle de bain - Climatisation réversible": {
       "ip": "192.168.0.112",
       "input": "00001001",
-      "state": "ON ",
+      "state": "OFF",
       "mode": 1
     },
     "Salle de jeux - Climatisation réversible": {
@@ -1084,7 +1062,7 @@
     "Couloir circulaire - Climatisation réversible": {
       "ip": "192.168.0.112",
       "input": "00001111",
-      "state": "ON ",
+      "state": "OFF",
       "mode": 1
     }
   }
