@@ -11,6 +11,13 @@
     :root {
       --accent: #ff6600;
       --bg-dark: #0a0a0d;
+      /* Ajout des variables manquantes si nécessaire pour la cohérence */
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -28,7 +35,7 @@
       position: relative;
     }
 
-    /* ----- FOND ANIMÉ ----- */
+    /* ----- FOND ANIMÉ (Mis à jour) ----- */
     .background {
       position: fixed;
       top: 0;
@@ -40,14 +47,28 @@
     }
 
     .light {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--accent), transparent 70%);
-      filter: blur(100px);
-      opacity: 0.8;
-      animation: moveLight 14s infinite ease-in-out, colorShift 10s infinite alternate;
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        /* background géré par les classes JS */
+        filter: blur(5px); /* Ajusté pour correspondre à l'autre page */
+        opacity: 0.8;
+        animation: moveLight 14s infinite ease-in-out, colorShift 10s infinite alternate;
+    }
+    
+    /* Classes de couleur pour les lumières (ajoutées) */
+    .light-color-1 {
+        background: radial-gradient(circle, #ff6600, transparent 70%); 
+    }
+    .light-color-2 {
+        background: radial-gradient(circle, #ff8800, transparent 70%); 
+    }
+    .light-color-3 {
+        background: radial-gradient(circle, #ffaa00, transparent 70%); 
+    }
+    .light-color-4 {
+        background: radial-gradient(circle, #ff3300, transparent 70%); 
     }
 
     @keyframes moveLight {
@@ -66,10 +87,9 @@
       100% { background: radial-gradient(circle, #ff6600, transparent 70%); }
     }
 
-    /* ----- TITRE ----- */
+    /* ----- TITRE (inchangé) ----- */
     h1 {
       color: var(--accent);
-      /* color: var(--accent); */
       font-size: 2.5em;
       letter-spacing: 2px;
       display: flex;
@@ -86,18 +106,20 @@
       filter: drop-shadow(0 0 20px var(--accent));
     }
 
-    /* ----- SECTIONS ----- */
+    /* ----- SECTIONS (Mis à jour avec Glassmorphism) ----- */
     .floor-section {
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 20px;
-      padding: 30px 25px;
-      margin: 40px auto;
-      max-width: 1200px;
-      backdrop-filter: blur(12px);
-      box-shadow:
-        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
-        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
-      z-index: 1;
+background: rgba(235, 233, 233, 0.9);
+        border-radius: 20px;
+        padding: 30px 25px;
+        margin: 40px auto;
+        max-width: 1200px;
+        backdrop-filter: blur(20px) saturate(150%); /* Flou intense */
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+        box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.4), 
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
+        z-index: 1;
     }
 
     .floor-section h2 {
@@ -117,7 +139,7 @@
       gap: 25px;
     }
 
-    /* ----- TUILES ----- */
+    /* ----- TUILES (Mis à jour avec Glassmorphism) ----- */
     .piece-tile {
       display: flex;
       flex-direction: column;
@@ -126,25 +148,31 @@
       width: 180px;
       height: 140px;
       border-radius: 20px;
-      background: var(--accent);
+      
+      /* Style Glassmorphism pour les sous-tuiles */
+      background: #0a0a0dad; 
       backdrop-filter: blur(10px);
       box-shadow:
-        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
-        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: white;
       text-decoration: none;
       font-weight: 600;
       text-align: center;
       transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
     }
 
     .piece-tile:hover {
-      transform: scale(1.05);
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow:
-        4px 10px 15px 2px rgba(97, 97, 97, 0.5),
-        inset -8px -6px 14px rgba(0, 0, 0, 0.4);
-      color: var(--accent);
+        transform: scale(1.05); 
+        background: var(--accent); /* Devient accentuée au survol */
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.6), /* Ombre plus marquée */
+            0 0 30px rgba(255, 102, 0, 0.5); /* Lueur accentuée au survol */
+        border-color: rgba(255, 255, 255, 0.3);
+        color: white; /* Conserver le texte blanc au survol */
     }
 
     .piece-tile i {
@@ -155,52 +183,107 @@
     }
 
     .piece-tile:hover i {
-      color: var(--accent);
+      color: white; /* Conserver l'icône blanche au survol (car le fond devient accent) */
     }
 
-    /* ----- BOUTON RETOUR ----- */
-    .back-button {
-      display: inline-block;
-      margin: 40px 0 20px 0;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.08);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-      box-shadow:
-        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
-        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
-      transition: all 0.3s ease-in-out;
-      z-index: 1;
-    }
+    /* ----- BOUTON RETOUR (Mis à jour avec Glassmorphism) ----- */
+.back-button {
+    /* Propriétés de positionnement et affichage */
+    display: inline-flex; /* Permet d'aligner l'icône et le texte */
+    align-items: center;
+    gap: 8px; /* Espace entre l'icône et le texte */
+    
+    /* Apparence et dimensions */
+    padding: 12px 24px;
+    margin-top: 40px; /* Espace après le contenu principal */
+    
+    /* Styles Glassmorphism */
+    background: rgba(255, 255, 255, 0.08); /* Fond léger, semi-transparent */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* L'effet de flou qui définit le Glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    /* Ombre et typographie */
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    font-size: 1em;
+    font-weight: 500;
+    
+    /* Transition et Z-index */
+    transition: all 0.3s ease-in-out;
+    z-index: 10; /* Important pour le faire flotter au-dessus du fond animé */
+    border: none;
+}
 
-    .back-button:hover {
-      transform: scale(1.05);
-      color: var(--accent);
-    }
+.back-button:hover {
+    transform: scale(1.05);
+    background:var(--accent); /* Plus lumineux au survol */
+    color: white; /* Couleur accentuée pour le texte */
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        0 0 15px var(--accent); /* Ajout d'une lueur accentuée */
+}
+
+.back-button i {
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.back-button:hover i {
+    color: white;
+}
 
   </style>
 </head>
 
 <body>
-  <!-- Lumières du fond -->
-  <div class="background">
-    <div class="light" style="top:5%; left:10%; animation-delay:0s;"></div>
-    <div class="light" style="top:15%; left:40%; animation-delay:1s;"></div>
-    <div class="light" style="top:25%; left:80%; animation-delay:2s;"></div>
-    <div class="light" style="top:35%; left:25%; animation-delay:3s;"></div>
-    <div class="light" style="top:50%; left:70%; animation-delay:4s;"></div>
-    <div class="light" style="top:60%; left:10%; animation-delay:5s;"></div>
-    <div class="light" style="top:70%; left:50%; animation-delay:6s;"></div>
-    <div class="light" style="top:80%; left:85%; animation-delay:7s;"></div>
-  </div>
+      <div class="background">
+        <div class="light" style="top:5%; left:10%; animation-delay:0s;"></div> 
+        <div class="light" style="top:25%; left:60%; animation-delay:1s;"></div>
+        <div class="light" style="top:65%; left:30%; animation-delay:1.25s;"></div>
+        <div class="light" style="top:80%; left:80%; animation-delay:1.5s;"></div>
+        <div class="light" style="top:10%; left:80%; animation-delay:1.75s;"></div>
+        <div class="light" style="top:50%; left:90%; animation-delay:2s;"></div>
+        <div class="light" style="top:70%; left:5%; animation-delay:2.25s;"></div>
+        <div class="light" style="top:85%; left:40%; animation-delay:2.5s;"></div>
+        <div class="light" style="top:40%; left:20%; animation-delay:2.75s;"></div>
+        <div class="light" style="top:15%; left:45%; animation-delay:3s;"></div>
+        <div class="light" style="top:55%; left:75%; animation-delay:3.25s;"></div>
+        <div class="light" style="top:90%; left:15%; animation-delay:3.5s;"></div>
 
-  <!-- Titre -->
-  <h1><img src="../logo.png" alt="Logo"> Smart Home – Gestion du Rez-de-chaussée</h1>
+        <div class="light" style="top:30%; left:5%; animation-delay:3.75s;"></div>
+        <div class="light" style="top:5%; left:50%; animation-delay:4s;"></div>
+        <div class="light" style="top:45%; left:95%; animation-delay:4.25s;"></div>
+        <div class="light" style="top:75%; left:70%; animation-delay:4.5s;"></div>
+        <div class="light" style="top:20%; left:30%; animation-delay:4.75s;"></div>
+        <div class="light" style="top:60%; left:15%; animation-delay:5s;"></div>
+        <div class="light" style="top:50%; left:40%; animation-delay:5.25s;"></div>
+        <div class="light" style="top:95%; left:60%; animation-delay:5.5s;"></div>
+        <div class="light" style="top:35%; left:85%; animation-delay:5.75s;"></div>
+        <div class="light" style="top:80%; left:10%; animation-delay:6s;"></div>
+        <div class="light" style="top:10%; left:65%; animation-delay:6.25s;"></div>
+        <div class="light" style="top:70%; left:45%; animation-delay:6.5s;"></div>
+        
+        <div class="light" style="top:15%; left:5%; animation-delay:6.75s;"></div>
+        <div class="light" style="top:80%; left:25%; animation-delay:7s;"></div>
+        <div class="light" style="top:55%; left:10%; animation-delay:7.25s;"></div>
+        <div class="light" style="top:20%; left:90%; animation-delay:7.5s;"></div>
+        <div class="light" style="top:75%; left:95%; animation-delay:7.75s;"></div>
+        <div class="light" style="top:30%; left:70%; animation-delay:8s;"></div>
+        <div class="light" style="top:90%; left:75%; animation-delay:8.25s;"></div>
+        <div class="light" style="top:60%; left:55%; animation-delay:8.5s;"></div>
+        <div class="light" style="top:5%; left:30%; animation-delay:8.75s;"></div>
+        <div class="light" style="top:45%; left:65%; animation-delay:9s;"></div>
+        <div class="light" style="top:95%; left:5%; animation-delay:9.25s;"></div>
+        <div class="light" style="top:65%; left:85%; animation-delay:9.5s;"></div>
+    </div>
 
-  <!-- Rez-de-chaussée -->
-  <div class="floor-section">
+    <h1><img src="../logo.png" alt="Logo"> Smart Home – Gestion du Rez-de-chaussée</h1>
+
+    <div class="floor-section">
     <div class="piece-grid">
       <a href="piece.html?room=Cuisine" class="piece-tile"><i class="fa-solid fa-utensils"></i> <span>Cuisine</span></a>
       <a href="piece.html?room=Salon" class="piece-tile"><i class="fa-solid fa-couch"></i> <span>Salon</span></a>
@@ -216,7 +299,19 @@
     </div>
   </div>
 
-  <!-- Bouton retour -->
-  <a href="./dashboard.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+    <a href="./dashboard.html" class="back-button"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+  
+  <script>
+        // CODE JAVASCRIPT POUR L'ATTRIBUTION ALÉATOIRE DES COULEURS
+        document.addEventListener('DOMContentLoaded', () => {
+            const lights = document.querySelectorAll('.light');
+            const numColors = 4;
+            
+            lights.forEach(light => {
+                const randomColorIndex = Math.floor(Math.random() * numColors) + 1; 
+                light.classList.add(`light-color-${randomColorIndex}`);
+            });
+        });
+    </script>
 </body>
 </html>

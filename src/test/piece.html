@@ -10,6 +10,14 @@
     :root {
       --accent: #ff6600;
       --bg-dark: #0a0a0d;
+      /* Variables pour la nouvelle cohérence des styles */
+      --glass-bg-light: rgba(235, 233, 233, 0.9); /* Nouveau fond pour le conteneur */
+      --glass-bg-dark: #0a0a0dad; /* Nouveau fond pour les tuiles sombres */
+      --glass-border: rgba(255, 255, 255, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -22,13 +30,13 @@
       flex-direction: column;
       align-items: center;
       position: relative;
-      /* overflow: hidden; */
+      overflow-x: hidden; /* Assurez-vous que le fond ne cause pas de scroll horizontal */
       min-height: 100vh;
     }
 
-    /* ----- FOND ANIMÉ ----- */
+    /* ----- FOND ANIMÉ (Mis à jour avec les nouveaux styles) ----- */
     .background {
-      position: absolute;
+      position: fixed; /* Mieux pour un fond plein écran */
       top: 0;
       left: 0;
       width: 100%;
@@ -42,10 +50,24 @@
       width: 300px;
       height: 300px;
       border-radius: 50%;
-      background: radial-gradient(circle, var(--accent), transparent 70%);
-      filter: blur(100px);
+      /* background géré par les classes JS */
+      filter: blur(5px); /* Ajusté pour cohérence */
       opacity: 0.8;
-      animation: moveLight 14s infinite ease-in-out, colorShift 10s infinite alternate;
+      animation: moveLight 14s infinite ease-in-out; 
+    }
+
+    /* Classes de couleur pour les lumières (ajoutées) */
+    .light-color-1 {
+        background: radial-gradient(circle, #ff6600, transparent 70%); 
+    }
+    .light-color-2 {
+        background: radial-gradient(circle, #ff8800, transparent 70%); 
+    }
+    .light-color-3 {
+        background: radial-gradient(circle, #ffaa00, transparent 70%); 
+    }
+    .light-color-4 {
+        background: radial-gradient(circle, #ff3300, transparent 70%); 
     }
 
     @keyframes moveLight {
@@ -55,27 +77,23 @@
       75% { transform: translate(90px, 70px); }
       100% { transform: translate(0, 0); }
     }
+    /* colorShift supprimé, géré par JS/classes */
 
-    @keyframes colorShift {
-      0% { background: radial-gradient(circle, #ff6600, transparent 70%); }
-      25% { background: radial-gradient(circle, #ff8800, transparent 70%); }
-      50% { background: radial-gradient(circle, #ffaa00, transparent 70%); }
-      75% { background: radial-gradient(circle, #ff3300, transparent 70%); }
-      100% { background: radial-gradient(circle, #ff6600, transparent 70%); }
-    }
-
-    /* ----- CONTAINER ----- */
+    /* ----- CONTAINER (Mis à jour avec le nouveau style light) ----- */
     .container {
-      width: 90%;
-      max-width: 1200px;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 20px;
-      padding: 40px;
-      backdrop-filter: blur(12px);
-      box-shadow:
-        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
-        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
-      z-index: 1;
+        width: 90%;
+        max-width: 1200px;
+        background: var(--glass-bg-light); /* Nouveau fond clair */
+        color: var(--bg-dark); /* Texte devient sombre sur fond clair */
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(20px) saturate(150%);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+        box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.4), 
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+        border: 1px solid rgba(255, 255, 255, 0.2); 
+        z-index: 1;
     }
 
     h1 {
@@ -87,7 +105,7 @@
     }
 
     h2 {
-      color: var(--accent);
+      color: var(--bg-dark); /* Reste sombre */
       font-size: 1.6em;
       margin-top: 40px;
       margin-bottom: 15px;
@@ -103,40 +121,50 @@
       margin-bottom: 40px;
     }
 
-    /* ----- CARTE DE CONTRÔLE (EFFET VERRE) ----- */
+    /* ----- CARTE DE CONTRÔLE (Mis à jour avec le nouveau style dark) ----- */
     .control-tile {
-      width: 230px;
-      height: 150px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      box-shadow:
-        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
-        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 600;
-      text-align: center;
-      transition: all 0.3s ease-in-out;
+        width: 230px;
+        height: 150px;
+        border-radius: 20px;
+        
+        /* Nouveau style de tuile sombre */
+        background: var(--glass-bg-dark); 
+        backdrop-filter: blur(10px);
+        box-shadow:
+            0 4px 8px rgba(0, 0, 0, 0.3),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white; /* Reste blanc sur tuile sombre */
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
     }
 
     .control-tile:hover {
-      transform: scale(1.03);
-      /* background: rgba(255, 255, 255, 0.12);
-      box-shadow:
-        4px 10px 15px 2px rgba(97, 97, 97, 0.5),
-        inset -8px -6px 14px rgba(0, 0, 0, 0.4),
-        0 0 25px rgba(255, 102, 0, 0.3); */
+        transform: scale(1.05); /* Échelle plus prononcée comme les autres tuiles */
+        /* background: var(--accent);  */
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.6), 
+            0 0 30px rgba(255, 102, 0, 0.5); 
+        border-color: rgba(255, 255, 255, 0.3);
+        color: white;
     }
 
     .control-tile i {
       font-size: 2.8em;
       margin-bottom: 8px;
-      color: var(--accent);
+      color: white; /* Icône orange par défaut */
+      transition: color 0.3s;
+    }
+
+    .control-tile:hover i {
+      color: white; /* Icône blanche au survol sur fond orange */
     }
 
     .clim-buttons {
@@ -154,107 +182,125 @@
       padding: 4px 0;
       border-radius: 6px;
       transition: background-color 0.2s;
+      color: white; /* Texte des boutons clim toujours blanc */
     }
 
     .clim-buttons div:hover {
       background-color: rgba(255, 255, 255, 0.25);
     }
 
-    /* ----- ÉTATS DES APPAREILS ----- */
-/* ----- ÉTATS DES APPAREILS ----- */
-.light-on {
-  background: rgba(255, 102, 0, 0.9);
-  box-shadow:
-    0 0 25px rgba(255, 102, 0, 0.8),
-    inset 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.light-off {
-  background: rgba(255, 255, 255, 0.05);
-  opacity: 0.8;
-}
-
-.store-open {
-  background: rgba(255, 102, 0, 0.9);
-  box-shadow:
-    0 0 25px rgba(255, 102, 0, 0.8),
-    inset 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.store-closed {
-  background: rgba(255, 255, 255, 0.05);
-  opacity: 0.8;
-}
-
-/* .clim-on {
-  background: rgba(46, 204, 113, 0.9);
-  box-shadow:
-    0 0 25px rgba(46, 204, 113, 0.8),
-    inset 0 0 15px rgba(255, 255, 255, 0.2);
-} */
-
-.clim-off {
-  background: rgba(255, 255, 255, 0.05);
-  opacity: 0.8;
-}
-
-.clim-heat {
-  background: rgba(255, 102, 0, 0.9);
-  box-shadow:
-    0 0 25px rgba(255, 102, 0, 0.8),
-    inset 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.clim-cool {
-  background: rgba(52, 152, 219, 0.9);
-  box-shadow:
-    0 0 25px rgba(52, 152, 219, 0.8),
-    inset 0 0 15px rgba(255, 255, 255, 0.2);
-}
-.light-on i,
-.store-open i,
-.clim-heat i,
-.clim-cool i{
-  color: white !important;
-}
-
-
-
-    /* ----- BOUTON RETOUR ----- */
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.08);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
+    /* ----- ÉTATS DES APPAREILS (Ajusté pour le fond dark) ----- */
+    .light-on, .store-open, .clim-heat, .clim-cool {
+      color: white !important;
+      background: var(--accent); /* Devient orange ON/HEAT */
       box-shadow:
-        3px 9px 11px 0px rgba(58, 58, 58, 0.3),
-        inset -11px -7px 12px rgba(37, 37, 37, 0.5);
-      transition: all 0.3s ease-in-out;
+        0 0 25px rgba(255, 102, 0, 0.8),
+        inset 0 0 15px rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .light-off, .store-closed, .clim-off {
+      background: var(--glass-bg-dark); /* Reste sur le fond sombre de la tuile */
+      opacity: 1;
+      color: white;
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+    }
+    
+    .clim-cool {
+      background: rgba(52, 152, 219, 0.9);
+      box-shadow:
+        0 0 25px rgba(52, 152, 219, 0.8),
+        inset 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .light-on i,
+    .store-open i,
+    .clim-heat i,
+    .clim-cool i{
+      color: white !important; /* Force l'icône en blanc quand l'appareil est ON/ACTIF */
+    }
+
+    .light-off i,
+    .store-closed i,
+    .clim-off i{
+      color: white !important; /* Rétablit l'icône en orange quand OFF/INACTIF */
+    }
+
+    /* ----- BOUTON RETOUR (Mis à jour avec Glassmorphism) ----- */
+    .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        
+        /* Style Glassmorphism pour le bouton */
+        background: rgba(255, 255, 255, 0.08);
+        color:var(--bg-dark);
+        text-decoration: none;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow:
+            0 4px 8px rgba(0, 0, 0, 0.3),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+        transition: all 0.3s ease-in-out;
+        z-index: 10;
     }
 
     .back-button:hover {
-      transform: scale(1.03);
-      color:#ff6600
+        transform: scale(1.05); /* Plus prononcé */
+        background: rgba(255, 255, 255, 0.15);
+        color: var(--accent); 
+        box-shadow:
+            0 6px 12px rgba(0, 0, 0, 0.5),
+            0 0 15px var(--accent); /* Ajout d'une lueur accentuée */
     }
 
   </style>
 </head>
 
 <body>
-  <div class="background">
-    <!-- mêmes lumières que sur la page d’accueil -->
-    <div class="light" style="top:5%; left:10%; animation-delay:0s;"></div>
-    <div class="light" style="top:15%; left:40%; animation-delay:1s;"></div>
-    <div class="light" style="top:25%; left:80%; animation-delay:2s;"></div>
-    <div class="light" style="top:35%; left:25%; animation-delay:3s;"></div>
-    <div class="light" style="top:50%; left:70%; animation-delay:4s;"></div>
-    <div class="light" style="top:60%; left:10%; animation-delay:5s;"></div>
-    <div class="light" style="top:70%; left:50%; animation-delay:6s;"></div>
-    <div class="light" style="top:80%; left:85%; animation-delay:7s;"></div>
+    <div class="background">
+        <div class="light" style="top:5%; left:10%; animation-delay:0s;"></div> 
+        <div class="light" style="top:25%; left:60%; animation-delay:1s;"></div>
+        <div class="light" style="top:65%; left:30%; animation-delay:1.25s;"></div>
+        <div class="light" style="top:80%; left:80%; animation-delay:1.5s;"></div>
+        <div class="light" style="top:10%; left:80%; animation-delay:1.75s;"></div>
+        <div class="light" style="top:50%; left:90%; animation-delay:2s;"></div>
+        <div class="light" style="top:70%; left:5%; animation-delay:2.25s;"></div>
+        <div class="light" style="top:85%; left:40%; animation-delay:2.5s;"></div>
+        <div class="light" style="top:40%; left:20%; animation-delay:2.75s;"></div>
+        <div class="light" style="top:15%; left:45%; animation-delay:3s;"></div>
+        <div class="light" style="top:55%; left:75%; animation-delay:3.25s;"></div>
+        <div class="light" style="top:90%; left:15%; animation-delay:3.5s;"></div>
+
+        <div class="light" style="top:30%; left:5%; animation-delay:3.75s;"></div>
+        <div class="light" style="top:5%; left:50%; animation-delay:4s;"></div>
+        <div class="light" style="top:45%; left:95%; animation-delay:4.25s;"></div>
+        <div class="light" style="top:75%; left:70%; animation-delay:4.5s;"></div>
+        <div class="light" style="top:20%; left:30%; animation-delay:4.75s;"></div>
+        <div class="light" style="top:60%; left:15%; animation-delay:5s;"></div>
+        <div class="light" style="top:50%; left:40%; animation-delay:5.25s;"></div>
+        <div class="light" style="top:95%; left:60%; animation-delay:5.5s;"></div>
+        <div class="light" style="top:35%; left:85%; animation-delay:5.75s;"></div>
+        <div class="light" style="top:80%; left:10%; animation-delay:6s;"></div>
+        <div class="light" style="top:10%; left:65%; animation-delay:6.25s;"></div>
+        <div class="light" style="top:70%; left:45%; animation-delay:6.5s;"></div>
+        
+        <div class="light" style="top:15%; left:5%; animation-delay:6.75s;"></div>
+        <div class="light" style="top:80%; left:25%; animation-delay:7s;"></div>
+        <div class="light" style="top:55%; left:10%; animation-delay:7.25s;"></div>
+        <div class="light" style="top:20%; left:90%; animation-delay:7.5s;"></div>
+        <div class="light" style="top:75%; left:95%; animation-delay:7.75s;"></div>
+        <div class="light" style="top:30%; left:70%; animation-delay:8s;"></div>
+        <div class="light" style="top:90%; left:75%; animation-delay:8.25s;"></div>
+        <div class="light" style="top:60%; left:55%; animation-delay:8.5s;"></div>
+        <div class="light" style="top:5%; left:30%; animation-delay:8.75s;"></div>
+        <div class="light" style="top:45%; left:65%; animation-delay:9s;"></div>
+        <div class="light" style="top:95%; left:5%; animation-delay:9.25s;"></div>
+        <div class="light" style="top:65%; left:85%; animation-delay:9.5s;"></div>
   </div>
 
   <div class="container">
@@ -264,7 +310,19 @@
   </div>
 
   <script>
-    /* Ton script JavaScript d'origine intact */
+        // CODE JAVASCRIPT POUR L'ATTRIBUTION ALÉATOIRE DES COULEURS
+        document.addEventListener('DOMContentLoaded', () => {
+            const lights = document.querySelectorAll('.light');
+            const numColors = 4;
+
+            lights.forEach(light => {
+                const randomColorIndex = Math.floor(Math.random() * numColors) + 1; 
+                light.classList.add(`light-color-${randomColorIndex}`);
+            });
+        });
+
+
+    /* Ton script JavaScript d'origine pour la logique des appareils */
     const DEVICE_TYPES = {
       lamps: { title: "Lumières", icon: "fa-lightbulb" },
       store: { title: "Volets Roulants", icon: "fa-house-chimney-window" },
