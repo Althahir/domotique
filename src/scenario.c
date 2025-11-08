@@ -182,9 +182,14 @@ void send_group_to_simulator(const char *host, int port, unsigned char **frames,
 // 🔸 perform_action_all()
 // Applique une même action (ON/OFF, OPEN/CLOSE, etc.) à tous les appareils
 // d’un groupe (lamps, store, clim).
-// Gère aussi le mode chauffage/climatisation.
+// - Génère toutes les trames en mémoire (une par appareil)
+// - Envoie le tout en une seule connexion TCP au simulateur
+// - Met à jour le JSON en RAM
 // ===========================================================================
-void perform_action_all(char *json, const char *group, const char *action, const char *mode, const char *sim_host, int sim_port) {
+
+void perform_action_all(char *json, const char *group, const char *action,
+                        const char *mode, const char *sim_host, int sim_port)
+{
     char pattern[128];
     snprintf(pattern, sizeof(pattern), "\"%s\"", group);
     char *grp = strstr(json, pattern);
@@ -192,9 +197,9 @@ void perform_action_all(char *json, const char *group, const char *action, const
     grp = strchr(grp, '{');
     if (!grp) return;
 
-    unsigned char *frames[1000];  // Tableau des trames à envoyer
+    unsigned char *frames[1000];   // tableau des trames à envoyer
     int frame_count = 0;
-    size_t frame_len = 13;        // Longueur par défaut (13 octets)
+    size_t frame_len = 13;         // longueur par défaut
 
     char *p = grp;
     while ((p = strchr(p, '\"')) != NULL) {
@@ -209,62 +214,64 @@ void perform_action_all(char *json, const char *group, const char *action, const
         if (!get_device_info(group, name, ip, input, state))
             continue;
 
-        unsigned char *msg = malloc(14);
-        memset(msg, 0, 14);
+        unsigned char *msg = calloc(1, 14);   // alloue et initialise à 0
+        if (!msg) continue;
 
-        // Encode IP automate
-        unsigned int a, b, c, d;
-        sscanf(ip, "%u.%u.%u.%u", &a, &b, &c, &d);
-        msg[0] = a; msg[1] = b; msg[2] = c; msg[3] = d;
+        // -- Adresse IP (4 octets)
+        unsigned int a,b,c,d;
+        sscanf(ip, "%u.%u.%u.%u", &a,&b,&c,&d);
+        msg[0]=a; msg[1]=b; msg[2]=c; msg[3]=d;
 
-        // Encode bits automate
-        for (int k = 0; k < 8; k++)
-            msg[4 + k] = (input[k] == '1') ? 1 : 0;
+        // -- Bits automate (8 octets)
+        for (int k=0; k<8; k++)
+            msg[4+k] = (input[k]=='1') ? 1 : 0;
 
-        /* --- Type "lamps" --- */
-        if (strcmp(group, "lamps") == 0) {
-            const char *new_state = (strcmp(action, "on") == 0) ? "ON" : "OFF";
+        /* --- Groupe "lamps" --- */
+        if (strcmp(group, "lamps")==0) {
+            const char *new_state = (strcmp(action,"on")==0) ? "ON":"OFF";
             update_device_in_buffer(json, group, name, new_state, NULL);
-            msg[12] = (strcmp(action, "on") == 0) ? 1 : 0;
+            msg[12] = (strcmp(action,"on")==0) ? 1:0;
             frame_len = 13;
         }
-        /* --- Type "store" (volets) --- */
-        else if (strcmp(group, "store") == 0) {
-            const char *new_state = (strcmp(action, "open") == 0) ? "ON" : "OFF";
+
+        /* --- Groupe "store" (volets) --- */
+        else if (strcmp(group,"store")==0) {
+            const char *new_state = (strcmp(action,"open")==0) ? "ON":"OFF";
             update_device_in_buffer(json, group, name, new_state, NULL);
-            msg[12] = (strcmp(action, "open") == 0) ? 1 : 0;
+            msg[12] = (strcmp(action,"open")==0) ? 1:0;
             frame_len = 13;
         }
-        /* --- Type "clim" --- */
-        else if (strcmp(group, "clim") == 0) {
+
+        /* --- Groupe "clim" --- */
+        else if (strcmp(group,"clim")==0) {
             int mode_val = 0;
-            if (mode && strcmp(mode, "heat") == 0) mode_val = 1;
-            else if (mode && strcmp(mode, "cool") == 0) mode_val = 0;
+            if (mode && strcmp(mode,"heat")==0) mode_val = 1;
+            else if (mode && strcmp(mode,"cool")==0) mode_val = 0;
 
-            if (strcmp(action, "on") == 0) {
+            // 🔧 Correction : toujours envoyer 14 octets, même pour OFF
+            msg[12] = (strcmp(action,"on")==0) ? 1 : 0;
+            msg[13] = mode_val;  // cohérence trame
+            frame_len = 14;
+
+            if (strcmp(action,"on")==0)
                 update_device_in_buffer(json, group, name, "ON", &mode_val);
-                msg[12] = 1;
-                msg[13] = mode_val;  // bit de mode : 1 = chaud, 0 = froid
-                frame_len = 14;
-            } else if (strcmp(action, "off") == 0) {
+            else if (strcmp(action,"off")==0)
                 update_device_in_buffer(json, group, name, "OFF", NULL);
-                msg[12] = 0;
-                frame_len = 13;
-            }
         }
 
         frames[frame_count++] = msg;
         if (frame_count >= 1000) break;
     }
 
-    // Envoi global à une seule connexion TCP
+    // -- Envoi global du lot de trames
     if (frame_count > 0)
         send_group_to_simulator(sim_host, sim_port, frames, frame_count, frame_len);
 
-    // Libération mémoire
-    for (int i = 0; i < frame_count; i++)
+    // -- Libération mémoire
+    for (int i=0; i<frame_count; i++)
         free(frames[i]);
 }
+
 
 // ===========================================================================
 // 🔸 main()
