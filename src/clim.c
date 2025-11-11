@@ -189,9 +189,9 @@ int main(void) {
     /* (2) Lit les informations de l’appareil depuis le JSON ou la config */
     if (!get_device_info(group, decoded_device, ip_auto, input_auto, current_state)) {
         // Si l’appareil n’existe pas → message d’erreur HTML
-        html_header("Erreur Clim");
+        // html_header("Erreur Clim");
         printf("<p style='color:red;'>❌ Climatisation \"%s\" introuvable (groupe %s).</p>", decoded_device, group);
-        html_footer();
+        // html_footer();
         return 0;
     }
 

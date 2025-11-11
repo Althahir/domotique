@@ -115,7 +115,7 @@ int main(void) {
        (IP automate, entrée automate, état actuel)
        ----------------------------------------------------------------------- */
     if (!get_device_info(group, decoded_device, ip_auto, input_auto, current_state)) {
-        html_header("Erreur CGI");
+        // html_header("Erreur CGI");
 
         FILE *log = fopen("C:\\xampp\\htdocs\\c\\src\\debug.log", "a");
         if (log) {
@@ -126,7 +126,7 @@ int main(void) {
 
         printf("<p style='color:red;'>❌ ERREUR : Appareil %s introuvable dans le JSON (groupe %s).</p>",
                decoded_device, group);
-        html_footer();
+        // html_footer();
         return 0;
     }
 

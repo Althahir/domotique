@@ -1,4 +1,5 @@
 #include "domotique.h"  // Fichier d’en-tête principal contenant définitions globales et macros (ex: STATE_JSON_PATH)
+#include <ctype.h>
 
 /* ---------------------------------------------------------------------------
    🔹 Fonction utilitaire : lecture complète d’un fichier JSON en mémoire

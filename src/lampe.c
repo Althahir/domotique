@@ -164,29 +164,29 @@ int main(void) {
        Affiche les infos du device, son IP, son entrée automate, et son état actuel.
        Fournit aussi des boutons d’action “Allumer” / “Éteindre”.
        ----------------------------------------------------------------------- */
-    html_header("Lampe");
-    printf("<div class='wrap'>");
-    printf("<h2>Lampe %s</h2>", decoded_device);
+    // html_header("Lampe");
+    // printf("<div class='wrap'>");
+    // printf("<h2>Lampe %s</h2>", decoded_device);
 
-    // Affiche les informations de l’automate associées à la lampe
-    printf("<p><em>IP automate :</em> %s<br><em>Entrée automate :</em> %s</p>",
-           ip_auto[0] ? ip_auto : "(non défini)",
-           input_auto[0] ? input_auto : "(non défini)");
+    // // Affiche les informations de l’automate associées à la lampe
+    // printf("<p><em>IP automate :</em> %s<br><em>Entrée automate :</em> %s</p>",
+    //        ip_auto[0] ? ip_auto : "(non défini)",
+    //        input_auto[0] ? input_auto : "(non défini)");
 
-    // Affiche l’état actuel (ON en vert, OFF en rouge)
-    printf("<p>État actuel : <span class='%s'>%s</span></p>",
-           (strcmp(etat, "ON") == 0) ? "on" : "off", etat);
+    // // Affiche l’état actuel (ON en vert, OFF en rouge)
+    // printf("<p>État actuel : <span class='%s'>%s</span></p>",
+    //        (strcmp(etat, "ON") == 0) ? "on" : "off", etat);
 
-    // Boutons pour allumer / éteindre la lampe
-    printf("<p>");
-    printf("<a href='/cgi-bin/lampe.exe?device=%s&action=on'><button>Allumer</button></a>", device);
-    printf("<a href='/cgi-bin/lampe.exe?device=%s&action=off'><button>Éteindre</button></a>", device);
-    printf("</p>");
+    // // Boutons pour allumer / éteindre la lampe
+    // printf("<p>");
+    // printf("<a href='/cgi-bin/lampe.exe?device=%s&action=on'><button>Allumer</button></a>", device);
+    // printf("<a href='/cgi-bin/lampe.exe?device=%s&action=off'><button>Éteindre</button></a>", device);
+    // printf("</p>");
 
-    // Lien de retour vers l’interface utilisateur
-    printf("<p><a href='/c/index.html'><button>Retour IHM</button></a></p>");
-    printf("</div>");
-    html_footer();
+    // // Lien de retour vers l’interface utilisateur
+    // printf("<p><a href='/c/index.html'><button>Retour IHM</button></a></p>");
+    // printf("</div>");
+    // html_footer();
 
     return 0;
 }
